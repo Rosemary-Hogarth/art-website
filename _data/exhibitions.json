@@ -1,0 +1,35 @@
+[
+  {
+    "title": "O Espelho",
+    "location": "Casa da Cerca, Almada",
+    "year": 2024,
+    "coverImage": "https://res.cloudinary.com/dyciaxri0/image/upload/o-espelho/img1-cover_mta4zk",
+    "images": [
+      "https://res.cloudinary.com/dyciaxri0/image/upload/o-espelho/img5_feydhx",
+      "https://res.cloudinary.com/dyciaxri0/image/upload/o-espelho/img2_ayki0h",
+      "https://res.cloudinary.com/dyciaxri0/image/upload/o-espelho/img1_qavejb"
+    ]
+  },
+  {
+    "title": "Essay",
+    "location": "Jahn und Jahn, Munich",
+    "year": 2024,
+    "coverImage": "https://res.cloudinary.com/dyciaxri0/image/upload/essay/img2-cover_ivyhdn",
+    "images": [
+      "https://res.cloudinary.com/dyciaxri0/image/upload/essay/img6_vsn2oo",
+      "https://res.cloudinary.com/dyciaxri0/image/upload/essay/img4_bvsekw",
+      "https://res.cloudinary.com/dyciaxri0/image/upload/essay/img3_qbhgdo"
+    ]
+  },
+  {
+    "title": "The Sound of Words Falling",
+    "location": "Jahn und Jahn, Munich",
+    "year": 2024,
+    "coverImage": "https://res.cloudinary.com/dyciaxri0/image/upload/words-falling/img7_lm7hap",
+    "images": [
+      "https://res.cloudinary.com/dyciaxri0/image/upload/words-falling/img8_quah6g",
+      "https://res.cloudinary.com/dyciaxri0/image/upload/words-falling/img3-cover_qvm4n6"
+    ]
+  }
+
+]

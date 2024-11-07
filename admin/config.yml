@@ -1,0 +1,29 @@
+backend:
+  name:  name: git-gateway
+  repo: Rosemary-Hogarth/art-website
+  branch: master
+
+
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: ${CLOUDINARY_CLOUD_NAME}
+    api_key: ${CLOUDINARY_API_KEY}
+    api_secret: ${CLOUDINARY_API_SECRET}
+
+collections:
+  - name: "exhibitions"
+    label: "Exhibitions"
+    folder: "data"
+    create: true
+    slug: '{{title | slugify}}'
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Location", name: "location", widget: "string"}
+      - {label: "Year", name: "year", widget: "number"}
+      - {label: "Cover Image", name: "coverImage", widget: "image"}
+      - label: "Gallery Images"
+        name: "images"
+        widget: "list"
+        field:
+          {label: "Image", name: "image", widget: "image"}

@@ -1,0 +1,16 @@
+---
+layout: base.njk
+---
+<div class="heading"><h1 class="index-title">PAST EXHIBITIONS</h1></div>
+<div class="exhibition-grid">
+{% for exhibition in exhibitions %}
+  <a href="/exhibitions/{{ exhibition.title | slug }}/" class="exhibition-card">
+    <img src="{{ exhibition.coverImage }}" alt="{{ exhibition.title }}" class="exhibition-image">
+    <div class="exhibition-details">
+      <h2 class="exhibition-title">{{ exhibition.title }}</h2>
+      <p class="exhibition-location">{{ exhibition.location }}</p>
+      <p class="exhibition-year">{{ exhibition.year }}</p>
+    </div>
+  </a>
+{% endfor %}
+</div>
