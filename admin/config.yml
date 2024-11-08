@@ -1,14 +1,14 @@
 backend:
-  name:  name: git-gateway
+  name: git-gateway
   repo: Rosemary-Hogarth/art-website
   branch: master
 
 media_library:
   name: cloudinary
   config:
-    cloud_name: ${CLOUDINARY_CLOUD_NAME}
-    api_key: ${CLOUDINARY_API_KEY}
-    api_secret: ${CLOUDINARY_API_SECRET}
+    cloud_name: dyciaxri0
+    api_key: 923446252637638
+
 
 
 
