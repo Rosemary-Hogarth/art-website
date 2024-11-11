@@ -34,10 +34,26 @@ module.exports = function(eleventyConfig) {
     return content;
   });
 
-  // Access exhibitions collection from markdown files in the "exhibitions" folder
+  // eleventyConfig.addCollection("exhibitions", function(collectionApi) {
+  //   const exhibitions = collectionApi.getFilteredByGlob("exhibitions/*.md");
+
+  //   // Instead of JSON.stringify, let's log a simplified version of the data
+  //   console.log("Exhibitions:", exhibitions.map(e => ({
+  //     inputPath: e.inputPath,
+  //     url: e.url,
+  //     data: {
+  //       title: e.data.title,
+  //       // Add other relevant properties, but avoid nested objects
+  //    }
+  //   })));
+
+  //   return exhibitions;
+  // });
+
+
   eleventyConfig.addCollection("exhibitions", function(collectionApi) {
     const exhibitions = collectionApi.getFilteredByGlob("exhibitions/*.md");
-    console.log("Exhibitions Collection:", exhibitions); // Log to check the collection data
+    console.log("Exhibitions:", exhibitions);
     return exhibitions;
   });
 
