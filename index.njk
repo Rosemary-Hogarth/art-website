@@ -6,11 +6,33 @@ pagination:
   alias: exhibition
 ---
 
-<div class="heading"><h1 class="index-title">PAST EXHIBITIONS</h1></div>
+<div class="heading">
+  <h1 class="index-title">PAST EXHIBITIONS</h1>
+</div>
+
 <div class="exhibition-grid">
   {% for exhibition in collections.exhibitions %}
     <a href="/exhibitions/{{ exhibition.fileSlug }}/" class="exhibition-card">
-      <img src="{{ exhibition.data.coverImage }}" alt="{{ exhibition.data.title }}" class="exhibition-image">
+      <!-- Bootstrap Carousel -->
+      <div id="carouselExampleControls-{{ exhibition.fileSlug }}" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          {% for image in exhibition.data.images %}
+            <div class="carousel-item {% if loop.first %}active{% endif %}">
+              <img class="d-block w-100" src="{{ image }}" alt="Image from {{ exhibition.data.title }}">
+            </div>
+          {% endfor %}
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls-{{ exhibition.fileSlug }}" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls-{{ exhibition.fileSlug }}" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      <!-- Exhibition Details -->
       <div class="exhibition-details">
         <h2 class="exhibition-title">{{ exhibition.data.title }}</h2>
         <p class="exhibition-location">{{ exhibition.data.location }}</p>
