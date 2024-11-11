@@ -1,22 +1,19 @@
 ---
 layout: base.njk
-pagination:
-  data: exhibitions
-  size: 1
-  alias: exhibition
-permalink: "exhibitions/{{ exhibition.title | slug }}/"
+permalink: "/exhibitions/{{ page.fileSlug }}/"
 ---
+
 <div class="exhibition-details-show">
-  <h1 class="exhib-details-name">{{ exhibition.title }}</h1>
-  <p  class="exhib-details-location">{{ exhibition.location }}</p>
-  <p  class="exhib-details-year">{{ exhibition.year }}</p>
- </div>
+  <h1 class="exhib-details-name">{{ exhibition.data.title }}</h1>
+  <p class="exhib-details-location">{{ exhibition.data.location }}</p>
+  <p class="exhib-details-year">{{ exhibition.data.year }}</p>
+</div>
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
-    {% for image in exhibition.images %}
-      <div class="carousel-item {% if loop.first %}active{% endif %}"> <!-- Set the first item as active -->
-        <img class="d-block w-100" src="{{ image }}" alt="Image from {{ exhibition.title }}">
+    {% for image in exhibition.data.images %}
+      <div class="carousel-item {% if loop.first %}active{% endif %}">
+        <img class="d-block w-100" src="{{ image }}" alt="Image from {{ exhibition.data.title }}">
       </div>
     {% endfor %}
   </div>

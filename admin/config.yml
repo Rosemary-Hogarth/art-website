@@ -3,6 +3,7 @@ backend:
   repo: Rosemary-Hogarth/art-website
   branch: master
 
+
 media_library:
   name: cloudinary
   config:
@@ -15,7 +16,7 @@ media_library:
 collections:
   - name: "exhibitions"
     label: "Exhibitions"
-    folder: "data"
+    folder: "exhibitions"
     create: true
     slug: '{{title | slugify}}'
     fields:

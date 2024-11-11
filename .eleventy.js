@@ -32,12 +32,12 @@ module.exports = function(eleventyConfig) {
     return content;
   });
 
-  // Access exhibitions from the JSON file in _data/exhibitions.json
-  eleventyConfig.addCollection("exhibitions", function(collectionApi) {
-    return collectionApi.getAll().filter(function(item) {
-      return item.data.exhibitions;  // Filter items that have exhibitions data
+    // Access exhibitions collection from markdown files in the "exhibitions" folder
+    eleventyConfig.addCollection("exhibitions", function(collectionApi) {
+      const exhibitions = collectionApi.getFilteredByGlob("/exhibitions/*.md");
+      console.log("Exhibitions Collection:", exhibitions); // Log to check the collection data
+      return exhibitions;
     });
-  });
 
   // Passthrough copy for assets
   eleventyConfig.addPassthroughCopy("*.css");
