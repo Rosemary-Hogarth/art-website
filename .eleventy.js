@@ -34,7 +34,7 @@ module.exports = function(eleventyConfig) {
 
     // Access exhibitions collection from markdown files in the "exhibitions" folder
     eleventyConfig.addCollection("exhibitions", function(collectionApi) {
-      const exhibitions = collectionApi.getFilteredByGlob("/exhibitions/*.md");
+      const exhibitions = collectionApi.getFilteredByGlob("exhibitions/*.md");
       console.log("Exhibitions Collection:", exhibitions); // Log to check the collection data
       return exhibitions;
     });
