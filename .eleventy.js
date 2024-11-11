@@ -5,10 +5,12 @@ const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
 
-
-
-
 module.exports = function(eleventyConfig) {
+  // Add cloudinaryUrl filter
+  eleventyConfig.addFilter("cloudinaryUrl", (imagePath) => {
+    return `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload/${imagePath}`;
+  });
+
   // Add YAML data file support
   eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
 
@@ -32,12 +34,12 @@ module.exports = function(eleventyConfig) {
     return content;
   });
 
-    // Access exhibitions collection from markdown files in the "exhibitions" folder
-    eleventyConfig.addCollection("exhibitions", function(collectionApi) {
-      const exhibitions = collectionApi.getFilteredByGlob("exhibitions/*.md");
-      console.log("Exhibitions Collection:", exhibitions); // Log to check the collection data
-      return exhibitions;
-    });
+  // Access exhibitions collection from markdown files in the "exhibitions" folder
+  eleventyConfig.addCollection("exhibitions", function(collectionApi) {
+    const exhibitions = collectionApi.getFilteredByGlob("exhibitions/*.md");
+    console.log("Exhibitions Collection:", exhibitions); // Log to check the collection data
+    return exhibitions;
+  });
 
   // Passthrough copy for assets
   eleventyConfig.addPassthroughCopy("*.css");

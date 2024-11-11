@@ -1,6 +1,10 @@
 ---
 layout: base.njk
-permalink: "/exhibitions/{{ page.fileSlug }}/"
+pagination:
+  data: collections.exhibitions
+  size: 1
+  alias: exhibition
+permalink: "/exhibitions/{{ exhibition.fileSlug }}/"
 ---
 
 <div class="exhibition-details-show">
@@ -13,7 +17,7 @@ permalink: "/exhibitions/{{ page.fileSlug }}/"
   <div class="carousel-inner">
     {% for image in exhibition.data.images %}
       <div class="carousel-item {% if loop.first %}active{% endif %}">
-        <img class="d-block w-100" src="{{ image }}" alt="Image from {{ exhibition.data.title }}">
+        <img class="d-block w-100" src="{{ image | cloudinaryUrl }}" alt="Image from {{ exhibition.data.title }}">
       </div>
     {% endfor %}
   </div>
