@@ -1,19 +1,35 @@
-body {
+body, html {
   font-family: "Inter", sans-serif;
+  margin: auto 1em;
 }
 
 .index-title {
   font-size: 1.1em;
   font-weight: 200;
   margin: 0;
-  padding-left: 1.2em;
   margin-bottom:1em;
+  padding-left: 0.4em;
+}
+
+.carousel {
+  margin: 10px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.carousel.slide {
+  margin: 0;
+}
+
+.exhibition-item {
+  display: flex;
+  flex-direction: column;
 }
 
 .exhibition-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 15px;
+  padding: 0px;
 }
 
 .exhibition-card {
@@ -26,23 +42,25 @@ body {
 .exhibition-card img {
   width: 100%;
   height: auto;
-  padding: 0.5em;
+  padding: 0;
   text-decoration: none;
 }
 
 .exhibition-details {
-  padding: 0.5rem;
+  padding-left: 0.5em;
   transition: all 0.3s ease;
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
 }
 
-.exhibition-details-show {
+/* .exhibition-details-show {
   padding: 1.5em;
   transition: all 0.3s ease;
-}
+} */
 
 
 .exhibition-title {
-  font-size: 1.05em;
+  font-size: 0.9em;
   line-height: 1.3em;
   margin-top: 0;
   margin-bottom: 0;
@@ -60,12 +78,14 @@ body {
 .exhibition-details:hover  {
   color: grey;
 }
-.exhibition-card:hover {
-  text-decoration: none;
-}
 
-.carousel {
-  margin: 20px;
+
+.fancybox__container {
+  background: rgba(0, 0, 0, 0.8);
+}
+.fancybox__image {
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .nav-link {
@@ -77,6 +97,7 @@ body {
 .navbar {
   background-color: white !important;
   margin-bottom: 30px;
+  padding-left: 0 !important;
 
 }
 
@@ -90,13 +111,14 @@ body {
 
 .navbar-brand {
   font-size: 1.6em;
-  margin-left: 0.2em !important;
+  padding: 0 !important;
+  margin-right: 0 !important;
 }
 
 
 /*
 show page */
-.exhib-details-name {
+/* .exhib-details-name {
   font-size: 1em;
   margin: 0;
 }
@@ -112,4 +134,53 @@ show page */
   font-size: 0.8em;
   padding-top: 0;
   color: #666;
+} */
+
+
+@media (max-width: 576px) {
+  .exhibition-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    padding-left: 0.5em !important;
+  }
+
+  .index-title {
+    padding-left: 0.5em;
+  }
+
+  body, html {
+    margin: 0;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .exhibition-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .exhibition-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  .exhibition-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+
+}
+
+@media (min-width: 1201px) {
+  .exhibition-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+
 }
