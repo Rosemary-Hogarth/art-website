@@ -7,6 +7,9 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
 
 module.exports = function(eleventyConfig) {
+
+
+
   // Add cloudinaryUrl filter
   eleventyConfig.addFilter("cloudinaryUrl", (imagePath) => {
     return `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload/${imagePath}`;

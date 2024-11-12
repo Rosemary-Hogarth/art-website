@@ -9,14 +9,14 @@ pagination:
 
 <h1>Works</h1>
 
+
 <!-- Filter Form (this could be done dynamically with JS) -->
 <form id="filter-form">
   <label for="medium">Filter by Medium:</label>
   <select id="medium">
     <option value="">All</option>
-    {% set mediums = collections.works | map(attribute="data.medium") | unique %}
-    {% for medium in mediums %}
-      <option value="{{ medium }}">{{ medium }}</option>
+    {% for work in collections.works %}
+      <option value="{{ work.data.medium }}">{{ work.data.medium }}</option>
     {% endfor %}
   </select>
 </form>
@@ -42,17 +42,71 @@ pagination:
 
 
 <script>
-  document.getElementById('medium').addEventListener('change', function(e) {
-    const medium = e.target.value.toLowerCase();
-    const works = document.querySelectorAll('.work-item');
+   // Wait for the DOM to be fully loaded before running the script
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize Masonry
+        var grid = document.querySelector('.works-grid');
+        var masonry = new Masonry(grid, {
+            itemSelector: '.work-item',
+            columnWidth: '.work-item',
+            percentPosition: true
+        });
 
-    works.forEach(function(work) {
-      const workMedium = work.getAttribute('data-medium').toLowerCase();
-      if (medium === '' || workMedium.includes(medium)) {
-        work.style.display = 'block';
-      } else {
-        work.style.display = 'none';
-      }
+        // Initialize Masonry after all images have loaded
+        imagesLoaded(grid).on('progress', function() {
+            masonry.layout();
+        });
+
+        // Get the select element with id 'medium'
+        const select = document.getElementById('medium');
+
+        // Convert the HTMLOptionsCollection to an array for easier manipulation
+        const options = Array.from(select.options);
+
+        // Initialize an array to store unique options
+        const uniqueOptions = [];
+
+        // Use a Set to keep track of unique values (Set only stores unique values)
+        const uniqueValues = new Set();
+
+        // Iterate through each option in the select element
+        options.forEach(function(option) {
+            // Check if the current option's value is not already in our Set
+            if (!uniqueValues.has(option.value)) {
+                // If it's not, add the value to the Set
+                uniqueValues.add(option.value);
+                // And push the entire option element to our uniqueOptions array
+                uniqueOptions.push(option);
+            }
+            // If the value is already in the Set, this option is skipped (removing duplicates)
+        });
+
+        // Clear all existing options from the select element
+        select.innerHTML = '';
+
+        // Add each unique option back to the select element
+        uniqueOptions.forEach(function(option) {
+            select.appendChild(option);
+        });
+
+        // Add event listener for medium filter
+        document.getElementById('medium').addEventListener('change', function(e) {
+            const medium = e.target.value.toLowerCase();
+            const works = document.querySelectorAll('.work-item');
+
+            works.forEach(function(work) {
+                const workMedium = work.getAttribute('data-medium').toLowerCase();
+                if (medium === '' || workMedium === medium) {
+                    work.style.display = 'block';
+                } else {
+                    work.style.display = 'none';
+                }
+            });
+
+            // Re-layout Masonry after filtering
+            masonry.layout();
+        });
     });
-  });
+</script>
+
 </script>
