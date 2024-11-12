@@ -1,0 +1,58 @@
+---
+layout: base.njk
+title: "Works"
+pagination:
+  data: collections.works
+  size: 100
+  alias: work
+---
+
+<h1>Works</h1>
+
+<!-- Filter Form (this could be done dynamically with JS) -->
+<form id="filter-form">
+  <label for="medium">Filter by Medium:</label>
+  <select id="medium">
+    <option value="">All</option>
+    {% set mediums = collections.works | map(attribute="data.medium") | unique %}
+    {% for medium in mediums %}
+      <option value="{{ medium }}">{{ medium }}</option>
+    {% endfor %}
+  </select>
+</form>
+
+<div class="works-grid">
+  {% for work in collections.works %}
+    <div class="work-item" data-medium="{{ work.data.medium }}">
+      <div class="works-card">
+        <a href="{{ work.data.image }}"
+           data-fancybox="gallery"
+           data-caption="
+             <em>{{ work.data.name }}</em><br>
+             {{ work.data.year }}<br>
+             {{ work.data.medium }}<br>
+             {{ work.data.dimensions }}
+           ">
+          <img src="{{ work.data.image }}" alt="{{ work.data.name }}">
+        </a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+
+<script>
+  document.getElementById('medium').addEventListener('change', function(e) {
+    const medium = e.target.value.toLowerCase();
+    const works = document.querySelectorAll('.work-item');
+
+    works.forEach(function(work) {
+      const workMedium = work.getAttribute('data-medium').toLowerCase();
+      if (medium === '' || workMedium.includes(medium)) {
+        work.style.display = 'block';
+      } else {
+        work.style.display = 'none';
+      }
+    });
+  });
+</script>

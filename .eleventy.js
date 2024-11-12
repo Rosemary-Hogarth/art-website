@@ -42,6 +42,12 @@ module.exports = function(eleventyConfig) {
     return exhibitions;
   });
 
+  eleventyConfig.addCollection("works", function(collectionApi) {
+    const works = collectionApi.getFilteredByGlob("works/*.md");
+    return works;
+  });
+
+
   // Passthrough copy for assets
   eleventyConfig.addPassthroughCopy("*.css");
   eleventyConfig.addPassthroughCopy("images");

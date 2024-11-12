@@ -29,3 +29,16 @@ collections:
         widget: "list"
         field:
           {label: "Image", name: "image", widget: "image"}
+
+# New "Works" Collection
+  - name: "works"
+    label: "Works"
+    folder: "works"
+    create: true
+    slug: '{{title | slugify}}'
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Year", name: "year", widget: "number"}
+      - {label: "Medium", name: "medium", widget: "string"} # To filter works by medium
+      - {label: "Dimensions", name: "dimensions", widget: "string"}
+      - {label: "Image", name: "image", widget: "image"}

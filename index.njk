@@ -11,25 +11,28 @@ pagination:
   {% for exhibition in collections.exhibitions %}
     <div class="exhibition-item">
       <a href="/exhibitions/{{ exhibition.fileSlug }}/" class="exhibition-link">
-        <!-- Carousel -->
-        <div id="carouselExampleControls-{{ exhibition.fileSlug }}" class="carousel slide">
-          <div class="carousel-inner">
-            {% for image in exhibition.data.images %}
-              <div class="carousel-item {% if loop.first %}active{% endif %}">
-                <a href="{{ image }}" data-fancybox="gallery-{{ exhibition.fileSlug }}">
-                  <img class="d-block w-100" src="{{ image }}" alt="Image from {{ exhibition.data.title }}">
-                </a>
-              </div>
-            {% endfor %}
+        <!-- Invisible Carousel Card -->
+        <div class="carousel-card">
+          <!-- Carousel -->
+          <div id="carouselExampleControls-{{ exhibition.fileSlug }}" class="carousel slide">
+            <div class="carousel-inner">
+              {% for image in exhibition.data.images %}
+                <div class="carousel-item {% if loop.first %}active{% endif %}">
+                  <a href="{{ image }}" data-fancybox="gallery-{{ exhibition.fileSlug }}">
+                    <img class="carousel-image d-block w-100" src="{{ image }}" alt="Image from {{ exhibition.data.title }}">
+                  </a>
+                </div>
+              {% endfor %}
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls-{{ exhibition.fileSlug }}" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls-{{ exhibition.fileSlug }}" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
           </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls-{{ exhibition.fileSlug }}" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls-{{ exhibition.fileSlug }}" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
         </div>
 
         <!-- Exhibition Details -->

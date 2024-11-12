@@ -21,6 +21,20 @@ body, html {
   margin: 0;
 }
 
+.carousel-card {
+  width: 100%;
+  max-width: 500px; /* Set a consistent width for all carousels */
+  margin: 0 auto;
+  overflow: hidden; /* Hides any overflow */
+  border: none;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 250px; /* Set a consistent height for all images */
+  object-fit: cover; /* Ensures image fills the space while maintaining aspect ratio */
+}
+
 .exhibition-item {
   display: flex;
   flex-direction: column;
@@ -81,10 +95,9 @@ body, html {
 
 
 .fancybox__container {
-  background: rgba(0, 0, 0, 0.8);
+  background-color: white !important;
 }
 .fancybox__image {
-  border-radius: 5px;
   overflow: hidden;
 }
 
@@ -116,25 +129,6 @@ body, html {
 }
 
 
-/*
-show page */
-/* .exhib-details-name {
-  font-size: 1em;
-  margin: 0;
-}
-
-.exhib-details-location {
-  font-size: 0.8em;
-  padding: 0;
-  margin: 0;
-  color: #666;
-}
-
-.exhib-details-year {
-  font-size: 0.8em;
-  padding-top: 0;
-  color: #666;
-} */
 
 
 @media (max-width: 576px) {
@@ -153,11 +147,18 @@ show page */
   body, html {
     margin: 0;
   }
+
+  .carousel-card {
+    max-width: 600px;
+  }
 }
 
 @media (min-width: 577px) and (max-width: 768px) {
   .exhibition-grid {
     grid-template-columns: 1fr;
+  }
+  .carousel-card {
+    max-width: 700px;
   }
 
 }
@@ -166,7 +167,6 @@ show page */
   .exhibition-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
 }
 
 @media (min-width: 993px) and (max-width: 1200px) {
@@ -174,13 +174,111 @@ show page */
     grid-template-columns: repeat(3, 1fr);
   }
 
-
 }
 
 @media (min-width: 1201px) {
   .exhibition-grid {
     grid-template-columns: repeat(4, 1fr);
   }
+  .exhibition-item {
+    align-items: start;
+
+  }
+
+  .carousel-card {
+    grid-column: 1 / span 1;
+    justify-self: end;
+  }
+
+  .exhibition-details {
+    grid-column: 2 / span 1;
+    text-align: left;
+    padding-left: 1rem;
+    max-width: 350px;
+  }
+
+}
+
+/*
+Works */
+
+/* General styles for the grid */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid with 250px items */
+  gap: 30px;
+  padding: 20px;
+}
+
+.work-item {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Styling for each work item card */
+.works-card {
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect: scale the card */
+.works-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Styling for the image */
+.works-card img {
+  width: 100%;  /* Make the image responsive */
+  height: auto;
+  transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+/* Hover zoom effect for images */
+.works-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Styling for the work info (title, year, medium, etc.) */
+.work-info {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.work-info h2 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.work-info p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #555;
+}
+
+/* Styling for Fancybox captions */
+.fancybox__caption {
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+.fancybox__caption em {
+  font-weight: 200;
+  display:inline;
+  font-size: 1.3em;
+}
 
 
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
 }
