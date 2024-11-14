@@ -7,106 +7,100 @@ pagination:
   alias: work
 ---
 
-<h1>Works</h1>
+<div class="works-container">
+  <!-- Filter Buttons -->
+  <div id="filter-buttons" class="filter-buttons">
+    <button class="filter-button active" data-filter="">All</button>
+    <!-- Mediums will be populated here by JavaScript -->
+  </div>
 
-
-<!-- Filter Form (this could be done dynamically with JS) -->
-<form id="filter-form">
-  <label for="medium">Filter by Medium:</label>
-  <select id="medium">
-    <option value="">All</option>
+  <!-- Works Grid -->
+  <div class="works-grid">
     {% for work in collections.works %}
-      <option value="{{ work.data.medium }}">{{ work.data.medium }}</option>
-    {% endfor %}
-  </select>
-</form>
-
-<div class="works-grid">
-  {% for work in collections.works %}
-    <div class="work-item" data-medium="{{ work.data.medium }}">
-      <div class="works-card">
-        <a href="{{ work.data.image }}"
-           data-fancybox="gallery"
-           data-caption="
-             <em>{{ work.data.name }}</em><br>
-             {{ work.data.year }}<br>
-             {{ work.data.medium }}<br>
-             {{ work.data.dimensions }}
-           ">
-          <img src="{{ work.data.image }}" alt="{{ work.data.name }}">
-        </a>
+      <div class="work-item" data-medium="{{ work.data.medium }}">
+        <div class="works-card">
+          <a href="{{ work.data.image }}"
+             data-fancybox="gallery"
+              data-caption="
+                <span class='caption-title'><em>{{ work.data.name }}</em></span>,
+                <span class='caption-year'>{{ work.data.year }}</span>,
+                <span class='caption-medium'>{{ work.data.medium }}</span>,
+                <span class='caption-dimensions'>{{ work.data.dimensions }}</span>
+              ">
+            <img src="{{ work.data.image }}" alt="{{ work.data.name }}">
+          </a>
+        </div>
       </div>
-    </div>
-  {% endfor %}
-</div>
+    {% endfor %}
+  </div>
+
+
+
 
 
 <script>
-   // Wait for the DOM to be fully loaded before running the script
-    document.addEventListener('DOMContentLoaded', function() {
-        // Initialize Masonry
-        var grid = document.querySelector('.works-grid');
-        var masonry = new Masonry(grid, {
-            itemSelector: '.work-item',
-            columnWidth: '.work-item',
-            percentPosition: true
-        });
+// Wait for the DOM to be fully loaded before running the script
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all work items and their mediums
+    const works = document.querySelectorAll('.work-item');
+    const mediums = new Set();
 
-        // Initialize Masonry after all images have loaded
-        imagesLoaded(grid).on('progress', function() {
-            masonry.layout();
-        });
+    works.forEach(work => {
+        const medium = work.getAttribute('data-medium');
+        mediums.add(medium); // Automatically deduplicates due to the Set
+    });
 
-        // Get the select element with id 'medium'
-        const select = document.getElementById('medium');
+    // Get the filter buttons container
+    const filterButtonsContainer = document.getElementById('filter-buttons');
 
-        // Convert the HTMLOptionsCollection to an array for easier manipulation
-        const options = Array.from(select.options);
+    // Add a button for each unique medium
+    mediums.forEach(medium => {
+        const button = document.createElement('button');
+        button.classList.add('filter-button');
+        button.setAttribute('data-filter', medium.toLowerCase());
+        button.textContent = medium;
+        filterButtonsContainer.appendChild(button);
+    });
 
-        // Initialize an array to store unique options
-        const uniqueOptions = [];
+    // Filter logic
+    const filterButtons = document.querySelectorAll('.filter-button');
 
-        // Use a Set to keep track of unique values (Set only stores unique values)
-        const uniqueValues = new Set();
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const filter = this.getAttribute('data-filter').toLowerCase();
 
-        // Iterate through each option in the select element
-        options.forEach(function(option) {
-            // Check if the current option's value is not already in our Set
-            if (!uniqueValues.has(option.value)) {
-                // If it's not, add the value to the Set
-                uniqueValues.add(option.value);
-                // And push the entire option element to our uniqueOptions array
-                uniqueOptions.push(option);
-            }
-            // If the value is already in the Set, this option is skipped (removing duplicates)
-        });
+            // Remove active class from all buttons and add to the clicked button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
 
-        // Clear all existing options from the select element
-        select.innerHTML = '';
-
-        // Add each unique option back to the select element
-        uniqueOptions.forEach(function(option) {
-            select.appendChild(option);
-        });
-
-        // Add event listener for medium filter
-        document.getElementById('medium').addEventListener('change', function(e) {
-            const medium = e.target.value.toLowerCase();
-            const works = document.querySelectorAll('.work-item');
-
-            works.forEach(function(work) {
+            // Filter works based on the selected medium
+            works.forEach(work => {
                 const workMedium = work.getAttribute('data-medium').toLowerCase();
-                if (medium === '' || workMedium === medium) {
-                    work.style.display = 'block';
-                } else {
-                    work.style.display = 'none';
-                }
+                work.style.display = (filter === '' || workMedium === filter) ? 'block' : 'none';
             });
-
-            // Re-layout Masonry after filtering
-            masonry.layout();
         });
     });
-</script>
 
+    // Initialize Fancybox
+    Fancybox.bind("[data-fancybox='gallery']", {
+        on: {
+            ready: (fancybox) => {
+                if (fancybox && fancybox.container) {
+                    console.log('Fancybox elements:', fancybox.container.children);
+
+                    // Apply transparent background to Fancybox elements
+                    const elements = fancybox.container.querySelectorAll('*');
+                    elements.forEach(el => {
+                        el.style.setProperty('background-color', 'transparent', 'important');
+                    });
+                }
+            }
+        },
+        // Prevent Fancybox from adding aria-hidden to the root
+        hideScrollbar: false,
+        autoFocus: false,
+        // Disable thumbnails
+        Thumbs: false
+    });
+});
 </script>

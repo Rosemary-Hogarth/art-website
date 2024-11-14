@@ -1,7 +1,18 @@
 body, html {
   font-family: "Inter", sans-serif;
-  margin: auto 1em;
+  margin: 0;
 }
+
+.main-container {
+  padding: 0 2em;
+  max-width: 2000px; /* Optional: limits the width on larger screens */
+  margin: 0 auto;
+}
+
+.navbar, .index-title, .works-grid {
+  padding-left: 0; /* Remove individual padding to rely on .main-container */
+}
+
 
 .index-title {
   font-size: 1.1em;
@@ -67,10 +78,6 @@ body, html {
   margin-bottom: 1.2em;
 }
 
-/* .exhibition-details-show {
-  padding: 1.5em;
-  transition: all 0.3s ease;
-} */
 
 
 .exhibition-title {
@@ -110,7 +117,6 @@ body, html {
 .navbar {
   background-color: white !important;
   margin-bottom: 30px;
-  padding-left: 0 !important;
 
 }
 
@@ -124,10 +130,7 @@ body, html {
 
 .navbar-brand {
   font-size: 1.6em;
-  padding: 0 !important;
-  margin-right: 0 !important;
 }
-
 
 
 
@@ -139,6 +142,11 @@ body, html {
   .navbar {
     padding-left: 0.5em !important;
   }
+
+
+.navbar-brand {
+  padding-left: 0.3em !important;
+}
 
   .index-title {
     padding-left: 0.5em;
@@ -160,6 +168,10 @@ body, html {
   .carousel-card {
     max-width: 700px;
   }
+  .navbar-brand,
+  .navbar-toggler {
+    padding: 0 0.3em; /* Adjust for smaller screen */
+  }
 
 }
 
@@ -171,7 +183,7 @@ body, html {
 
 @media (min-width: 993px) and (max-width: 1200px) {
   .exhibition-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
 }
@@ -201,31 +213,61 @@ body, html {
 
 /* Works */
 
+.heading-works {
+  font-size: 1.2em;
+  font-weight: 300;
+  margin-bottom: 1.5em;
+}
+
+
+.filter {
+  font-size: 0.8em;
+  margin-bottom: 1.5em;
+}
+
 .works-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 30px;
-  padding: 20px;
 }
 
+
 .work-item {
+  overflow: visible;
   position: relative;
-  overflow: hidden;
+  aspect-ratio: 5 / 4;
 }
 
 .works-card {
-  padding: 10px;
-  transition: transform 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
 }
 
+.works-card a {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+
 .works-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .works-card img {
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
@@ -235,42 +277,75 @@ body, html {
 
 
 .work-info {
-  margin-top: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
   text-align: center;
-}
-
-.work-info h2 {
-  font-size: 1.2rem;
-  margin-bottom: 5px;
-}
-
-.work-info p {
-  font-size: 0.9rem;
-  margin: 0;
-  color: #555;
 }
 
 
 .fancybox__caption {
   font-size: 1rem;
   font-weight: 200;
+  color: #000;
 }
 
 .fancybox__caption em {
   font-weight: 200;
   display:inline;
-  font-size: 1.3em;
+  font-size: 1em;
 }
 
+.fancybox__container,
+.fancybox__backdrop,
+.fancybox__carousel,
+.fancybox__slide,
+.fancybox__content {
+    background-color: white !important;
+}
 
-@media (max-width: 768px) {
-  .works-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 items per row on smaller screens */
+.fancybox__container .fancybox__caption,
+.fancybox__container .fancybox__toolbar,
+.fancybox__container .fancybox__nav {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 200;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  &:focus {
+    outline: none;
+    box-shadow: none;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .works-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
+}
+
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+}
+
+.filter-button {
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+
+}
+
+.filter-button.active, .filter-button:hover {
+  background-color: #242323;
+  color: #fff;
 }
