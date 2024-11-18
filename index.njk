@@ -6,7 +6,9 @@ pagination:
   alias: exhibition
 ---
 
-<div class="heading"><h1 class="index-title">PAST EXHIBITIONS</h1></div>
+<div class="heading">
+  <h1 class="index-title">PAST EXHIBITIONS</h1>
+</div>
 <div class="exhibition-grid">
   {% for exhibition in collections.exhibitions %}
     <div class="exhibition-item">
@@ -18,7 +20,11 @@ pagination:
             <div class="carousel-inner">
               {% for image in exhibition.data.images %}
                 <div class="carousel-item {% if loop.first %}active{% endif %}">
-                  <a href="{{ image }}" data-fancybox="gallery-{{ exhibition.fileSlug }}">
+                  <a href="{{ image }}" data-fancybox="gallery-{{ exhibition.fileSlug }}"
+                     data-caption="
+                     <span class='exhib-title'><em>{{ exhibition.data.title }}</em></span>,
+                     <span class='exhib-location'>{{ exhibition.data.location }}</span>,
+                     <span class='caption-year'>{{ exhibition.data.year }}</span>">
                     <img class="carousel-image d-block w-100" src="{{ image }}" alt="Image from {{ exhibition.data.title }}">
                   </a>
                 </div>
@@ -45,3 +51,8 @@ pagination:
     </div>
   {% endfor %}
 </div>
+
+
+{% block scripts %}
+  <script src="/exhibitions.js"></script>
+{% endblock %}
