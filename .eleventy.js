@@ -8,7 +8,12 @@ const htmlmin = require("html-minifier");
 
 module.exports = function(eleventyConfig) {
 
-
+    // Set the pathPrefix for production
+    if (process.env.ELEVENTY_ENV === 'production') {
+      return {
+        pathPrefix: "/your-repo-name/"
+      }
+    }
 
   // Add cloudinaryUrl filter
   eleventyConfig.addFilter("cloudinaryUrl", (imagePath) => {
@@ -66,5 +71,7 @@ module.exports = function(eleventyConfig) {
       data: "_data",
       output: "_site"
     }
+
   };
+
 };
