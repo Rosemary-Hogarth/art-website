@@ -43,6 +43,9 @@ module.exports = function(eleventyConfig) {
     return content;
   });
 
+  eleventyConfig.addCollection("homepage_slideshow", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("homepage_slideshow/*.md");
+  });
 
   eleventyConfig.addCollection("exhibitions", function(collectionApi) {
     const exhibitions = collectionApi.getFilteredByGlob("exhibitions/*.md");

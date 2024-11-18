@@ -13,6 +13,7 @@ media_library:
 
 
 
+
 collections:
   - name: "exhibitions"
     label: "Exhibitions"
@@ -42,3 +43,13 @@ collections:
       - {label: "Medium", name: "medium", widget: "string"} # To filter works by medium
       - {label: "Dimensions", name: "dimensions", widget: "string"}
       - {label: "Image", name: "image", widget: "image"}
+
+  - name: "homepage_slideshow"
+    label: "Homepage Slideshow"
+    folder: "homepage_slideshow"
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Order", name: "order", widget: "number", default: 1}
