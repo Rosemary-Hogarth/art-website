@@ -8,12 +8,7 @@ const htmlmin = require("html-minifier");
 
 module.exports = function(eleventyConfig) {
 
-    // Set the pathPrefix for production
-    if (process.env.ELEVENTY_ENV === 'production') {
-      return {
-        pathPrefix: "/your-repo-name/"
-      }
-    }
+
 
   // Add cloudinaryUrl filter
   eleventyConfig.addFilter("cloudinaryUrl", (imagePath) => {
@@ -49,7 +44,6 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addCollection("exhibitions", function(collectionApi) {
     const exhibitions = collectionApi.getFilteredByGlob("exhibitions/*.md");
-    console.log("Exhibitions:", exhibitions);
     return exhibitions;
   });
 
@@ -66,8 +60,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("admin");
   // eleventyConfig.addPassthroughCopy("images/uploads");
 
+  const pathPrefix = process.env.ELEVENTY_ENV === 'production' ? "/Rosemary-Hogarth/" : "/";
+
   // Set custom directory structure
   return {
+    pathPrefix,
     dir: {
       input: ".",
       includes: "_includes",
