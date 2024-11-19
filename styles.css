@@ -296,7 +296,9 @@ body, html {
   text-align: center;
 }
 
-
+.fancybox__toolbar {
+  background: none !important;
+}
 .fancybox__caption {
   font-family: "Montserrat", sans-serif !important;
   font-size: 1rem;

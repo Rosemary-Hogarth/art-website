@@ -1,0 +1,59 @@
+---
+layout: base.njk
+pagination:
+  data: collections.exhibitions
+  size: 1
+  alias: exhibition
+
+---
+
+<div class="heading">
+  <h1 class="index-title">PAST EXHIBITIONS</h1>
+</div>
+<div class="exhibition-grid">
+  {% for exhibition in collections.exhibitions %}
+    <div class="exhibition-item">
+      <a href="/exhibitions/{{ exhibition.fileSlug }}/" class="exhibition-link">
+        <!-- Invisible Carousel Card -->
+        <div class="carousel-card">
+          <!-- Carousel -->
+          <div id="carouselExampleControls-{{ exhibition.fileSlug }}" class="carousel slide">
+            <div class="carousel-inner">
+              {% for image in exhibition.data.images %}
+                <div class="carousel-item {% if loop.first %}active{% endif %}">
+                  <a href="{{ image }}" data-fancybox="gallery-{{ exhibition.fileSlug }}"
+                     data-caption="
+                     <span class='exhib-title'><em>{{ exhibition.data.title }}</em></span>,
+                     <span class='exhib-location'>{{ exhibition.data.location }}</span>,
+                     <span class='caption-year'>{{ exhibition.data.year }}</span>">
+                    <img class="carousel-image d-block w-100" src="{{ image }}" alt="Image from {{ exhibition.data.title }}">
+                  </a>
+                </div>
+              {% endfor %}
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls-{{ exhibition.fileSlug }}" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls-{{ exhibition.fileSlug }}" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Exhibition Details -->
+        <div class="exhibition-details">
+          <h2 class="exhibition-title">{{ exhibition.data.title }}</h2>
+          <p class="exhibition-location">{{ exhibition.data.location }}</p>
+          <p class="exhibition-year">{{ exhibition.data.year }}</p>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</div>
+
+
+{% block scripts %}
+  <script src="/exhibitions.js"></script>
+{% endblock %}
