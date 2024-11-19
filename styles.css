@@ -392,3 +392,7 @@ body, html {
   height: 100%;
   object-fit: cover;
 }
+
+.current-page {
+  font-weight: bold;
+}
