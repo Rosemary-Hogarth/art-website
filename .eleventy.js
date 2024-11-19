@@ -60,11 +60,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("admin");
   // eleventyConfig.addPassthroughCopy("images/uploads");
 
-  const pathPrefix = process.env.ELEVENTY_ENV === 'production' ? "/Rosemary-Hogarth/" : "/";
 
   // Set custom directory structure
   return {
-    pathPrefix,
     dir: {
       input: ".",
       includes: "_includes",
