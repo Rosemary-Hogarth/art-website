@@ -26,7 +26,7 @@ collections:
       - label: "Gallery Images"
         name: "images"
         widget: "list"
-        fields:
+        field:
           {label: "Image", name: "image", widget: "image"}
 
 # New "Works" Collection
