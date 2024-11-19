@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log('Slide clicked');
 
       // Navigate to the exhibitions page
-      window.location.href = '/';
+      window.location.href = '/exhibitions';
     });
   });
 
