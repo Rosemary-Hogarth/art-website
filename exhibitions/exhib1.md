@@ -7,5 +7,4 @@ images:
   - https://res.cloudinary.com/dyciaxri0/image/upload/o-espelho/img5_feydhx
   - https://res.cloudinary.com/dyciaxri0/image/upload/o-espelho/img2_ayki0h
   - https://res.cloudinary.com/dyciaxri0/image/upload/o-espelho/img1_qavejb
-permalink: "/exhibitions/{{ title | slugify }}/"
 ---

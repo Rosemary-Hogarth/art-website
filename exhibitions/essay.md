@@ -7,5 +7,4 @@ images:
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1730809833/essay/img2-cover_ivyhdn.jpg
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1730809786/essay/img3_qbhgdo.jpg
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1730809809/essay/img6_vsn2oo.jpg
-permalink: "/exhibitions/{{ title | slugify }}/"
 ---
