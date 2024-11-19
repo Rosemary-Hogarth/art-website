@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   repo: Rosemary-Hogarth/art-website
   branch: master
-  base-url: https://courageous-bonbon-e9ab9d.netlify.app/
+  baseUrl: https://courageous-bonbon-e9ab9d.netlify.app/
 
 
 media_library:
@@ -10,9 +10,6 @@ media_library:
   config:
     cloud_name: dyciaxri0
     api_key: 923446252637638
-
-
-
 
 
 collections:
@@ -29,7 +26,7 @@ collections:
       - label: "Gallery Images"
         name: "images"
         widget: "list"
-        field:
+        fields:
           {label: "Image", name: "image", widget: "image"}
 
 # New "Works" Collection
