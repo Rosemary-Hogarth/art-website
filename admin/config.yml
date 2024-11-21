@@ -4,6 +4,11 @@ backend:
   branch: master
   baseUrl: https://courageous-bonbon-e9ab9d.netlify.app/
 
+hooks: https://api.netlify.com/build_hooks/673f0ff2eca2d87481834725
+
+extra_buttons:
+  - label: "Deploy Site"
+    url: https://api.netlify.com/build_hooks/673f0ff2eca2d87481834725
 
 media_library:
   name: cloudinary
