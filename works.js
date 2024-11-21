@@ -3,22 +3,22 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Get all work items and their mediums
     const works = document.querySelectorAll('.work-item');
-    const mediums = new Set();
+    const categories = new Set();
 
     works.forEach(work => {
-        const medium = work.getAttribute('data-medium');
-        mediums.add(medium); // Automatically deduplicates due to the Set
+        const category = work.getAttribute('data-category');
+        categories.add(category); // Automatically deduplicates due to the Set
     });
 
     // Get the filter buttons container
     const filterButtonsContainer = document.getElementById('filter-buttons');
 
     // Add a button for each unique medium
-    mediums.forEach(medium => {
+    categories.forEach(category => {
         const button = document.createElement('button');
         button.classList.add('filter-button');
-        button.setAttribute('data-filter', medium.toLowerCase());
-        button.textContent = medium;
+        button.setAttribute('data-filter', category.toLowerCase());
+        button.textContent = category;
         filterButtonsContainer.appendChild(button);
     });
 
@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Filter works based on the selected medium
             works.forEach(work => {
-                const workMedium = work.getAttribute('data-medium').toLowerCase();
-                work.style.display = (filter === '' || workMedium === filter) ? 'block' : 'none';
+                const workCategory = work.getAttribute('data-category').toLowerCase();
+                work.style.display = (filter === '' || workCategory === filter) ? 'block' : 'none';
             });
         });
     });

@@ -38,7 +38,8 @@ collections:
     fields:
       - {label: "Name", name: "name", widget: "string"}
       - {label: "Year", name: "year", widget: "number"}
-      - {label: "Medium", name: "medium", widget: "string"} # To filter works by medium
+      - {label: "Medium", name: "medium", widget: "string"}
+      - {label: "Category", name: "category", widget: "select", options: ["Painting", "Works on paper", "Sculpture", "Photography", "Installation", "Mixed media", "Performance", "Public sculpture"]} # Filter category
       - {label: "Dimensions", name: "dimensions", widget: "string"}
       - {label: "Image", name: "image", widget: "image"}
 

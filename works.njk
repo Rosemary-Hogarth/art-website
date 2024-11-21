@@ -12,13 +12,13 @@ pagination:
   <!-- Filter Buttons -->
   <div id="filter-buttons" class="filter-buttons">
     <button class="filter-button active" data-filter="">All</button>
-    <!-- Mediums will be populated here by JavaScript -->
+    <!-- Categories will be populated here by JavaScript -->
   </div>
 
   <!-- Works Grid -->
   <div class="works-grid">
     {% for work in collections.works %}
-      <div class="work-item" data-medium="{{ work.data.medium }}">
+      <div class="work-item" data-category="{{ work.data.category }}" data-medium="{{ work.data.medium }}">
         <div class="works-card">
           <a href="{{ work.data.image }}"
              data-fancybox="gallery"
@@ -26,6 +26,7 @@ pagination:
                 <span class='caption-title'><em>{{ work.data.name }}</em></span>,
                 <span class='caption-year'>{{ work.data.year }}</span>,
                 <span class='caption-medium'>{{ work.data.medium }}</span>,
+                <span class='caption-category'>{{ work.data.category }}</span>,
                 <span class='caption-dimensions'>{{ work.data.dimensions }}</span>
               ">
             <img src="{{ work.data.image }}" alt="{{ work.data.name }}">

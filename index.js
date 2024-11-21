@@ -36,4 +36,11 @@ document.addEventListener('DOMContentLoaded', function() {
   }, 7000);
 
 
+  function hideNabvar() {
+    const navbar = document.querySelector(".navbar")
+      if(navbar && window.location.pathname === "/") {
+      navbar.style.display = "none";
+    }
+  }
+  hideNabvar()
 });
