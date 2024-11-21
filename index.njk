@@ -7,7 +7,10 @@ removeMainPadding: true
 
 {% if slideshow.length > 0 %}
 <div class="slideshow">
-<h1 class="artist-name">Julius Heinemann</h1>
+<h1 class="artist-name">
+<a href="/exhibitions" style="text-decoration: none; color: inherit;">
+    Julius Heinemann
+  </a></h1>
   {% for slide in slideshow %}
     <div class="home-slide {% if loop.first %}active{% endif %}"">
       <img src="{{ slide.data.image }}" alt="{{ slide.data.title }}" class="full-vh">
