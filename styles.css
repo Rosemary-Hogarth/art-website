@@ -4,6 +4,11 @@ body, html {
   cursor: url('/images/cursor.png'), auto;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 a, a:hover, a:active, button:hover {
   cursor: url('/images/cursor.png'), auto;
 }
