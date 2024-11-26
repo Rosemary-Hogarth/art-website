@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   const slides = document.querySelectorAll('.home-slide');
+
   let currentSlide = 0;
 
 
@@ -24,23 +25,32 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
 
       console.log('Slide clicked');
+      nextSlide()
 
       // Navigate to the exhibitions page
-      window.location.href = '/exhibitions';
+      //window.location.href = '/exhibitions';
     });
   });
 
   // Start the slideshow after 5 seconds
   setTimeout(() => {
-    setInterval(nextSlide, 7000);
-  }, 7000);
+    setInterval(nextSlide, 3000);
+  }, 3000);
 
 
-  function hideNabvar() {
+  function removePadding() {
     const navbar = document.querySelector(".navbar")
       if(navbar && window.location.pathname === "/") {
-      navbar.style.display = "none";
+        navbar.style.marginBottom = '10px';
     }
   }
-  hideNabvar()
+  removePadding()
+
+  function newLinkNavbar() {
+    const navbarHome = document.getElementById('navbar-home')
+    if(navbarHome && window.location.pathname === "/") {
+      navbarHome.href = '/exhibitions'
+    }
+  }
+  newLinkNavbar()
 });

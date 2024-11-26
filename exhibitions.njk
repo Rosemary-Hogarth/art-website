@@ -8,7 +8,7 @@ pagination:
 ---
 
 <div class="heading">
-  <h1 class="index-title">PAST EXHIBITIONS</h1>
+  <h1 class="index-title">Exhibitions</h1>
 </div>
 <div class="exhibition-grid">
   {% for exhibition in collections.exhibitions %}
@@ -44,9 +44,10 @@ pagination:
 
         <!-- Exhibition Details -->
         <div class="exhibition-details">
-          <h2 class="exhibition-title">{{ exhibition.data.title }}</h2>
-          <p class="exhibition-location">{{ exhibition.data.location }}</p>
-          <p class="exhibition-year">{{ exhibition.data.year }}</p>
+          <span class="exhibition-title">{{ exhibition.data.title }}</span> |
+          <span class="exhibition-location">{{ exhibition.data.location }}</span> |
+          <span class="exhibition-year">{{ exhibition.data.year }}</span>
+          <p class="show-text"><a href="#">Text</a></p>
         </div>
       </a>
     </div>
