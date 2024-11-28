@@ -28,6 +28,10 @@ collections:
         widget: "list"
         field:
           {label: "Image", name: "image", widget: "image"}
+      - {label: "Exhibition Text Title", name: "exhibitionTextTitle", widget: "string"}
+      - {label: "Exhibition Text Author", name: "exhibitionTextAuthor", widget: "string"}
+      - {label: "Exhibition Text", name: "exhibitionText", widget: "text"}
+
 
 # New "Works" Collection
   - name: "works"

@@ -67,7 +67,7 @@ a, a:hover, a:active, button:hover {
 
 
 
-.index-title {
+/* .index-title {
   font-size: 1.5em;
   font-weight: 400;
   background-color: #000;
@@ -94,20 +94,61 @@ a, a:hover, a:active, button:hover {
   opacity: 0;
   animation: fadeInSingleLetter 0.5s forwards;
   animation-delay: calc(0.1s * var(--letter-index)); /* Delay based on letter index */
-}
+/* } */
 
-@keyframes fadeInSingleLetter {
+/* @keyframes fadeInSingleLetter {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
   }
+} */
+
+.caption {
+  width: 100%;
+  display: flex;
+  align-items: space-between;
+  margin-bottom: 1em;
 }
 
 
+button {
+  border: none;
+  font-size: 0.8em;
+  margin-right: 0.6em;
+  margin-bottom: 0.5em;
+  background-color: white;
+
+}
+.text-link {
+  margin-left: auto; /* Push the button to the right */
+}
 
 
+.svg-img {
+  width: 15px;
+  font-size: 10px;
+  height: auto;
+  max-width: 100%;
+  color:#434040;
+}
+
+.svg-img:hover {
+  cursor: pointer;
+ color: #000;
+}
+
+#exhibition-grid {
+  width: 100%;
+  max-width: none;
+}
+
+#exhibition-text .narrow-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
 .carousel-control-prev-icon, .carousel-control-next-icon {
   width: 30px;
@@ -182,10 +223,11 @@ a, a:hover, a:active, button:hover {
 .exhibition-details {
   transition: all 0.3s ease;
   margin-top: 0.7em;
-  margin-bottom: 1.4em;
+  flex-grow: 1;
   font-size: 0.8em;
   font-weight: 300;
 }
+
 
 
 .exhibition-title {
@@ -207,7 +249,11 @@ a, a:hover, a:active, button:hover {
 
 
 
-
+#exhibition-text {
+  line-height: 1.8em;
+  text-align:justify;
+  padding: 1em;
+}
 
 /* Works */
 
@@ -425,6 +471,22 @@ a, a:hover, a:active, button:hover {
 
 
 @media (max-width: 576px) {
+  .exhibition-details {
+    margin-top: 0;
+  }
+
+  .caption {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+
+  button {
+    margin-top: 1.1em;
+  }
+
   .exhibition-grid {
     grid-template-columns: 1fr;
   }
@@ -469,6 +531,7 @@ a, a:hover, a:active, button:hover {
   }
   .exhibition-details {
     padding-left: 0.5em;
+    max-width: 250px;
   }
 
 }
@@ -504,7 +567,7 @@ a, a:hover, a:active, button:hover {
     grid-column: 2 / span 1;
     text-align: left;
     padding-left: 0.5em;
-    max-width: 350px;
+    max-width: 250px;
   }
 
 }
@@ -527,7 +590,7 @@ a, a:hover, a:active, button:hover {
     grid-column: 2 / span 1;
     text-align: left;
     padding-left: 0.5em;
-    max-width: 350px;
+    max-width: 250px;
   }
 
 }
