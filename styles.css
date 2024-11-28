@@ -1,5 +1,5 @@
 body, html {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   cursor: url('/images/cursor.png'), auto;
 }
@@ -23,7 +23,7 @@ a, a:hover, a:active, button:hover {
 
 .navbar {
   background-color: white !important;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 
 }
 
@@ -36,9 +36,9 @@ a, a:hover, a:active, button:hover {
 }
 
 .navbar-brand {
-  font-size: 1.1em;
+  font-size: 1.2em;
   padding-left: 1.1em;
-  font-weight: 500;
+  font-weight: 400;
 
 }
 
@@ -105,39 +105,7 @@ a, a:hover, a:active, button:hover {
   }
 } */
 
-.caption {
-  width: 100%;
-  display: flex;
-  align-items: space-between;
-  margin-bottom: 1em;
-}
 
-
-button {
-  border: none;
-  font-size: 0.8em;
-  margin-right: 0.6em;
-  margin-bottom: 0.5em;
-  background-color: white;
-
-}
-.text-link {
-  margin-left: auto; /* Push the button to the right */
-}
-
-
-.svg-img {
-  width: 15px;
-  font-size: 10px;
-  height: auto;
-  max-width: 100%;
-  color:#434040;
-}
-
-.svg-img:hover {
-  cursor: pointer;
- color: #000;
-}
 
 #exhibition-grid {
   width: 100%;
@@ -225,10 +193,42 @@ button {
   margin-top: 0.7em;
   flex-grow: 1;
   font-size: 0.8em;
-  font-weight: 300;
+  font-weight: 200;
+}
+
+.caption {
+  width: 100%;
+  display: flex;
+  align-items: space-between;
+  margin-bottom: 1em;
 }
 
 
+button {
+  border: none;
+  font-size: 0.8em;
+  margin-bottom: 0.5em;
+  background-color: white;
+
+}
+.text-link {
+  margin-left: auto;
+}
+
+.svg-img {
+
+  font-size: 0.9em;
+  height: auto;
+  max-width: 100%;
+  color:#434040;
+  font-weight: 200;
+}
+
+.svg-img:hover {
+  cursor: pointer;
+ color: #000;
+ font-weight: 300;
+}
 
 .exhibition-title {
   line-height: 1.3em;
@@ -384,9 +384,10 @@ button {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  margin-top: 1em;
-  margin-bottom: 3em;
-  font-size: 0.9em;
+
+  margin-bottom: 1em;
+  font-size: 1em;
+
 }
 
 .filter-button {
@@ -395,7 +396,7 @@ button {
   background-color: #fff;
   cursor: pointer;
   color: black;
-
+  font-weight: 200;
 }
 
 .filter-button.active, .filter-button:hover {
@@ -463,6 +464,11 @@ button {
   stroke-width: 1;
   color: rgb(67, 65, 65);
 }
+
+button.carousel__button.fancybox__button--zoom {
+
+  display: none;
+}
 .fancybox__counter {
   stroke-width: 0.2;
   font-weight: 100;
@@ -518,6 +524,10 @@ button {
 
   .exhibition-details {
     padding-left: 0.5em;
+  }
+
+  .filter-button {
+    margin: 0;
   }
 
 }
