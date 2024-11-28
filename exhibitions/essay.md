@@ -1,14 +1,17 @@
 ---
+coverImage: https://res.cloudinary.com/dyciaxri0/image/upload/v1730809794/essay/img4_bvsekw.jpg
+exhibitionTextAuthor: Enno Schramm, 2021. Translated from German by Valerie von
+  Kittlitz and Blake Kendall.
+permalink: /exhibitions/{{ title | slugify }}/
 title: Essay
 location: Munich
 year: 2021
-coverImage: https://res.cloudinary.com/dyciaxri0/image/upload/v1730809794/essay/img4_bvsekw.jpg
 images:
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1730809833/essay/img2-cover_ivyhdn.jpg
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1730809786/essay/img3_qbhgdo.jpg
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1730809809/essay/img6_vsn2oo.jpg
-permalink: /exhibitions/{{ title | slugify }}/
-exhibitionText: >-
+exhibitionTextTitle: Essay
+exhibitionText: >
   JULIUS HEINEMANN: MA
 
   Here we are. Seeing, sensing, experiencing: This exhibition invites us to explore the momentary
@@ -78,6 +81,4 @@ exhibitionText: >-
   togetherness. He is interested in the ephemeral traces and paths leading to such alternatives. His
 
   work can be read as an indication in the sense of the old Japanese proverb: Catch the MA.
-
-  Enno Schramm, 2021. Translated from German by Valerie von Kittlitz and Blake Kendall.
 ---
