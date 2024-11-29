@@ -55,6 +55,7 @@ collections:
         required: false
       - {label: "Location", name: "location", widget: "string", required: false}
 
+
   - name: "homepage_slideshow"
     label: "Homepage Slideshow"
     folder: "homepage_slideshow"

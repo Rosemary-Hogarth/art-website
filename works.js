@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const filterButtonsContainer = document.getElementById('filter-buttons');
 
-  // Only add "All" button if it doesn't already exist
   if (!filterButtonsContainer.querySelector('button[data-filter=""]')) {
     const allButton = document.createElement('button');
     allButton.classList.add('filter-button', 'active');
@@ -30,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function updateFancybox() {
     Fancybox.destroy();
-    // only bind to visible elements
     Fancybox.bind('.work-item:not([style*="display: none"]) [data-fancybox^="gallery"]', {
       hideScrollbar: false,
       autoFocus: false,
@@ -57,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
       const workCategory = work.getAttribute('data-category').toLowerCase();
       work.style.display = (filter === '' || workCategory === filter) ? 'block' : 'none';
     });
-    // makes sure the slideshow only has the filtered images
     updateFancybox();
   }
 
@@ -70,15 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Initial filtering (show all)
-  // empty string means no filter applied
   filterWorks('');
-
-  // Initialize Bootstrap carousels for installations
-  const carousels = document.querySelectorAll('.installation-carousel');
-  carousels.forEach(carousel => {
-    new bootstrap.Carousel(carousel, {
-      interval: false // Disable auto-sliding
-    });
-  });
+  updateFancybox();
 });
