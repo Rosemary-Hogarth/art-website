@@ -23,7 +23,7 @@ a, a:hover, a:active, button:hover {
 
 .navbar {
   background-color: white !important;
-
+  margin-bottom: 0 !important;
 
 }
 
@@ -33,11 +33,12 @@ a, a:hover, a:active, button:hover {
 
 .navbar-toggler {
   border: none !important;
+  margin-top: 0.5em !important;
 }
 
 .navbar-brand {
   font-size: 1.2em;
-  padding-left: 1.1em;
+  padding-left: 0.8em;
   font-weight: 400;
 
 }
@@ -213,10 +214,10 @@ button {
 }
 .text-link {
   margin-left: auto;
+  margin-right: 0.3em
 }
 
 .svg-img {
-
   font-size: 0.9em;
   height: auto;
   max-width: 100%;
@@ -490,7 +491,7 @@ button.carousel__button.fancybox__button--zoom {
   }
 
   button {
-    margin-top: 1.1em;
+    margin-top: 1em;
   }
 
   .exhibition-grid {
