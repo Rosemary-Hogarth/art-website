@@ -57,6 +57,9 @@ a, a:hover, a:active, button:hover {
   padding-left: 0;
 }
 
+#back-to-grid {
+  margin-bottom: 0.8em;
+}
 
 /* .index-title {
   font-size: 0.9em;
@@ -116,7 +119,9 @@ a, a:hover, a:active, button:hover {
 #exhibition-text .narrow-container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 10px 20px;
+  background-color: #000;
+  color: white;
 }
 
 .carousel-control-prev-icon, .carousel-control-next-icon {
@@ -467,7 +472,6 @@ button {
 }
 
 button.carousel__button.fancybox__button--zoom {
-
   display: none;
 }
 .fancybox__counter {

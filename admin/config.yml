@@ -45,7 +45,15 @@ collections:
       - {label: "Medium", name: "medium", widget: "string"}
       - {label: "Category", name: "category", widget: "select", options: ["Painting", "Works on paper", "Sculpture", "Photography", "Installation", "Mixed media", "Performance", "Public sculpture"]} # Filter category
       - {label: "Dimensions", name: "dimensions", widget: "string"}
-      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Type", name: "type", widget: "select", options: ["Single", "Installation"], default: "Single"}
+      - {label: "Image", name: "image", widget: "image", required: false}
+      - label: "Installation Images"
+        name: "installationImages"
+        widget: "list"
+        fields:
+          - {label: "Image", name: "image", widget: "image"}
+        required: false
+      - {label: "Location", name: "location", widget: "string", required: false}
 
   - name: "homepage_slideshow"
     label: "Homepage Slideshow"
