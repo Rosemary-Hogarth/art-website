@@ -365,14 +365,14 @@ button {
   background: none !important;
 }
 .fancybox__caption {
-  font-family: "Montserrat", sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
   font-size: 1rem;
   font-weight: 200;
   color: #000;
 }
 
 .fancybox__caption em {
-  font-family: "Montserrat", sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
   font-weight: 200;
   display:inline;
   font-size: 1em;
@@ -401,9 +401,9 @@ button {
 .fancybox__container .fancybox__caption,
 .fancybox__container .fancybox__toolbar,
 .fancybox__container .fancybox__nav {
-  font-family: 'Inter', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
   font-weight: 200;
-  font-family: "Montserrat", sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
 }
 
 /* .carousel-control-prev,
