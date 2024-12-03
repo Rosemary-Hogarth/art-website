@@ -26,7 +26,10 @@ pagination:
                       <span class='exhib-title'><em>{{ exhibition.data.title }}</em></span>,
                       <span class='exhib-location'>{{ exhibition.data.location }}</span>,
                       <span class='caption-year'>{{ exhibition.data.year }}</span>">
-                      <img class="carousel-image d-block w-100" src="{{ image }}" alt="Image from {{ exhibition.data.title }}">
+                       <img
+                        class="carousel-image d-block w-100"
+                        src="{{ (image | replace('/upload/', '/upload/w_800,q_auto,f_auto/')) }}"
+                        alt="Image from {{ exhibition.data.title }}">
                     </a>
                   </div>
                 {% endfor %}

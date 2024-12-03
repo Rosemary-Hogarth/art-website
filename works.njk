@@ -16,45 +16,50 @@ pagination:
     <!-- Categories will be populated here by JavaScript -->
   </div>
 
-<div class="works-grid">
-  {% for work in collections.works %}
-    <div class="work-item" data-category="{{ work.data.category }}" data-medium="{{ work.data.medium }}">
-      <div class="works-card">
-        {% if work.data.type == "Installation" %}
-          <a href="{{ work.data.installationImages[0].image }}"
-             data-fancybox="gallery-{{ work.data.name | slugify }}"
-             data-caption="
-               <span class='caption-title'><em>{{ work.data.name }}</em></span>,
-               <span class='caption-year'>{{ work.data.year }}</span>,
-               <span class='caption-medium'>{{ work.data.medium }}</span>,
-               <span class='caption-location'>{{ work.data.location }}</span>
-             ">
-            <img src="{{ work.data.installationImages[0].image }}?w=300&h=300&c=thumb&g=center" alt="{{ work.data.name }}">
-          </a>
-          {% for image in work.data.installationImages %}
-            {% if not forloop.first %}
-              <a href="{{ image.image }}"
-                 data-fancybox="gallery-{{ work.data.name | slugify }}"
-                 style="display: none;">
-                <img src="{{ image.image }}" alt="{{ work.data.name }}">
-              </a>
-            {% endif %}
-          {% endfor %}
-        {% else %}
-          <a href="{{ work.data.image }}"
-             data-fancybox="gallery"
-             data-caption="
-               <span class='caption-title'><em>{{ work.data.name }}</em></span>,
-               <span class='caption-year'>{{ work.data.year }}</span>,
-               <span class='caption-medium'>{{ work.data.medium }}</span>,
-               <span class='caption-dimensions'>{{ work.data.dimensions }}</span>
-             ">
-            <img src="{{ work.data.image }}?w=300&h=300&c=thumb&g=center" alt="{{ work.data.name }}">
-          </a>
-        {% endif %}
+  <div class="works-grid">
+    {% for work in collections.works %}
+      <div class="work-item" data-category="{{ work.data.category }}" data-medium="{{ work.data.medium }}">
+        <div class="works-card">
+          {% if work.data.type == "Installation" %}
+            <a href="{{ (work.data.installationImages[0].image | replace('/upload/', '/upload/w_1600,q_auto,f_auto,dpr_auto/')) }}"
+               data-fancybox="gallery-{{ work.data.name | slugify }}"
+               data-caption="
+                 <span class='caption-title'><em>{{ work.data.name }}</em></span>,
+                 <span class='caption-year'>{{ work.data.year }}</span>,
+                 <span class='caption-medium'>{{ work.data.medium }}</span>,
+                 <span class='caption-location'>{{ work.data.location }}</span>
+               ">
+              <img
+                src="{{ (work.data.installationImages[0].image | replace('/upload/', '/upload/w_300,h_300,c_thumb,g_center,q_auto,f_auto,dpr_auto/')) }}"
+                alt="{{ work.data.name }}">
+            </a>
+            {% for image in work.data.installationImages %}
+              {% if not forloop.first %}
+                <a href="{{ (image.image | replace('/upload/', '/upload/w_1600,q_auto,f_auto,dpr_auto/')) }}"
+                   data-fancybox="gallery-{{ work.data.name | slugify }}"
+                   style="display: none;">
+                  <img src="{{ (image.image | replace('/upload/', '/upload/w_300,h_300,c_thumb,g_center,q_auto,f_auto,dpr_auto/')) }}" alt="{{ work.data.name }}">
+                </a>
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            <a href="{{ (work.data.image | replace('/upload/', '/upload/w_1600,q_auto,f_auto,dpr_auto/')) }}"
+               data-fancybox="gallery"
+               data-caption="
+                 <span class='caption-title'><em>{{ work.data.name }}</em></span>,
+                 <span class='caption-year'>{{ work.data.year }}</span>,
+                 <span class='caption-medium'>{{ work.data.medium }}</span>,
+                 <span class='caption-dimensions'>{{ work.data.dimensions }}</span>
+               ">
+              <img
+                src="{{ (work.data.image | replace('/upload/', '/upload/w_300,h_300,c_thumb,g_center,q_auto,f_auto,dpr_auto/')) }}"
+                alt="{{ work.data.name }}">
+            </a>
+          {% endif %}
+        </div>
       </div>
-    </div>
-  {% endfor %}
+    {% endfor %}
+  </div>
 </div>
 
 
