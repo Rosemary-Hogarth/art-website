@@ -28,23 +28,30 @@ document.addEventListener('DOMContentLoaded', function() {
   const filterButtons = document.querySelectorAll('.filter-button');
 
   function updateFancybox() {
-    Fancybox.destroy();
-    Fancybox.bind('.work-item:not([style*="display: none"]) [data-fancybox^="gallery"]', {
+    Fancybox.bind('.work-item:not(.visually-hidden) [data-fancybox^="gallery"]', {
       hideScrollbar: false,
       autoFocus: false,
-      Thumbs: false,
+      Thumbs: {
+        autoStart: false
+      },
       Toolbar: true,
       arrows: true,
       dragToClose: false,
+      Image: {
+        zoom: false,
+        click: 'next', // This enables click to next
+      },
+      Carousel: {
+        friction: 0, // Makes sliding between images instant
+      },
       on: {
-        ready: (fancybox) => {
-          if (fancybox && fancybox.container) {
-            console.log('Fancybox elements initialized');
-            const elements = fancybox.container.querySelectorAll('*');
-            elements.forEach(el => {
-              el.style.setProperty('background-color', 'transparent', 'important');
-            });
-          }
+        init: (fancybox) => {
+          console.log('Fancybox initialized');
+        },
+        destroy: () => {
+          works.forEach(work => {
+            work.removeAttribute('tabindex');
+          });
         }
       }
     });
@@ -53,7 +60,13 @@ document.addEventListener('DOMContentLoaded', function() {
   function filterWorks(filter) {
     works.forEach(work => {
       const workCategory = work.getAttribute('data-category').toLowerCase();
-      work.style.display = (filter === '' || workCategory === filter) ? 'block' : 'none';
+      if (filter === '' || workCategory === filter) {
+        work.classList.remove('visually-hidden');
+
+      } else {
+        work.classList.add('visually-hidden');
+        // We're not using aria-hidden here anymore
+      }
     });
     updateFancybox();
   }
@@ -70,3 +83,4 @@ document.addEventListener('DOMContentLoaded', function() {
   filterWorks('');
   updateFancybox();
 });
+console.log(Fancybox.version);

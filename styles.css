@@ -263,6 +263,22 @@ button {
 
 /* Works */
 
+.carousel__viewport {
+  display: none;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 .heading-works {
   font-size: 1.2em;
   font-weight: 300;
@@ -360,6 +376,18 @@ button {
   display:inline;
   font-size: 1em;
 }
+
+.fancybox__image {
+  max-width: 100% !important;
+  max-height: 100% !important;
+
+}
+
+.fancybox__slide.can-zoom_in {
+  cursor: default !important;
+  pointer-events: none;
+}
+
 
 .fancybox__container,
 .fancybox__backdrop,
