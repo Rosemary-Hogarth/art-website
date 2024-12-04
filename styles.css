@@ -565,7 +565,9 @@ button.carousel__button.fancybox__button--zoom {
 
 
 @media (max-width: 576px) {
-
+.works-heading {
+  font-size: 5em;
+}
 
   .pubTitle {
     font-size: 1.1em;

@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   const filterButtonsContainer = document.getElementById('filter-buttons');
-  filterButtonsContainer.innerHTML = ''; // Clear existing buttons
+  filterButtonsContainer.innerHTML = ''; // Clear existing buttons so there's no repitition
 
   if (!filterButtonsContainer.querySelector('button[data-filter=""]')) {
     const allButton = document.createElement('button');
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
   updateFancybox();
 
 
-
+// Intro animation
 
       const intro = document.getElementById('works-intro');
       const mainContent = document.getElementById('works-main');
