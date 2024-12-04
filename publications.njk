@@ -5,35 +5,33 @@ pagination:
   size: 100
   alias: publications
 ---
+<h1>Publications</h1>
 
-<div class="publications-container">
-  {% for publication in publications %}
-    <div class="row">
-      <div class="col-sm-6">
-        <img src="{{ publication.data.image }}" alt="{{ publication.data.publicationTitle }}">
-      </div>
-      <div class="col-sm-6">
-        <h2>{{ publication.data.publicationTitle }}</h2>
-        <p>{{ publication.data.publicationDetails }}</p>
-        {% if publication.data.publicationAuthor %}
-          <p>Author: {{ publication.data.publicationAuthor }}</p>
-        {% endif %}
-        {% if publication.data.publicationEdition %}
-          <p>Edition: {{ publication.data.publicationEdition }}</p>
-        {% endif %}
-        {% if publication.data.designedBy %}
-          <p>Designed by: {{ publication.data.designedBy }}</p>
-        {% endif %}
-        {% if publication.data.publishedBy %}
-          <p>Published by: {{ publication.data.publishedBy }}</p>
-        {% endif %}
-        {% if publication.data.isbn %}
-          <p>ISBN: {{ publication.data.isbn }}</p>
-        {% endif %}
-        {% if publication.data.publicationPrice %}
-          <p>Price: {{ publication.data.publicationPrice }}</p>
-        {% endif %}
-      </div>
-    </div>
-  {% endfor %}
+<div class="main-container">
+  <div class="publications-container">
+    {% if publications | length > 0 %}
+      {% for publication in publications %}
+        <div class="row each-row">
+          <div class="col-sm-6 publication-image-container">
+            {% if publication.data.image %}
+              <img src="{{ (publication.data.image | replace('/upload/', '/upload/w_1600,q_auto,f_auto,dpr_auto/')) }}" alt="{{ publication.data.publicationTitle }}" class="publication-image">
+            {% endif %}
+          </div>
+          <div class="col-sm-6">
+            <h2 class="pubTitle">{{ publication.data.publicationTitle }}</h2>
+            <p class="pubDetails">{{ publication.data.publicationDetails }}</p>
+            {% if publication.data.publicationAuthor %}
+              <p class="pubMainInfo">Text by: {{ publication.data.publicationAuthor }}</p>
+            {% endif %}
+            {% if publication.data.publicationEdition %}
+              <p class="pubMainInfo">Edition: {{ publication.data.publicationEdition }}</p>
+            {% endif %}
+            <!-- Add other fields as needed -->
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>No publications found.</p>
+    {% endif %}
+  </div>
 </div>

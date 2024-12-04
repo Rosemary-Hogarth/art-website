@@ -73,12 +73,13 @@ collections:
     create: true
     slug: '{{publicationTitle | slugify}}'
     fields:
-      - {label: "Image", name: "image", widget: "image", required: true}
+      - {label: "Image", name: "image", widget: "image", required: false}
       - {label: "Publication Title", name: "publicationTitle", widget: "string", required: true}
-      - {label: "Publication Author", name: "publicationAuthor", widget: "string"}
+      - {label: "Publication Text Author", name: "publicationTextAuthor", widget: "string", required: false}
+      - {label: "Publication Languages", name: "publicationLanguages", widget: "string", required: false}
       - {label: "Publication Details", name: "publicationDetails", widget: "text", required: false}
       - {label: "Publication Edition", name: "publicationEdition", widget: "string", required: false}
       - {label: "Designed by", name: "designedBy", widget: "string", required: false}
       - {label: "Published by", name: "publishedBy", widget: "string", required: false}
       - {label: "ISBN", name: "isbn", widget: "string", required: false}
-      - {label: "Publication Price", name: "publicationPrice", widget: "string", hint: "Enter the price in Euros or your preferred currency"}
+      - {label: "Publication Price", name: "publicationPrice", widget: "string", required: false}
