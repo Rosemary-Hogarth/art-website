@@ -76,4 +76,45 @@ document.addEventListener("DOMContentLoaded", function() {
   } else {
     console.warn('One or more required elements not found');
   }
-});
+
+
+    const navbar = document.querySelector('.navbar');
+    const intro = document.getElementById('exhibitions-intro');
+    const mainContent = document.getElementById('exhibitions-main');
+    const artistName = document.querySelector('.navbar-brand');
+
+    if (navbar && intro && mainContent) {
+      // Fade out navbar
+      navbar.style.animation = 'fadeOut 0.5s ease-in-out forwards';
+
+      // Hide the artist's name/link
+    artistName.style.animation = 'fadeOut 0.1s ease-in-out forwards';
+
+      // Wait for navbar to fade out, then show intro
+      setTimeout(() => {
+        navbar.style.display = 'none'; // Hide navbar completely
+        artistName.style.display = 'none'; // Hide artist name completely
+
+        intro.classList.remove('hidden');
+        intro.style.animation = 'fadeIn 0.5s ease-in-out';
+
+        // Fade out intro after 1.5 seconds
+        setTimeout(() => {
+          intro.style.animation = 'fadeOut 0.5s ease-in-out';
+
+          // Show main content after intro fades out
+          setTimeout(() => {
+            intro.classList.add('hidden');
+            mainContent.classList.remove('hidden');
+            mainContent.style.animation = 'fadeIn 0.5s ease-in-out';
+
+            // Bring back the navbar
+            navbar.style.display = ''; // Reset display to its original value
+            artistName.style.display = ''; // Reset artist name display
+            navbar.style.animation = 'fadeIn 0.5s ease-in-out';
+            artistName.style.animation = 'fadeIn 0.5s ease-in-out';
+          }, 300);
+        }, 1500);
+      }, 300);
+    }
+  });

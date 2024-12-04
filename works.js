@@ -2,127 +2,128 @@ document.addEventListener('DOMContentLoaded', function() {
   const works = document.querySelectorAll('.work-item');
   const categories = new Set();
 
+  // Collect unique categories from work items
   works.forEach(work => {
     const category = work.getAttribute('data-category');
-    categories.add(category);
+    if (category) {
+      categories.add(category);
+    }
   });
 
   const filterButtonsContainer = document.getElementById('filter-buttons');
-  filterButtonsContainer.innerHTML = ''; // Clear existing buttons so there's no repitition
 
-  if (!filterButtonsContainer.querySelector('button[data-filter=""]')) {
-    const allButton = document.createElement('button');
-    allButton.classList.add('filter-button', 'active');
-    allButton.setAttribute('data-filter', '');
-    allButton.textContent = 'All';
-    filterButtonsContainer.appendChild(allButton);
-  }
+  if (filterButtonsContainer) {
+    filterButtonsContainer.innerHTML = ''; // Clear existing buttons
 
-  categories.forEach(category => {
-    const button = document.createElement('button');
-    button.classList.add('filter-button');
-    button.setAttribute('data-filter', category.toLowerCase());
-    button.textContent = category;
-    filterButtonsContainer.appendChild(button);
-  });
+    // Create "All" button if it doesn't exist
+    if (!filterButtonsContainer.querySelector('button[data-filter=""]')) {
+      const allButton = document.createElement('button');
+      allButton.classList.add('filter-button', 'active');
+      allButton.setAttribute('data-filter', '');
+      allButton.textContent = 'All';
+      filterButtonsContainer.appendChild(allButton);
+    }
 
-  const filterButtons = document.querySelectorAll('.filter-button');
+    // Create buttons for each category
+    categories.forEach(category => {
+      const button = document.createElement('button');
+      button.classList.add('filter-button');
+      button.setAttribute('data-filter', category.toLowerCase());
+      button.textContent = category;
+      filterButtonsContainer.appendChild(button);
+    });
 
-  function updateFancybox() {
-    Fancybox.bind('.work-item:not(.visually-hidden) [data-fancybox^="gallery"]', {
-      hideScrollbar: false,
-      autoFocus: false,
-      Thumbs: {
-        autoStart: false
-      },
-      Toolbar: true,
-      arrows: true,
-      dragToClose: false,
-      Image: {
-        zoom: false,
-        click: 'next', // This enables click to next
-      },
-      Carousel: {
-        friction: 0, // Makes sliding between images instant
-      },
-      on: {
-        init: (fancybox) => {
-          console.log('Fancybox initialized');
-        },
-        destroy: () => {
-          works.forEach(work => {
-            work.removeAttribute('tabindex');
-          });
+    // Initialize filter buttons
+    const filterButtons = document.querySelectorAll('.filter-button');
+
+    function updateFancybox() {
+      Fancybox.bind('.work-item:not(.visually-hidden) [data-fancybox^="gallery"]', {
+        hideScrollbar: false,
+        autoFocus: false,
+        Thumbs: { autoStart: false },
+        Toolbar: true,
+        arrows: true,
+        dragToClose: false,
+        Image: { zoom: false, click: 'next' },
+        Carousel: { friction: 0 },
+        on: {
+          init: (fancybox) => {
+            console.log('Fancybox initialized');
+          },
+          destroy: () => {
+            works.forEach(work => {
+              work.removeAttribute('tabindex');
+            });
+          }
         }
-      }
+      });
+    }
+
+    function filterWorks(filter) {
+      works.forEach(work => {
+        const workCategory = work.getAttribute('data-category')?.toLowerCase();
+        if (filter === '' || workCategory === filter) {
+          work.classList.remove('visually-hidden');
+        } else {
+          work.classList.add('visually-hidden');
+        }
+      });
+      updateFancybox();
+    }
+
+    // Add event listeners to filter buttons
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const filter = this.getAttribute('data-filter').toLowerCase();
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        filterWorks(filter);
+      });
     });
-  }
 
-  function filterWorks(filter) {
-    works.forEach(work => {
-      const workCategory = work.getAttribute('data-category').toLowerCase();
-      if (filter === '' || workCategory === filter) {
-        work.classList.remove('visually-hidden');
+    // Initial filtering to show all works
+    filterWorks('');
 
-      } else {
-        work.classList.add('visually-hidden');
-        // We're not using aria-hidden here anymore
-      }
-    });
-    updateFancybox();
-  }
+    // Intro animation logic
+    const navbar = document.querySelector('.navbar');
+    const intro = document.getElementById('works-intro');
+    const mainContent = document.getElementById('works-main');
+    const artistName = document.querySelector('.navbar-brand');
 
-  filterButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      const filter = this.getAttribute('data-filter').toLowerCase();
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      this.classList.add('active');
-      filterWorks(filter);
-    });
-  });
+    if (navbar && intro && mainContent && artistName) {
+      // Fade out navbar and artist name
+      navbar.style.animation = 'fadeOut 0.5s ease-in-out forwards';
+      artistName.style.animation = 'fadeOut 0.1s ease-in-out forwards';
 
-  filterWorks('');
-  updateFancybox();
-
-
-// Intro animation
-
-
-const navbar = document.querySelector('.navbar');
-const intro = document.getElementById('works-intro');
-const mainContent = document.getElementById('works-main');
-
-if (navbar && intro && mainContent) {
-  // Fade out navbar
-  navbar.style.animation = 'fadeOut 0.5s ease-in-out forwards';
-
-  // Wait for navbar to fade out, then show intro
-  setTimeout(() => {
-    navbar.style.display = 'none'; // Hide navbar completely
-    intro.classList.remove('hidden');
-    intro.style.animation = 'fadeIn 0.5s ease-in-out';
-
-    // Fade out intro after 1.5 seconds
-    setTimeout(() => {
-      intro.style.animation = 'fadeOut 0.5s ease-in-out';
-
-      // Show main content after intro fades out
+      // Wait for navbar to fade out, then show intro
       setTimeout(() => {
-        intro.classList.add('hidden');
-        mainContent.classList.remove('hidden');
-        mainContent.style.animation = 'fadeIn 0.5s ease-in-out';
+        navbar.style.display = 'none'; // Hide navbar completely
+        artistName.style.display = 'none';
+        intro.classList.remove('hidden');
+        intro.style.animation = 'fadeIn 0.5s ease-in-out';
 
+        // Fade out intro after a delay
+        setTimeout(() => {
+          intro.style.animation = 'fadeOut 0.5s ease-in-out';
 
-        // Bring back the navbar
-        navbar.style.display = ''; // Reset display to its original value
-        navbar.style.animation = 'fadeIn 0.5s ease-in-out';
-      }, 300);
-    }, 1500);
-  }, 300);
-}
-    });
+          // Show main content after intro fades out
+          setTimeout(() => {
+            intro.classList.add('hidden');
+            mainContent.classList.remove('hidden');
+            mainContent.style.animation = 'fadeIn 0.5s ease-in-out';
 
+            // Bring back the navbar and artist name
+            navbar.style.display = ''; // Reset display to its original value
+            artistName.style.display = '';
+            navbar.style.animation = 'fadeIn 0.5s ease-in-out';
+            artistName.style.animation = 'fadeIn 0.5s ease-in-out';
+          }, 300); // Duration of fade out for intro
+        }, 1500); // Duration for which the intro is visible
+      }, 300); // Delay before starting the intro animation
+    }
+  } else {
+    console.error("Filter buttons container not found.");
+  }
 
-
-
-console.log(Fancybox.version);
+  console.log(Fancybox.version);
+});

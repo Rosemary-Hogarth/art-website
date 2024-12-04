@@ -1,3 +1,23 @@
 ---
 layout: base.njk
+pagination:
+  data: collections.about
+  size: 1
+  alias: about
 ---
+
+<button id="back-to-grid"><img src="/images/arrow-left.svg"></button>
+
+<div class="text-container">
+  <button id="language-toggle" class="toggle-button" data-current-language="en">Switch Language</button>
+
+  <!-- English Text Section -->
+  <div id="text-en" class="about-content">
+    {{ about.data.text_en }}
+  </div>
+
+  <!-- Other Language Text Section (Initially Hidden) -->
+  <div id="text-other" class="about-content hidden">
+    {{ about.data.text_other }}
+  </div>
+</div>

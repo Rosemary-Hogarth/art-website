@@ -57,6 +57,11 @@ module.exports = function(eleventyConfig) {
     return publications;
   });
 
+  eleventyConfig.addCollection("about", function(collectionApi) {
+    const about = collectionApi.getFilteredByGlob("about/*.md");
+    return about;
+  });
+
   // Passthrough copy for assets
   eleventyConfig.addPassthroughCopy("*.css");
   eleventyConfig.addPassthroughCopy("images");

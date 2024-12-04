@@ -7,64 +7,69 @@ pagination:
 
 ---
 
+<div id="exhibitions-intro" class="exhibitions-intro hidden">
+  <h1 id="exhibitions-heading" class="exhibitions-heading">Exhibitions</h1>
+</div>
 
-<div id="content-area" >
-  <div id="exhibition-grid" class="exhibition-grid">
-    {% for exhibition in collections.exhibitions %}
-      <div class="exhibition-item">
-        <a href="/exhibitions/{{ exhibition.fileSlug }}/" class="exhibition-link">
-          <!-- Invisible Carousel Card -->
-          <div class="carousel-card">
-            <!-- Carousel -->
-            <div id="carouselExampleControls-{{ exhibition.fileSlug }}" class="carousel slide">
-              <div class="carousel-inner">
-                {% for image in exhibition.data.images %}
-                  <div class="carousel-item {% if loop.first %}active{% endif %}">
-                      <a href="{{ image }}" data-fancybox="gallery-{{ exhibition.fileSlug }}"
+<div id="exhibitions-main" class="exhibitions-container hidden">
+  <div id="content-area">
+    <div id="exhibition-grid" class="exhibition-grid">
+      {% for exhibition in collections.exhibitions %}
+        <div class="exhibition-item">
+          <a href="/exhibitions/{{ exhibition.fileSlug }}/" class="exhibition-link">
+            <!-- Invisible Carousel Card -->
+            <div class="carousel-card">
+              <!-- Carousel -->
+              <div id="carouselExampleControls-{{ exhibition.fileSlug }}" class="carousel slide">
+                <div class="carousel-inner">
+                  {% for image in exhibition.data.images %}
+                    <div class="carousel-item {% if loop.first %}active{% endif %}">
+                        <a href="{{ image }}" data-fancybox="gallery-{{ exhibition.fileSlug }}"
 
-                      data-caption="
-                      <span class='exhib-title'><em>{{ exhibition.data.title }}</em></span> |
-                      <span class='exhib-location'>{{ exhibition.data.location }}</span> |
-                      <span class='caption-year'>{{ exhibition.data.year }}</span>">
-                       <img
-                        class="carousel-image d-block w-100"
-                        src="{{ (image | replace('/upload/', '/upload/w_800,q_auto,f_auto/')) }}"
-                        alt="Image from {{ exhibition.data.title }}">
-                    </a>
-                  </div>
-                {% endfor %}
+                        data-caption="
+                        <span class='exhib-title'><em>{{ exhibition.data.title }}</em></span> |
+                        <span class='exhib-location'>{{ exhibition.data.location }}</span> |
+                        <span class='caption-year'>{{ exhibition.data.year }}</span>">
+                         <img
+                          class="carousel-image d-block w-100"
+                          src="{{ (image | replace('/upload/', '/upload/w_800,q_auto,f_auto/')) }}"
+                          alt="Image from {{ exhibition.data.title }}">
+                      </a>
+                    </div>
+                  {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls-{{ exhibition.fileSlug }}" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls-{{ exhibition.fileSlug }}" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
               </div>
-              <a class="carousel-control-prev" href="#carouselExampleControls-{{ exhibition.fileSlug }}" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleControls-{{ exhibition.fileSlug }}" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
             </div>
-          </div>
-
-          <!-- Exhibition Details -->
-
-         <div class="caption">
-          <div class="exhibition-details">
-            <span class="exhibition-title">{{ exhibition.data.title }}</span> |
-            <span class="exhibition-location">{{ exhibition.data.location }}</span> |
-            <span class="exhibition-year">{{ exhibition.data.year }}</span>
-          </div>
-          <div class="text-link">
-            <button class="show-text"
-              data-exhibition-text="{{ exhibition.data.exhibitionText | escape }}"
-              data-exhibition-text-title="{{ exhibition.data.exhibitionTextTitle | escape }}"
-              data-exhibition-text-author="{{ exhibition.data.exhibitionTextAuthor | escape }}">
-              <img src="/images/more-horiz.svg" class="svg-img">
-            </button>
-          </div>
+            <div class="caption">
+              <div class="exhibition-details">
+                <span class="exhibition-title">{{ exhibition.data.title }}</span> |
+                <span class="exhibition-location">{{ exhibition.data.location }}</span> |
+                <span class="exhibition-year">{{ exhibition.data.year }}</span>
+              </div>
+              <div class="text-link">
+                <button class="show-text"
+                  data-exhibition-text="{{ exhibition.data.exhibitionText | escape }}"
+                  data-exhibition-text-title="{{ exhibition.data.exhibitionTextTitle | escape }}"
+                  data-exhibition-text-author="{{ exhibition.data.exhibitionTextAuthor | escape }}">
+                  <img src="/images/more-horiz.svg" class="svg-img">
+                </button>
+              </div>
+            </div>
+          </a>
         </div>
-         </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
 
-    {% endfor %}
 
     </div>
     <div id="exhibition-text" style="display: none;">
