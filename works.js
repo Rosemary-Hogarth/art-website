@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   const filterButtonsContainer = document.getElementById('filter-buttons');
+  filterButtonsContainer.innerHTML = ''; // Clear existing buttons
 
   if (!filterButtonsContainer.querySelector('button[data-filter=""]')) {
     const allButton = document.createElement('button');
@@ -82,5 +83,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
   filterWorks('');
   updateFancybox();
-});
+
+
+
+
+      const intro = document.getElementById('works-intro');
+      const mainContent = document.getElementById('works-main');
+
+      if (intro && mainContent) {
+        intro.classList.remove('hidden');
+        intro.style.animation = 'fadeIn 0.5s ease-in-out';
+
+        setTimeout(() => {
+          intro.style.animation = 'fadeOut 0.5s ease-in-out';
+          setTimeout(() => {
+            intro.classList.add('hidden');
+            mainContent.classList.remove('hidden');
+            mainContent.style.animation = 'fadeIn 0.5s ease-in-out';
+          }, 200);
+        }, 1200);
+      }
+    });
+
+
+
+
 console.log(Fancybox.version);

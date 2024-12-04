@@ -74,6 +74,7 @@ a, a:hover, a:active, button:hover {
 }
 
 .navbar {
+  /* z-index: 1001;  */
   background-color: white !important;
   margin-bottom: 0 !important;
 
@@ -270,6 +271,59 @@ button {
 }
 
 /* Works */
+/* Full-screen heading */
+.works-intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white; /* Background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  color: black;
+  text-align: center;
+  cursor:pointer;
+  animation: fadeIn 0.5s ease-in-out; /* Initial fade-in */
+}
+
+.works-heading {
+  font-size: 10em;
+}
+
+/* Hide the works container initially */
+.hidden {
+  display: none;
+}
+
+/* Reveal the works container */
+.works-container {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Add the fade-out effect */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 
 .carousel__viewport {
   display: none;
@@ -287,12 +341,12 @@ button {
   border: 0 !important;
 }
 
-.works-heading {
+/* .works-heading {
   font-size: 3em;
   font-weight: 400;
   margin-top: 0.5em;
   margin-bottom: 1em;
-}
+} */
 
 
 .filter {
