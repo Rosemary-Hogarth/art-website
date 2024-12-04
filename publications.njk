@@ -1,4 +1,39 @@
 ---
 layout: base.njk
-
+pagination:
+  data: collections.publications
+  size: 100
+  alias: publications
 ---
+
+<div class="publications-container">
+  {% for publication in publications %}
+    <div class="row">
+      <div class="col-sm-6">
+        <img src="{{ publication.data.image }}" alt="{{ publication.data.publicationTitle }}">
+      </div>
+      <div class="col-sm-6">
+        <h2>{{ publication.data.publicationTitle }}</h2>
+        <p>{{ publication.data.publicationDetails }}</p>
+        {% if publication.data.publicationAuthor %}
+          <p>Author: {{ publication.data.publicationAuthor }}</p>
+        {% endif %}
+        {% if publication.data.publicationEdition %}
+          <p>Edition: {{ publication.data.publicationEdition }}</p>
+        {% endif %}
+        {% if publication.data.designedBy %}
+          <p>Designed by: {{ publication.data.designedBy }}</p>
+        {% endif %}
+        {% if publication.data.publishedBy %}
+          <p>Published by: {{ publication.data.publishedBy }}</p>
+        {% endif %}
+        {% if publication.data.isbn %}
+          <p>ISBN: {{ publication.data.isbn }}</p>
+        {% endif %}
+        {% if publication.data.publicationPrice %}
+          <p>Price: {{ publication.data.publicationPrice }}</p>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
