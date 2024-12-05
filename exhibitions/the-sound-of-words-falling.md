@@ -1,14 +1,22 @@
 ---
-coverImage: https://res.cloudinary.com/dyciaxri0/image/upload/v1733390950/words-falling/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_01_web_ayxqov.jpg
+coverImage: https://res.cloudinary.com/dyciaxri0/image/upload/v1733394581/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_14_web_u7232y.jpg
 exhibitionTextAuthor: Sara Jones
 permalink: /exhibitions/{{ title | slugify }}/
 title: The Sound of Words Falling
 location: Jahn und Jahn, Munich
 year: 2022
 images:
-  - https://res.cloudinary.com/dyciaxri0/image/upload/v1730809824/words-falling/img8_quah6g.jpg
-  - https://res.cloudinary.com/dyciaxri0/image/upload/v1730809816/words-falling/img7_lm7hap.jpg
-  - https://res.cloudinary.com/dyciaxri0/image/upload/v1733390950/words-falling/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_01_web_ayxqov.jpg
+  - https://res.cloudinary.com/dyciaxri0/image/upload/v1733394582/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_16_web_uzlzc7.jpg
+  - https://res.cloudinary.com/dyciaxri0/image/upload/v1733394582/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_15_web_wrnwfo.jpg
+  - https://res.cloudinary.com/dyciaxri0/image/upload/v1733394582/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_05_web_uu0lpu.jpg
+  - https://res.cloudinary.com/dyciaxri0/image/upload/v1733394582/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_06_web_dm9xjk.jpg
+  - https://res.cloudinary.com/dyciaxri0/image/upload/v1733394581/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_07_web_j9jo5w.jpg
+  - https://res.cloudinary.com/dyciaxri0/image/upload/v1733394581/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_03_web_uu7hfi.jpg
+  - https://res.cloudinary.com/dyciaxri0/image/upload/v1733394581/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_04_web_ibyb4u.jpg
+  - https://res.cloudinary.com/dyciaxri0/image/upload/v1733394581/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_12_web_yyclm9.jpg
+  - https://res.cloudinary.com/dyciaxri0/image/upload/v1733394581/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_13_web_m7le7o.jpg
+  - https://res.cloudinary.com/dyciaxri0/image/upload/v1733394580/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_08_web_b3uyvh.jpg
+  - https://res.cloudinary.com/dyciaxri0/image/upload/v1733394580/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_10_web_p2hnfj.jpg
 exhibitionTextTitle: Words
 exhibitionText: >-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
