@@ -1,5 +1,5 @@
 ---
-coverImage: https://res.cloudinary.com/dyciaxri0/image/upload/v1730809841/words-falling/img3-cover_qvm4n6.jpg
+coverImage: https://res.cloudinary.com/dyciaxri0/image/upload/v1733390950/words-falling/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_01_web_ayxqov.jpg
 exhibitionTextAuthor: Sara Jones
 permalink: /exhibitions/{{ title | slugify }}/
 title: The Sound of Words Falling
