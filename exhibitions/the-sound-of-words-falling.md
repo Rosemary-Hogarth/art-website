@@ -8,6 +8,7 @@ year: 2022
 images:
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1730809824/words-falling/img8_quah6g.jpg
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1730809816/words-falling/img7_lm7hap.jpg
+  - https://res.cloudinary.com/dyciaxri0/image/upload/v1733390950/words-falling/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_01_web_ayxqov.jpg
 exhibitionTextTitle: Words
 exhibitionText: >-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
