@@ -1,5 +1,6 @@
 ---
 title: About
+permalink: /about/{{ title | slugify }}/
 text_en: >-
   Julius Heinemann's practice is based on the study of the different layers of
   perception, understood as a key for the relationship between the subject and
@@ -35,4 +36,6 @@ text_other: >-
 
 
   De este modo, sus obras se convierten en base para la búsqueda de un pensamiento fuera de las ideas normativas establecidas en todo campo de conocimiento, y que reverberan en la concepción de la historia, la ciencia o la política. Su permanente actitud de cuestionamiento sobre lo que vemos físicamente, se plantea como una herramienta de pensamiento y sentimiento, como una alternativa para imaginar la posibilidad de una actitud colectiva compuesta por nociones libres individuales.
+
+
 ---
