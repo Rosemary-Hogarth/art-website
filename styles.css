@@ -1,7 +1,7 @@
 body, html {
   font-family: "indivisible",sans-serif !important;
   margin: 0;
-  cursor: url('/images/cursor.png'), auto;
+  /* cursor: url('/images/cursor.png'), auto; */
 }
 
 img {
@@ -9,9 +9,9 @@ img {
   height: auto;
 }
 
-a, a:hover, a:active, button:hover {
+/* a, a:hover, a:active, button:hover {
   cursor: url('/images/cursor.png'), auto;
-}
+} */
 
 /* about */
 
@@ -232,6 +232,7 @@ body.fancybox-open .navbar-toggler {
 }
 
 /* Exhibitions */
+
 
 .exhibition-h2 {
   display: none;
@@ -492,7 +493,7 @@ button {
 .fadeIn {
   animation: fadeIn 0.5s ease-in-out forwards;
 }
-
+x
 .carousel__viewport {
   display: none;
 }
@@ -566,7 +567,6 @@ button {
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
-  cursor: url('/images/cursor.png'), auto;
 }
 
 .works-card:hover img {
@@ -599,7 +599,10 @@ button {
   font-size: 1rem;
   font-weight: 200;
   color: #000;
+  margin-top: 7em;
 }
+
+
 
 .fancybox__caption em {
   font-family: "indivisible",sans-serif !important;
@@ -765,7 +768,7 @@ button.carousel__button.fancybox__button--zoom {
     display: block;
   }
   .publications-container {
-    margin-top: 2.5em;
+    margin-top: 0.5em;
   }
 
   .text-section {
@@ -799,9 +802,7 @@ button.carousel__button.fancybox__button--zoom {
     margin-bottom: 1em;
   }
 
-  button {
-    margin-top: 1em;
-  }
+
 
   .exhibition-grid {
     grid-template-columns: 1fr;
@@ -840,6 +841,8 @@ button.carousel__button.fancybox__button--zoom {
 
   .exhibition-details {
     padding-left: 0.5em;
+    font-size: 0.8em;
+    max-width: 250px;
   }
 
   .exhibitions-heading {
@@ -866,8 +869,12 @@ button.carousel__button.fancybox__button--zoom {
     height: auto; /* Maintain aspect ratio */
 
 }
-
-
+.navbar-brand {
+  font-size: 0.8em;
+}
+.current-page-name {
+  font-size: 0.8em;
+}
 
 }
 
@@ -914,7 +921,7 @@ button.carousel__button.fancybox__button--zoom {
   .exhibition-details {
     padding-left: 0.5em;
     max-width: 200px;
-    font-weight: 400;
+    font-weight: 350;
   }
   .exhibitions-heading {
     font-size: 5em;

@@ -78,6 +78,10 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
 
+
+
+
+
     const navbar = document.querySelector('.navbar');
     const intro = document.getElementById('exhibitions-intro');
     const mainContent = document.getElementById('exhibitions-main');

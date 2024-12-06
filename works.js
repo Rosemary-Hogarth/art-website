@@ -84,6 +84,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial filtering to show all works
     filterWorks('');
 
+
+
+
     // Intro animation logic
     const navbar = document.querySelector('.navbar');
     const intro = document.getElementById('works-intro');
