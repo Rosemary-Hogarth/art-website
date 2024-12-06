@@ -82,18 +82,22 @@ document.addEventListener("DOMContentLoaded", function() {
     const intro = document.getElementById('exhibitions-intro');
     const mainContent = document.getElementById('exhibitions-main');
     const artistName = document.querySelector('.navbar-brand');
+    const currentPageName = document.querySelector('.current-page-name');
 
     if (navbar && intro && mainContent) {
       // Fade out navbar
-      navbar.style.animation = 'fadeOut 0.5s ease-in-out forwards';
+      navbar.style.display = 'none';
 
       // Hide the artist's name/link
-    artistName.style.animation = 'fadeOut 0.1s ease-in-out forwards';
+    artistName.style.display = 'none';
+    currentPageName.style.display = 'none';
 
       // Wait for navbar to fade out, then show intro
       setTimeout(() => {
         navbar.style.display = 'none'; // Hide navbar completely
         artistName.style.display = 'none'; // Hide artist name completely
+        currentPageName.style.display = 'none'; // Hide current page name
+
 
         intro.classList.remove('hidden');
         intro.style.animation = 'fadeIn 0.5s ease-in-out';
@@ -111,8 +115,10 @@ document.addEventListener("DOMContentLoaded", function() {
             // Bring back the navbar
             navbar.style.display = ''; // Reset display to its original value
             artistName.style.display = ''; // Reset artist name display
+            currentPageName.style.display = ''; // Reset current page name display
             navbar.style.animation = 'fadeIn 0.5s ease-in-out';
             artistName.style.animation = 'fadeIn 0.5s ease-in-out';
+            currentPageName.style.animation = 'fadeIn 0.5s ease-in-out';
           }, 300);
         }, 1500);
       }, 300);

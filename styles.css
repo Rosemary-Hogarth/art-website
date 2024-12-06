@@ -115,12 +115,44 @@ a, a:hover, a:active, button:hover {
   transform: translateY(0);
 }
 
+body.fancybox-open .navbar-toggler {
+  display: none !important;
+}
+
+.fancybox__button--close {
+  z-index: 99999;
+  pointer-events: auto !important;
+}
+
+.navbar-toggler:focus {
+  outline: 1px;
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+}
+
+
+.divider {
+  margin-right: 0.5em;
+
+}
+
+
+
 .nav-link {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+.navbar-light .navbar-toggler {
+  border: none;
+}
 
+.navbar-toggler.active .navbar-toggler-icon {
+  background-image: url(/images/xmark.svg); /* Your X mark icon */
+}
 .nav-list {
   list-style: none;
   padding: 0;
@@ -174,6 +206,7 @@ a, a:hover, a:active, button:hover {
   font-size: 1.2em;
   padding-left: 0.8em;
   font-weight: 400;
+  margin-right: 0.5rem;
 
 }
 
@@ -281,7 +314,6 @@ a, a:hover, a:active, button:hover {
   grid-template-columns: 1fr; /* Ensures single-column layout */
   gap: 25px;
   padding: 20px;
-  margin-top: 1.5em;
 
 }
 
@@ -453,6 +485,13 @@ button {
   }
 }
 
+.fadeOut {
+  animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
 
 .carousel__viewport {
   display: none;

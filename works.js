@@ -89,16 +89,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const intro = document.getElementById('works-intro');
     const mainContent = document.getElementById('works-main');
     const artistName = document.querySelector('.navbar-brand');
+    const currentPageName = document.querySelector('.current-page-name');
 
     if (navbar && intro && mainContent && artistName) {
-      // Fade out navbar and artist name
-      navbar.style.animation = 'fadeOut 0.5s ease-in-out forwards';
-      artistName.style.animation = 'fadeOut 0.1s ease-in-out forwards';
+      navbar.style.display = 'none';
+      artistName.style.display = 'none';
+      currentPageName.style.display = 'none';
 
       // Wait for navbar to fade out, then show intro
       setTimeout(() => {
-        navbar.style.display = 'none'; // Hide navbar completely
-        artistName.style.display = 'none';
         intro.classList.remove('hidden');
         intro.style.animation = 'fadeIn 0.5s ease-in-out';
 
