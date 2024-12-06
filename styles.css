@@ -91,10 +91,57 @@ a, a:hover, a:active, button:hover {
 
 /* navbar */
 
+.fullscreen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* background: rgba(255, 255, 255, 0.95); */
+  background-color: #000;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1050;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-in-out;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.fullscreen-menu.active {
+  transform: translateY(0);
+}
+
 .nav-link {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.nav-list .nav-item {
+  margin: 15px 0;
+}
+
+.nav-list .nav-link {
+  font-size: 3rem;
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.nav-list .nav-link:hover {
+  color: grey;
 }
 
 .navbar {
@@ -107,10 +154,20 @@ a, a:hover, a:active, button:hover {
 .navbar-website {
   justify-content: space-between !important;
 }
-
+/*
 .navbar-toggler {
   border: none !important;
   margin-top: 0.5em !important;
+} */
+
+.navbar-toggler {
+  position: relative;
+  z-index: 1100;
+}
+
+.navbar-toggler.active span {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease-in-out;
 }
 
 .navbar-brand {
@@ -141,7 +198,11 @@ a, a:hover, a:active, button:hover {
   margin-bottom: 0.8em;
 }
 
+/* Exhibitions */
 
+.exhibition-h2 {
+  display: none;
+}
 
 #exhibition-grid {
   width: 100%;
@@ -673,6 +734,12 @@ button.carousel__button.fancybox__button--zoom {
 
   }
 
+  /* .exhibition-h2 {
+    display: block;
+    font-size: 1em;
+    padding-left: 0.5em
+  } */
+
   .exhibition-details {
     margin-top: 0;
   }
@@ -700,6 +767,7 @@ button.carousel__button.fancybox__button--zoom {
   .exhibition-grid {
     grid-template-columns: 1fr;
     padding:0 !important;
+    margin-top: 0;
   }
 
 
