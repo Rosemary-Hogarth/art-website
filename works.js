@@ -117,8 +117,10 @@ document.addEventListener('DOMContentLoaded', function() {
             // Bring back the navbar and artist name
             navbar.style.display = ''; // Reset display to its original value
             artistName.style.display = '';
+            currentPageName.style.display = ''; // Reset current page name display
             navbar.style.animation = 'fadeIn 0.5s ease-in-out';
             artistName.style.animation = 'fadeIn 0.5s ease-in-out';
+            currentPageName.style.animation = 'fadeIn 0.5s ease-in-out';
           }, 300); // Duration of fade out for intro
         }, 1500); // Duration for which the intro is visible
       }, 300); // Delay before starting the intro animation
