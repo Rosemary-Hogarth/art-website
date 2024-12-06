@@ -5,7 +5,7 @@ pagination:
   size: 100
   alias: publications
 ---
-<h1>Publications</h1>
+<h1 class="publications-heading">Publications</h1>
 
 <div class="main-container">
   <div class="publications-container">
@@ -17,7 +17,7 @@ pagination:
               <img src="{{ (publication.data.image | replace('/upload/', '/upload/w_1600,q_auto,f_auto,dpr_auto/')) }}" alt="{{ publication.data.publicationTitle }}" class="publication-image">
             {% endif %}
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-6 text-section">
             <h2 class="pubTitle">{{ publication.data.publicationTitle }}</h2>
             <p class="pubDetails">{{ publication.data.publicationDetails }}</p>
             {% if publication.data.publicationAuthor %}

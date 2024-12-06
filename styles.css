@@ -24,13 +24,18 @@ a, a:hover, a:active, button:hover {
 }
 /* publications */
 .publications-container {
-  margin-top: 50px;
+  margin-top: 5em;
   overflow-x: hidden;
+}
+
+.publications-heading {
+  font-size: 1.5em;
+  display: none;
 }
 
 
 .pubTitle {
-  font-size: 1.8em;
+  font-size: 1.7em;
 }
 
 .pubMainInfo{
@@ -38,6 +43,14 @@ a, a:hover, a:active, button:hover {
   margin-bottom: 0.5em;
 }
 
+.text-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Keeps the text left-aligned */
+
+  padding: 20px; /* Optional for spacing */
+}
 
 .publication-image-container {
   height: 300px; /* Adjust this value as needed */
@@ -69,6 +82,9 @@ a, a:hover, a:active, button:hover {
   box-sizing: border-box;
 }
 
+.pubDetails {
+  margin-bottom: 0.3em;
+}
 
 
 
@@ -644,6 +660,19 @@ button.carousel__button.fancybox__button--zoom {
     font-size: 0.7em;
   }
 
+  .publications-heading {
+    font-size: 1.5em;
+    display: block;
+  }
+  .publications-container {
+    margin-top: 2.5em;
+  }
+
+  .text-section {
+    margin: 0;
+
+  }
+
   .exhibition-details {
     margin-top: 0;
   }
@@ -730,6 +759,9 @@ button.carousel__button.fancybox__button--zoom {
     height: auto; /* Maintain aspect ratio */
 
 }
+
+
+
 }
 
 @media (min-width: 577px) and (max-width: 768px) {
@@ -786,6 +818,8 @@ button.carousel__button.fancybox__button--zoom {
   }
 
 
+
+
 }
 
 @media (max-width: 768px) {
@@ -797,6 +831,8 @@ button.carousel__button.fancybox__button--zoom {
   .exhibitions-heading {
     font-size: 5em;
   }
+
+
 }
 
 @media (min-width: 769px) and (max-width: 992px) {
@@ -814,6 +850,8 @@ button.carousel__button.fancybox__button--zoom {
     margin-bottom: 0.3em;
     font-size: 0.8em;
   }
+
+
   .exhibition-grid {
     grid-template-columns: repeat(1, 1fr);
   }
