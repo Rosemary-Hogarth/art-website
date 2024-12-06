@@ -195,6 +195,7 @@ body.fancybox-open .navbar-toggler {
 .navbar-toggler {
   position: relative;
   z-index: 1100;
+  margin-top: 0.3em !important;
 }
 
 .navbar-toggler.active span {
@@ -870,7 +871,7 @@ button.carousel__button.fancybox__button--zoom {
 
 }
 .navbar-brand {
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 .current-page-name {
   font-size: 0.8em;
