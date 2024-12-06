@@ -833,7 +833,7 @@ button.carousel__button.fancybox__button--zoom {
 
 @media (min-width: 993px) and (max-width: 1200px) {
   .exhibition-grid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .exhibition-details {
@@ -855,7 +855,7 @@ button.carousel__button.fancybox__button--zoom {
     font-size: 0.9em;
   }
   .exhibition-grid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   .exhibition-item {
     align-items: start;
