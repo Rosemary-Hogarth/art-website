@@ -62,6 +62,20 @@ module.exports = function(eleventyConfig) {
     return about;
   });
 
+  eleventyConfig.addCollection("contact", function(collectionApi) {
+    const contact = collectionApi.getFilteredByGlob("contact/*.md");
+    return contact;
+  });
+
+  eleventyConfig.addCollection("imprint", function(collectionApi) {
+    const imprint = collectionApi.getFilteredByGlob("imprint/*.md");
+    return imprint;
+  });
+
+  eleventyConfig.addCollection("privacy", function(collectionApi) {
+    const privacy = collectionApi.getFilteredByGlob("privacy/*.md");
+    return privacy;
+  });
   // Passthrough copy for assets
   eleventyConfig.addPassthroughCopy("*.css");
   eleventyConfig.addPassthroughCopy("images");

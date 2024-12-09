@@ -1,0 +1,13 @@
+---
+layout: base.njk
+---
+
+{% if collections.imprint.length > 0 %}
+  {% set imprint = collections.imprint[0] %}
+  <div>
+    <h1>{{ imprint.data.title }}</h1>
+    <div>{{ imprint.data.text | safe }}</div>
+  </div>
+{% else %}
+  <p>No imprint information available.</p>
+{% endif %}

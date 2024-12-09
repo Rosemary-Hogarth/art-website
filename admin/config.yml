@@ -103,8 +103,7 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string", required: true}
       - { label: "Text", name: "text", widget: "text" }
-      - { label: "Imprint URL", name: "imprint_url", widget: "string", required: true }
-      - { label: "Privacy Policy URL", name: "privacy_policy_url", widget: "string", required: true }
+
 
   - name: "imprint"
     label: "Imprint"
@@ -115,9 +114,9 @@ collections:
       - { label: "Title", name: "title", widget: "string", required: true }
       - { label: "Text", name: "text", widget: "markdown", required: true }
 
-  - name: "privacy_policy"
-    label: "Privacy Policy"
-    folder: "privacy_policy"
+  - name: "privacy"
+    label: "Privacy"
+    folder: "privacy"
     create: true
     slug: '{{title | slugify}}'
     fields:

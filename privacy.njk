@@ -1,0 +1,13 @@
+---
+layout: base.njk
+---
+
+{% if collections.privacy.length > 0 %}
+  {% set privacy = collections.privacy[0] %}
+  <div>
+    <h1>{{ privacy.data.title }}</h1>
+    <div>{{ privacy.data.text | safe }}</div>
+  </div>
+{% else %}
+  <p>No privacy policy information available.</p>
+{% endif %}
