@@ -2,14 +2,25 @@
 layout: base.njk
 ---
 
-<h1>hello</h1>
-
+ <button id="back-to-grid" data-url="{{ '/contact/' | url }}"><img src="/images/arrow-left.svg"></button>
 {% if collections.privacy.length > 0 %}
   {% set privacy = collections.privacy[0] %}
-  <div>
-    <h1>{{ privacy.data.title }}</h1>
-    <div>{{ privacy.data.text | safe }}</div>
+  <div class="privacy-container">
+    <header class="privacy-header">
+      <h1>{{ privacy.data.title }}</h1>
+    </header>
+    <main class="privacy-content">
+      <div class="privacy-text">
+        {{ privacy.data.text | safe }}
+      </div>
+    </main>
   </div>
 {% else %}
-  <p>No privacy policy information available.</p>
+  <div class="privacy-container">
+    <p class="no-content-message">No privacy policy information available.</p>
+  </div>
 {% endif %}
+
+{% block scripts %}
+  <script src="/imprint-privacy.js"></script>
+{% endblock %}

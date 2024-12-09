@@ -750,6 +750,90 @@ button.carousel__button.fancybox__button--zoom {
   font-size: 0.8em;
 }
 
+/* contact-imprint - privacy */
+
+
+.artist-info {
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+}
+
+.gallery-contact {
+  margin-bottom: 0;
+}
+.imprint-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.imprint-header {
+  border-bottom: 2px solid #333;
+  margin-bottom: 20px;
+}
+
+.imprint-header h1 {
+  color: #333;
+  font-size: 2em;
+}
+
+.imprint-content {
+  line-height: 1.6;
+}
+
+.imprint-text {
+  color: #444;
+}
+
+.no-content-message {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+/*
+footer */
+.site-footer {
+  background-color: #f8f8f8;
+  padding: 20px 0;
+  font-size: 14px;
+  color: #666;
+
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center items vertically */
+}
+
+
+.contact-info p {
+  margin: 0 0 5px 0;
+}
+.footer-links {
+  display: flex;
+  align-items: center; /* Center links vertically */
+}
+
+.footer-links a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #333;
+}
+
+.footer-links span {
+  margin: 0 10px; /* Space between links */
+}
+
 
 @media (max-width: 576px) {
   .about-content {
@@ -966,6 +1050,16 @@ button.carousel__button.fancybox__button--zoom {
   }
   #text-content .column {
     max-width: 100%;
+  }
+
+  .footer-content {
+    flex-direction: column; /* Stack on smaller screens */
+    align-items: center; /* Center items */
+    text-align: center; /* Center text */
+  }
+
+  .footer-links {
+    margin-top: 10px; /* Space above links */
   }
 
 }

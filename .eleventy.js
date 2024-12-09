@@ -1,13 +1,24 @@
 require('dotenv').config();
 
 
+
+
 const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
+const markdownIt = require("markdown-it");
 
 module.exports = function(eleventyConfig) {
+    // Configure Eleventy's Markdown library with custom options
+    let markdownLib = markdownIt({
+      html: true, // Enable HTML in Markdown (important for custom tags or raw HTML)
+      breaks: true, // Convert newlines to <br> tags
+      linkify: true // Automatically turn URLs into clickable links
+    });
 
+    // Set markdown-it as the Markdown library used by Eleventy
+    eleventyConfig.setLibrary("md", markdownLib);
 
 
   // Add cloudinaryUrl filter

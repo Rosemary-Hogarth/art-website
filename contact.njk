@@ -3,19 +3,58 @@ layout: base.njk
 ---
 
 
-
 {% if collections.contact.length > 0 %}
   {% set contact = collections.contact[0] %}
-  <div class="contact-page">
+  <div class="contact-container">
     <div class="artist-info">
-      <p>{{ contact.data.title }}</p>
-      <p>{{ contact.data.text }}</p>
+      <p class="gallery-contact">{{ contact.data.contactName }}</p>
+      <p class="gallery-contact">{{ contact.data.contactAddress }}</p>
+      <a href="https://www.jahnundjahn.com" target="_blank" class="gallery-contact">{{ contact.data.contactEmail }}</a>
     </div>
-      <ul class="contact-links">
-      <li><a href="/imprint" target="_blank">Imprint</a></li>
-       <li><a href="/privacy" target="_blank">Privacy Policy</a></li>
-    </ul>
+    <div class="footer-links">
+      <a href="#" data-toggle="imprint">Imprint</a>
+      <span>|</span>
+      <a href="#" data-toggle="privacy">Privacy Policy</a>
+    </div>
+  </div>
+
+  <div id="imprint" class="toggle-content" style="display: none;">
+    {% if collections.imprint.length > 0 %}
+      {% set imprint = collections.imprint[0] %}
+        <div class="imprint-container">
+    <header class="imprint-header">
+      <h1>{{ imprint.data.title }}</h1>
+    </header>
+    <main class=" imprint-content">
+      <div class="imprint-text">
+        {{ imprint.data.text | safe }}
+      </div>
+    </main>
+  </div>
+    {% endif %}
+  </div>
+
+  <div id="privacy" class="toggle-content" style="display: none;">
+    {% if collections.privacy.length > 0 %}
+      {% set privacy = collections.privacy[0] %}
+       <div class="imprint-container">
+          <header class="imprint-header">
+            <h1>{{ privacy.data.title }}</h1>
+          </header>
+          <main class="imprint-content">
+            <div class="imprint-text">
+              {{ privacy.data.text | safe }}
+            </div>
+          </main>
+        </div>
+        {% endif %}
   </div>
 {% else %}
-  <p>No contact information available.</p>
+  <footer class="site-footer">
+    <p>No contact information available.</p>
+  </footer>
 {% endif %}
+
+{% block scripts %}
+  <script src="/imprint-privacy.js"></script>
+{% endblock %}

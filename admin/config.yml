@@ -102,7 +102,9 @@ collections:
     slug: '{{title | slugify}}'
     fields:
       - {label: "Title", name: "title", widget: "string", required: true}
-      - { label: "Text", name: "text", widget: "text" }
+      - { label: "Contact name", name: "contactName", widget: "text" }
+      - { label: "Contact address", name: "contactAddress", widget: "text" }
+      - { label: "Contact email", name: "contactEmail", widget: "text" }
 
 
   - name: "imprint"
@@ -112,7 +114,7 @@ collections:
     slug: '{{title | slugify}}'
     fields:
       - { label: "Title", name: "title", widget: "string", required: true }
-      - { label: "Text", name: "text", widget: "markdown", required: true }
+      - { label: "Text", name: "body", widget: "markdown", required: true }
 
   - name: "privacy"
     label: "Privacy"
@@ -121,4 +123,4 @@ collections:
     slug: '{{title | slugify}}'
     fields:
       - { label: "Title", name: "title", widget: "string", required: true }
-      - { label: "Text", name: "text", widget: "markdown", required: true }
+      - { label: "Text", name: "body", widget: "markdown", required: true }

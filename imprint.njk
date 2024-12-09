@@ -2,12 +2,25 @@
 layout: base.njk
 ---
 
+ <button id="back-to-grid"  data-url="{{ '/contact/' | url }}"><img src="/images/arrow-left.svg"></button>
 {% if collections.imprint.length > 0 %}
   {% set imprint = collections.imprint[0] %}
-  <div>
-    <h1>{{ imprint.data.title }}</h1>
-    <div>{{ imprint.data.text | safe }}</div>
+  <div class="imprint-container">
+    <header class="imprint-header">
+      <h1>{{ imprint.data.title }}</h1>
+    </header>
+    <main class="imprint-content">
+      <div class="imprint-text">
+        {{ imprint.data.text | safe }}
+      </div>
+    </main>
   </div>
 {% else %}
-  <p>No imprint information available.</p>
+  <div class="imprint-container">
+    <p class="no-content-message">No imprint information available.</p>
+  </div>
 {% endif %}
+
+{% block scripts %}
+  <script src="/imprint-privacy.js"></script>
+{% endblock %}
