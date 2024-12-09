@@ -1,5 +1,6 @@
 ---
 title: Privacy
+permalink: /contact/{{ title | slugify }}/
 text: >-
   ## AN OVERVIEW OF DATA PROTECTION
 

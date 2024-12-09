@@ -7,18 +7,9 @@ const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
-const markdownIt = require("markdown-it");
+
 
 module.exports = function(eleventyConfig) {
-    // Configure Eleventy's Markdown library with custom options
-    let markdownLib = markdownIt({
-      html: true, // Enable HTML in Markdown (important for custom tags or raw HTML)
-      breaks: true, // Convert newlines to <br> tags
-      linkify: true // Automatically turn URLs into clickable links
-    });
-
-    // Set markdown-it as the Markdown library used by Eleventy
-    eleventyConfig.setLibrary("md", markdownLib);
 
 
   // Add cloudinaryUrl filter
@@ -85,6 +76,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addCollection("privacy", function(collectionApi) {
     const privacy = collectionApi.getFilteredByGlob("privacy/*.md");
+    console.log(privacy);
     return privacy;
   });
   // Passthrough copy for assets
@@ -104,7 +96,7 @@ module.exports = function(eleventyConfig) {
       output: "_site"
     },
     templateFormats: ["njk", "md"], // Ensure both .njk and .md are processed
-    markdownTemplateEngine: "njk", // Use Nunjucks for Markdown files
+
     htmlTemplateEngine: "njk", // Use Nunjucks for HTML files
   };
 
