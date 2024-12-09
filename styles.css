@@ -18,8 +18,7 @@ img {
 .text-container {
   margin: 0 6em;
   padding: 80px;
-  background-color: #000;
-  color: white;
+  color: black;
   margin-top: 5em;
 }
 /* publications */
@@ -247,10 +246,26 @@ body.fancybox-open .navbar-toggler {
 #exhibition-text .narrow-container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 10px 20px;
-  background-color: #000;
-  color: white;
+  padding: 30px 20px;
   cursor: default;
+}
+
+#text-content .row {
+  display: flex; /* Enable flexbox layout */
+  justify-content: space-between; /* Add space between columns */
+  gap: 20px; /* Gap between the columns */
+}
+
+#text-content .column {
+  flex: 1; /* Equal width for columns */
+  max-width: 48%; /* Optional: Limit width to 48% for spacing */
+}
+
+/* Optional: Style individual columns */
+#text-content .left-column,
+#text-content .right-column {
+  padding: 20px;
+
 }
 
 
@@ -416,7 +431,7 @@ button {
   color: black;
   text-align: center;
   cursor: pointer;
-  animation: fadeIn 0.5s ease-in-out; /* Initial fade-in */
+  animation: fadeIn 0.2s ease-in-out; /* Initial fade-in */
 }
 
 .exhibitions-heading {
@@ -449,7 +464,7 @@ button {
   color: black;
   text-align: center;
   cursor:pointer;
-  animation: fadeIn 0.5s ease-in-out; /* Initial fade-in */
+  animation: fadeIn 0.2s ease-in-out; /* Initial fade-in */
 }
 
 .works-heading {
@@ -946,7 +961,12 @@ button.carousel__button.fancybox__button--zoom {
   .exhibitions-heading {
     font-size: 5em;
   }
-
+  #text-content .row {
+    flex-direction: column;
+  }
+  #text-content .column {
+    max-width: 100%;
+  }
 
 }
 

@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
             artistName.style.animation = 'fadeIn 0.5s ease-in-out';
             currentPageName.style.animation = 'fadeIn 0.5s ease-in-out';
           }, 300); // Duration of fade out for intro
-        }, 1500); // Duration for which the intro is visible
+        }, 1300); // Duration for which the intro is visible
       }, 300); // Delay before starting the intro animation
     }
   } else {

@@ -73,11 +73,24 @@ pagination:
 
 
     </div>
-    <div id="exhibition-text" style="display: none;">
-     <button id="back-to-grid"><img src="/images/arrow-left.svg"></button>
-    <div id="text-content" class="narrow-container"></div>
+
+
+  <div id="exhibition-text" style="display: none;">
+    <button id="back-to-grid"><img src="/images/arrow-left.svg"></button>
+  <div id="text-content" class="narrow-container">
+    <div class="row">
+      <div class="column left-column">
+        <!-- Left column content -->
+      </div>
+      <div class="column right-column">
+        <!-- Right column content -->
+      </div>
+    </div>
   </div>
 </div>
+</div>
+
+
 
 {% block scripts %}
   <script src="/exhibitions.js"></script>

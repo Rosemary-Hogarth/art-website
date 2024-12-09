@@ -6,15 +6,24 @@ pagination:
   alias: about
 ---
 
-<button id="back-to-grid"><img src="/images/arrow-left.svg"></button>
+ <button id="back-button" data-url="{{ '/exhibitions/' | url }}"><img src="/images/arrow-left.svg"></button>
 
 <div class="text-container">
+  <div class="row">
+    <div class="column left-column">
+
+      <!-- English Text Section -->
+      <div id="text-en" class="about-content">
+        {{ about.data.text_en }}
+      </div>
+
+      <div class="column right-column">
+        <!-- Right column content -->
+      </div>
+    </div>
+  </div>
   <button id="language-toggle" class="toggle-button" data-current-language="en">Switch Language</button>
 
-  <!-- English Text Section -->
-  <div id="text-en" class="about-content">
-    {{ about.data.text_en }}
-  </div>
 
   <!-- Other Language Text Section (Initially Hidden) -->
   <div id="text-other" class="about-content hidden">

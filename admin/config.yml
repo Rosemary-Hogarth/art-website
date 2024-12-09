@@ -83,6 +83,7 @@ collections:
       - {label: "Published by", name: "publishedBy", widget: "string", required: false}
       - {label: "ISBN", name: "isbn", widget: "string", required: false}
       - {label: "Publication Price", name: "publicationPrice", widget: "string", required: false}
+      - {label: "Order", name: "order", widget: "number", default: 1}
 
   - name: "about"
     label: "About"
@@ -93,3 +94,32 @@ collections:
       - {label: "Title", name: "title", widget: "string", required: true}
       - { label: "Text (English)", name: "text_en", widget: "text" }
       - { label: "Text (Other Language)", name: "text_other", widget: "text" }
+
+  - name: "contact"
+    label: "Contact"
+    folder: "contact"
+    create: true
+    slug: '{{title | slugify}}'
+    fields:
+      - {label: "Title", name: "title", widget: "string", required: true}
+      - { label: "Text", name: "text", widget: "text" }
+      - { label: "Imprint URL", name: "imprint_url", widget: "string", required: true }
+      - { label: "Privacy Policy URL", name: "privacy_policy_url", widget: "string", required: true }
+
+  - name: "imprint"
+    label: "Imprint"
+    folder: "imprint"
+    create: true
+    slug: '{{title | slugify}}'
+    fields:
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Text", name: "text", widget: "markdown", required: true }
+
+  - name: "privacy_policy"
+    label: "Privacy Policy"
+    folder: "privacy_policy"
+    create: true
+    slug: '{{title | slugify}}'
+    fields:
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Text", name: "text", widget: "markdown", required: true }

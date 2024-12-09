@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function () {
 // Initialize Fancybox for Exhibitions
 Fancybox.bind("[data-fancybox^='gallery-']", {
   Thumbs: false, // Disable thumbnails
@@ -39,48 +40,95 @@ function removeContainerPadding() {
 
 removeContainerPadding();
 
-document.addEventListener("DOMContentLoaded", function() {
-  const showTextButtons = document.querySelectorAll('.show-text');
-  const exhibitionGrid = document.getElementById('exhibition-grid');
-  const exhibitionText = document.getElementById('exhibition-text');
-  const textContent = document.getElementById('text-content');
-  const backToGridButton = document.getElementById('back-to-grid');
+// handle text section
 
-  if (showTextButtons && exhibitionGrid && exhibitionText && textContent && backToGridButton) {
+    const showTextButtons = document.querySelectorAll('.show-text');
+    const exhibitionGrid = document.getElementById('exhibition-grid');
+    const exhibitionText = document.getElementById('exhibition-text');
+    const textContent = document.getElementById('text-content');
+    const backToGridButton = document.getElementById('back-to-grid');
+
+    if (!showTextButtons || !exhibitionGrid || !exhibitionText || !textContent || !backToGridButton) {
+      console.warn('One or more required elements not found');
+      return;
+    }
+
+    function splitTextIfNecessary(text, title, author) {
+      // Temporarily inject the full text to measure height
+      textContent.innerHTML = `<p>${text}</p>`;
+      const textHeight = textContent.scrollHeight;
+      const viewportHeight = window.innerHeight;
+
+      if (textHeight < viewportHeight) {
+        renderSingleColumnText(title, author, text);
+      } else {
+        renderTwoColumnText(title, author, text);
+      }
+    }
+
+    function renderSingleColumnText(title, author, text) {
+      textContent.innerHTML = `
+        <h2>${title}</h2>
+        <p><em>By ${author}</em></p>
+        <p>${text}</p>
+      `;
+    }
+
+    function renderTwoColumnText(title, author, text) {
+      const words = text.split(' ');
+      const midPoint = Math.ceil(words.length / 2);
+      const leftText = words.slice(0, midPoint).join(' ');
+      const rightText = words.slice(midPoint).join(' ');
+
+      textContent.innerHTML = `
+        <h2>${title}</h2>
+        <p><em>By ${author}</em></p>
+        <div class="row">
+          <div class="column left-column">
+            <p>${leftText}</p>
+          </div>
+          <div class="column right-column">
+            <p>${rightText}</p>
+          </div>
+        </div>
+      `;
+    }
+
+    function showExhibitionText(button) {
+      const text = button.dataset.exhibitionText;
+      const title = button.dataset.exhibitionTextTitle;
+      const author = button.dataset.exhibitionTextAuthor;
+
+      splitTextIfNecessary(text, title, author);
+      exhibitionGrid.style.display = 'none';
+      exhibitionText.style.display = 'block';
+
+      // Update URL without page reload (optional)
+      history.pushState(null, '', '/exhibitions');
+    }
+
+    function returnToGridView() {
+      exhibitionGrid.style.display = 'block';
+      exhibitionText.style.display = 'none';
+      exhibitionGrid.removeAttribute('style');
+
+      // Optionally update URL back to exhibitions
+      history.pushState(null, '', '/exhibitions');
+    }
+
+    // Attach event listeners
     showTextButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        const text = this.dataset.exhibitionText;
-        const title = this.dataset.exhibitionTextTitle;
-        const author = this.dataset.exhibitionTextAuthor;
-        textContent.innerHTML = `
-          <h2>${title}</h2>
-          <p><em>By ${author}</em></p>
-          <p>${text}</p>
-        `;
-        exhibitionGrid.style.display = 'none';
-        exhibitionText.style.display = 'block';
-
-        // Update URL without page reload (optional)
-        history.pushState(null, '', '/exhibitions');
+      button.addEventListener('click', function () {
+        showExhibitionText(this);
       });
     });
 
-    backToGridButton.addEventListener('click', function() {
-      exhibitionGrid.style.display = 'block';
-      exhibitionText.style.display = 'none';
-
-      exhibitionGrid.removeAttribute('style');
-      // Optionally update URL back to exhibitions
-      history.pushState(null, '', '/exhibitions');
-    });
-  } else {
-    console.warn('One or more required elements not found');
-  }
+    backToGridButton.addEventListener('click', returnToGridView);
 
 
 
 
-
+// Handle intro section
 
     const navbar = document.querySelector('.navbar');
     const intro = document.getElementById('exhibitions-intro');
@@ -124,7 +172,7 @@ document.addEventListener("DOMContentLoaded", function() {
             artistName.style.animation = 'fadeIn 0.5s ease-in-out';
             currentPageName.style.animation = 'fadeIn 0.5s ease-in-out';
           }, 300);
-        }, 1500);
+        }, 1300);
       }, 300);
     }
   });

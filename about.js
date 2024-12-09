@@ -2,6 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggleButton = document.getElementById('language-toggle');
   const textEn = document.getElementById('text-en');
   const textOther = document.getElementById('text-other');
+  const backButton = document.getElementById('back-button');
+
+  backButton.addEventListener('click', () => {
+    console.log('clicked');
+    const url = backButton.getAttribute('data-url');
+    window.location.href = url;
+  })
 
   toggleButton.addEventListener('click', () => {
     console.log('clicked'); // Check if this logs

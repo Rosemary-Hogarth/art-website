@@ -1,0 +1,27 @@
+---
+layout: base.njk
+---
+
+
+{% if collections.contact.length > 0 %}
+  {% set contact = collections.contact[0] %}
+  <div class="contact-page">
+    <h1>Contact Information</h1>
+    <div class="artist-info">
+      <p><strong>Artist Name:</strong> {{ contact.title }}</p>
+      <p><strong>Gallery Name:</strong> {{ contact.text }}</p>
+      <p><strong>Contact Information:</strong></p>
+      <p>{{ contact.contact_info }}</p>
+    </div>
+    <ul class="contact-links">
+      {% if contact.imprint_link %}
+        <li><a href="/imprint/{{ contact.imprint_link }}" target="_blank">Imprint</a></li>
+      {% endif %}
+      {% if contact.privacy_policy_link %}
+        <li><a href="/privacy_policy/{{ contact.privacy_policy_link }}" target="_blank">Privacy Policy</a></li>
+      {% endif %}
+    </ul>
+  </div>
+{% else %}
+  <p>No contact information available.</p>
+{% endif %}
