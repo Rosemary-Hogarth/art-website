@@ -1,13 +1,12 @@
 ---
 title: Privacy
 text: >-
-  /// 1. AN OVERVIEW OF DATA PROTECTION
+  1. AN OVERVIEW OF DATA PROTECTION
 
 
   General
 
   The following gives a simple overview of what happens to your personal information when you visit our website. Personal information is any data with which you could be personally identified. Detailed information on the subject of data protection can be found in our privacy policy found below.
-
 
 
   DATA COLLECTION ON OUR WEBSITE
@@ -35,7 +34,6 @@ text: >-
   You always have the right to request information about your stored data, its origin, its recipients, and the purpose of its collection at no charge. You also have the right to request that it be corrected, blocked, or deleted. You can contact us at any time using the address given in the legal notice if you have further questions about the issue of privacy and data protection. You may also, of course, file a complaint with the competent regulatory authorities.
 
 
-
   ANALYTICS AND THIRD-PARTY TOOLS
 
 
@@ -45,9 +43,7 @@ text: >-
   You can object to this analysis. We will inform you below about how to exercise your options in this regard.
 
 
-
-
-  /// 2. GENERAL INFORMATION AND MANDATORY INFORMATION
+  2. GENERAL INFORMATION AND MANDATORY INFORMATION
 
 
   Data protection
@@ -98,9 +94,7 @@ text: >-
   As permitted by law, you have the right to be provided at any time with information free of charge about any of your personal data that is stored as well as its origin, the recipient and the purpose for which it has been processed. You also have the right to have this data corrected, blocked or deleted. You can contact us at any time using the address given in our legal notice if you have further questions on the topic of personal data.
 
 
-
-
-  /// 3. DATA COLLECTION ON OUR WEBSITE
+  3. DATA COLLECTION ON OUR WEBSITE
 
 
   Cookies
@@ -140,9 +134,7 @@ text: >-
   The basis for data processing is Art. 6 (1) (f) DSGVO, which allows the processing of data to fulfill a contract or for measures preliminary to a contract.
 
 
-
-
-  /// 4. ANALYTICS AND ADVERTISING
+  4. ANALYTICS AND ADVERTISING
 
 
   Google Analytics
@@ -179,7 +171,7 @@ text: >-
   This website uses Google Analytics' demographic features. This allows reports to be generated containing statements about the age, gender, and interests of site visitors. This data comes from interest-based advertising from Google and third-party visitor data. This collected data cannot be attributed to any specific individual person. You can disable this feature at any time by adjusting the ads settings in your Google account or you can forbid the collection of your data by Google Analytics as described in the section "Refusal of data collection".
 
 
-  ___
+  - - -
 
 
   Source: https://www.erecht24.de
