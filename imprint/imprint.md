@@ -1,17 +1,12 @@
 ---
 title: Imprint
 permalink: /about/{{ title | slugify }}/
-
 text: >-
   © on all images Julius Heinemann and the photographers 2023\
 
   © on the texts by the authors\
 
-  Images and texts may not be reproduced without permission.\
-
-  \
-
-  Website programming: [Lea Becker](http://www.leabecker.com/)
+  Images and texts may not be reproduced without permission.
 
 
   The information contained in this website is for general information purposes only. The information is provided by Julius Heinemann\
