@@ -1,6 +1,6 @@
 ---
 title: Imprint
-permalink: /about/{{ title | slugify }}/
+permalink: /contact/{{ title | slugify }}/
 
 text: >-
   © on all images Julius Heinemann and the photographers 2023\

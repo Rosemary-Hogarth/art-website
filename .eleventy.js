@@ -102,8 +102,10 @@ module.exports = function(eleventyConfig) {
       includes: "_includes",
       data: "_data",
       output: "_site"
-    }
-
+    },
+    templateFormats: ["njk", "md"], // Ensure both .njk and .md are processed
+    markdownTemplateEngine: "njk", // Use Nunjucks for Markdown files
+    htmlTemplateEngine: "njk", // Use Nunjucks for HTML files
   };
 
-};
+  };
