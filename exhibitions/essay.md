@@ -11,12 +11,10 @@ images:
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1730809786/essay/img3_qbhgdo.jpg
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1730809809/essay/img6_vsn2oo.jpg
 exhibitionTextTitle: Essay
-exhibitionText: >
+exhibitionText: >-
   JULIUS HEINEMANN: MA
 
-  Here we are. Seeing, sensing, experiencing: This exhibition invites us to explore the momentary
-
-  relations between space and our subjective experience. Drifting between past and future, our
+  Here we are. Seeing, sensing, experiencing: This exhibition invites us to explore the momentary relations between space and our subjective experience. Drifting between past and future, our
 
   perceptions and senses define what we accept as reality. Thus, Julius Heinemann explores the
 
@@ -46,21 +44,17 @@ exhibitionText: >
 
   — drawing on the light within the space.
 
+
+
+
+
   A mirror hanging in front of the window reflects the outside world, whilst erasing the world inside at
 
   this spot – creating a non-space, a space in-between. The replica of the shelf, in proxy with the
 
-  shelf from which it was cloned, suggests an irritating déjà vu. But on closer inspection, its details
+  shelf from which it was cloned, suggests an irritating déjà vu. But on closer inspection, its details and compartments hold subtle changes, as if the objects had magically shifted during one's stay in the room. Though time has irretrievably gone by, there are limits to what is lost: The shelf still has the same basic constitution.
 
-  and compartments hold subtle changes, as if the objects had magically shifted during one's stay in
-
-  the room. Though time has irretrievably gone by, there are limits to what is lost: The shelf still has
-
-  the same basic constitution.
-
-  MA offers its visitors a field of experiential and conceptual experimentation. They become cocreators of an exhibition both spatially and temporally relative and absolute at the same time. In an
-
-  age focused on futures, and characterized by exponential speeds, the cult of the spectacle and the
+  MA offers its visitors a field of experiential and conceptual experimentation. They become cocreators of an exhibition both spatially and temporally relative and absolute at the same time. In anage focused on futures, and characterized by exponential speeds, the cult of the spectacle and the
 
   migration from material to virtual realities, Heinemann invites us to an alternative. His proposition is
 
@@ -71,6 +65,10 @@ exhibitionText: >
   an escape, nor does it proclaim deep, hidden truths. Instead, its radical temporality throws us into
 
   a world conceived by the artist and opens us up to the naked facts of a nowness we all share.
+
+
+
+
 
   We become one —however, not in the form of a social utopia, but as independent individuals held
 
