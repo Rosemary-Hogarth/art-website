@@ -1,5 +1,6 @@
 body, html {
-  font-family: "indivisible",sans-serif !important;
+  font-family: "minion-3", serif !important;
+  font-weight: 600;
   margin: 0;
   /* cursor: url('/images/cursor.png'), auto; */
 }
@@ -14,6 +15,9 @@ img {
 } */
 
 /* about */
+.about-content {
+  text-align: justify;
+}
 
 .text-container {
   margin: 0 6em;
@@ -179,7 +183,11 @@ body.fancybox-open .navbar-toggler {
   /* z-index: 1001;  */
   background-color: white !important;
   margin-bottom: 0 !important;
-
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
 }
 
 .navbar-website {
@@ -203,10 +211,11 @@ body.fancybox-open .navbar-toggler {
 }
 
 .navbar-brand {
-  font-size: 1.2em;
+  font-size: 1.5em;
   padding-left: 0.8em;
   font-weight: 400;
   margin-right: 0.5rem;
+
 
 }
 
@@ -233,6 +242,13 @@ body.fancybox-open .navbar-toggler {
 
 /* Exhibitions */
 
+.current-page-name {
+  font-size: 1.5em;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
 
 .exhibition-h2 {
   display: none;
@@ -248,7 +264,9 @@ body.fancybox-open .navbar-toggler {
   margin: 0 auto;
   padding: 30px 20px;
   cursor: default;
-  text-align: justify;
+  /* text-align: justify; */
+  line-height: 1.2em;
+  font-size: 1.1em;
 }
 
 #text-content .row {
@@ -273,51 +291,7 @@ body.fancybox-open .navbar-toggler {
 
 
 
-.carousel-control-prev-icon, .carousel-control-next-icon {
-  width: 30px;
-  height: 30px;
-  /* display:none; */
-}
 
-
-
-.carousel-control-prev-icon {
-  /* Add your own custom arrow using a background image or CSS */
-  background-image: url('/images/chevron-left.png'); /* Use an image */
-}
-
-.carousel-control-next-icon {
-  background-image: url('/images/chevron-right.png'); /* Use an image */
-}
-
-
-.carousel {
-  margin: 10px;
-  padding: 5px;
-  box-sizing: border-box;
-
-}
-
-.carousel.slide {
-  margin: 0;
-}
-
-.carousel-card {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  overflow: hidden;
-  border: none;
-
-}
-
-.carousel-image {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  cursor: url('/images/cursor.png'), auto;
-
-}
 
 .exhibition-item {
   display: flex;
@@ -334,6 +308,8 @@ body.fancybox-open .navbar-toggler {
   grid-template-columns: 1fr; /* Ensures single-column layout */
   gap: 25px;
   padding: 20px;
+  margin-top: 2em;
+
 
 }
 
@@ -354,10 +330,11 @@ body.fancybox-open .navbar-toggler {
 
 .exhibition-details {
   transition: all 0.3s ease;
-  margin-top: 0.7em;
+  margin-top: 0.5em;
   flex-grow: 1;
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: 400;
+  line-height: 1.1em;
 }
 
 .caption {
@@ -381,15 +358,16 @@ button {
   margin-right: 0.3em
 }
 
-.svg-img {
-  font-size: 0.9em;
+.more-info {
+  font-size: 1.2em;
   height: auto;
   max-width: 100%;
   color:#434040;
   font-weight: 200;
+  margin-top: 0.5em;
 }
 
-.svg-img:hover {
+.more-info:hover {
   cursor: pointer;
  color: #000;
  font-weight: 300;
@@ -399,7 +377,6 @@ button {
   line-height: 1.3em;
   margin-top: 0;
   margin-bottom: 0;
-  color: #2f2e2e;
 }
 
 .exhibition-location, .exhibition-year {
@@ -408,9 +385,6 @@ button {
   margin-bottom: 0;
 }
 
-.exhibition-details:hover  {
-  color: grey;
-}
 
 
 
@@ -512,10 +486,8 @@ button {
 .fadeIn {
   animation: fadeIn 0.5s ease-in-out forwards;
 }
-x
-.carousel__viewport {
-  display: none;
-}
+
+
 
 .visually-hidden {
   position: absolute !important;
@@ -770,6 +742,8 @@ button.carousel__button.fancybox__button--zoom {
   margin: 0 auto;
   padding: 20px;
   font-family: Arial, sans-serif;
+  text-align: justify;
+
 }
 
 .imprint-header {
@@ -839,6 +813,11 @@ footer */
 
 
 @media (max-width: 576px) {
+
+
+
+
+
   .about-content {
     font-size: 1em;
   }
@@ -879,15 +858,6 @@ footer */
 
   }
 
-  /* .exhibition-h2 {
-    display: block;
-    font-size: 1em;
-    padding-left: 0.5em
-  } */
-
-  .exhibition-details {
-    margin-top: 0;
-  }
 
   #exhibition-text {
     font-size: 0.8em;
@@ -895,14 +865,6 @@ footer */
 
   .fancybox__caption {
     font-size: 0.7em;
-  }
-
-  .caption {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1em;
   }
 
 
@@ -930,23 +892,38 @@ footer */
     margin: 0;
   }
 
-  .carousel {
-    padding: 0;
+  .caption {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+    margin-top: 0.2em;
   }
 
-  .carousel-image {
-    height: 400px; /* Adjust carousel height for smaller screens */
-  }
 
-  .carousel-card {
-    max-width: 600px;
-  }
 
   .exhibition-details {
     padding-left: 0.5em;
-    font-size: 0.8em;
-    max-width: 250px;
+    font-size: 0.9em;
+    max-width: 320px;
   }
+
+  .text-link {
+    display: flex;
+    justify-content: center; /* Center align the button */
+    align-items: flex-start; /* Align the button at the top */
+    margin-top: -19px; /* Adjust this value as needed */
+  }
+
+  .more-info {
+    /* If needed, adjust padding or use transform for fine-tuned control */
+    padding-top: 5px; /* Optional */
+    transform: translateY(-5px); /* Moves the button up */
+    font-size: 1em;
+  }
+
+
 
   .exhibitions-heading {
     font-size: 5em;
@@ -973,10 +950,10 @@ footer */
 
 }
 .navbar-brand {
-  font-size: 0.9em;
+  font-size: 1.3em;
 }
-.current-page-name {
-  font-size: 0.8em;
+ .current-page-name {
+  font-size: 1.3em;
 }
 
 }
@@ -985,6 +962,7 @@ footer */
 
   .about-content {
     font-size: 1em;
+
   }
   .pubTitle {
     font-size: 1em;
@@ -1005,25 +983,13 @@ footer */
     grid-template-columns: repeat(1, 1fr);
     padding:0 !important;
   }
-  .carousel-card {
-    max-width: 800px;
-  }
-
-  .carousel-image {
-    width: 100%;
-    height: auto;
-    max-height: 80vh;
-    object-fit: cover;
-    height: 400px; /* Slightly larger carousel for tablets */
-    cursor: url('/images/cursor.png'), auto;
-  }
 
   .caption {
     margin: 0 auto;
   }
   .exhibition-details {
     padding-left: 0.5em;
-    max-width: 200px;
+    max-width: 300px;
     font-weight: 350;
   }
   .exhibitions-heading {
@@ -1040,6 +1006,7 @@ footer */
 }
 
 @media (max-width: 768px) {
+
 
   .works-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -1095,28 +1062,22 @@ footer */
     font-size: 5em;
   }
 
-  .carousel-image {
-    height: calc(100vh - 300px); /* Slightly smaller height for medium screens */
-    max-height: 60vh;
-  }
+
 }
 
 @media (min-width: 993px) and (max-width: 1200px) {
   .exhibition-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .exhibition-details {
     grid-column: 2 / span 1;
     text-align: left;
-    padding-left: 0.5em;
+    /* padding-left: 0.5em; */
     max-width: 500px;
   }
 
-  .carousel-image {
-    height: calc(100vh - 300px); /* Slightly smaller height for medium screens */
-    max-height: 60vh;
-  }
+
 
 }
 
@@ -1125,28 +1086,22 @@ footer */
     font-size: 0.9em;
   }
   .exhibition-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
   .exhibition-item {
     align-items: start;
 
   }
 
-  .carousel-card {
-    max-width: 1000px; /* Adjusts width for larger screens */
-  }
+
 
   .exhibition-details {
     grid-column: 2 / span 1;
     text-align: left;
-    padding-left: 0.5em;
+    /* padding-left: 0.5em; */
     max-width: 500px;
   }
 
-  .carousel-image {
-    height: calc(100vh - 200px);
-    max-height: 70vh; /* Restricts height to prevent excessive vertical stretching */
-    object-fit: cover; /* Ensures the image maintains its aspect ratio */
-  }
+
 
 }
