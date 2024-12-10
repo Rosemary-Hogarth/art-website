@@ -3,9 +3,9 @@ coverImage: https://res.cloudinary.com/dyciaxri0/image/upload/v1730809794/essay/
 exhibitionTextAuthor: Enno Schramm, 2021. Translated from German by Valerie von
   Kittlitz and Blake Kendall.
 permalink: /exhibitions/{{ title | slugify }}/
-title: Essay
-location: Munich
-year: 2021
+title: Julius Heinemann - "Essay"
+location: Jahn und Jahn, Lisbon / 16.05.-22-08.2024
+category: Solo show
 images:
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1730809833/essay/img2-cover_ivyhdn.jpg
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1730809786/essay/img3_qbhgdo.jpg
@@ -35,6 +35,7 @@ exhibitionText: >-
 
 
   We become one —however, not in the form of a social utopia, but as independent individuals held in space and time. Catching the weight and simultaneously, the banality of this fleeting realization, is Heinemann's encouragement for us to consider alternative scopes of thought, action, and togetherness. He is interested in the ephemeral traces and paths leading to such alternatives. His work can be read as an indication in the sense of the old Japanese proverb: Catch the MA.
+year: 2021
 ---
 # P﻿ara one
 
