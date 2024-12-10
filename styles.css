@@ -905,7 +905,7 @@ footer */
 
   .exhibition-details {
     padding-left: 0.5em;
-    font-size: 0.9em;
+    font-size: 0.8em;
     max-width: 320px;
   }
 
@@ -920,7 +920,7 @@ footer */
     /* If needed, adjust padding or use transform for fine-tuned control */
     padding-top: 5px; /* Optional */
     transform: translateY(-5px); /* Moves the button up */
-    font-size: 1em;
+    font-size: 0.9em;
   }
 
 
