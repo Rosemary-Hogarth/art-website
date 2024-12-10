@@ -10,7 +10,15 @@ const htmlmin = require("html-minifier");
 
 
 module.exports = function(eleventyConfig) {
+  const md = require("markdown-it")({
+    html: false,
+    breaks: true,
+    linkify: true,
+  });
 
+  eleventyConfig.addNunjucksFilter("markdownify", (markdownString) =>
+    md.render(markdownString),
+  );
 
   // Add cloudinaryUrl filter
   eleventyConfig.addFilter("cloudinaryUrl", (imagePath) => {

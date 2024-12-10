@@ -248,6 +248,7 @@ body.fancybox-open .navbar-toggler {
   margin: 0 auto;
   padding: 30px 20px;
   cursor: default;
+  text-align: justify;
 }
 
 #text-content .row {
@@ -259,12 +260,14 @@ body.fancybox-open .navbar-toggler {
 #text-content .column {
   flex: 1; /* Equal width for columns */
   max-width: 48%; /* Optional: Limit width to 48% for spacing */
+  text-align: justify;
 }
 
 /* Optional: Style individual columns */
 #text-content .left-column,
 #text-content .right-column {
   padding: 20px;
+  text-align: justify;
 
 }
 

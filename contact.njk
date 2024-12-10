@@ -27,7 +27,7 @@ layout: base.njk
     </header>
     <main class=" imprint-content">
       <div class="imprint-text">
-        {{ imprint.data.text | safe }}
+        {{ imprint.data.text | markdownify | safe }}
 
 
       </div>
@@ -45,7 +45,7 @@ layout: base.njk
           </header>
           <main class="imprint-content">
             <div class="imprint-text">
-              {{ privacy.data.text | safe }}
+              {{ privacy.data.text | markdownify | safe }}
             </div>
           </main>
         </div>

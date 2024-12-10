@@ -57,7 +57,7 @@ pagination:
               </div>
               <div class="text-link">
                 <button class="show-text"
-                  data-exhibition-text="{{ exhibition.data.exhibitionText | escape }}"
+                  data-exhibition-text="{{ exhibition.data.exhibitionText | markdownify | safe }}"
                   data-exhibition-text-title="{{ exhibition.data.exhibitionTextTitle | escape }}"
                   data-exhibition-text-author="{{ exhibition.data.exhibitionTextAuthor | escape }}">
                   <img src="/images/more-horiz.svg" class="svg-img">

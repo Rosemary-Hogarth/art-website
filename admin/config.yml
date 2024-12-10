@@ -83,7 +83,7 @@ collections:
       - {label: "Published by", name: "publishedBy", widget: "string", required: false}
       - {label: "ISBN", name: "isbn", widget: "string", required: false}
       - {label: "Publication Price", name: "publicationPrice", widget: "string", required: false}
-      - {label: "Order", name: "order", widget: "number", default: 1}
+
 
   - name: "about"
     label: "About"
@@ -123,4 +123,4 @@ collections:
     slug: '{{title | slugify}}'
     fields:
       - { label: "Title", name: "title", widget: "string", required: true }
-      - { label: "Text", name: "text", widget: "markdown", required: true }
+      - { label: "Body", name: "body", widget: "markdown", required: true }
