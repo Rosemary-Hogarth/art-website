@@ -1,6 +1,6 @@
 ---
 title: Julius Heinemann - "Pueblo Potemkin"
-location: Condeduque, Madrid
+location: Condeduque, Madrid / date
 category: Solo show
 coverImage: https://res.cloudinary.com/dyciaxri0/image/upload/v1731409012/Pueblo%20Potemkin/Pueblo1_zawh2z.jpg
 images:
