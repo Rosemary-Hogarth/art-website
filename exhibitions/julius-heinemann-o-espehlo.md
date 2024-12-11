@@ -1,7 +1,10 @@
 ---
 title: Julius Heinemann - "O  Espehlo"
-location: Casa da Cerca, Almada / date
+locationDate: Casa da Cerca, Almada / 01.01.-20.02.2021
+location: Casa da Cerca, Almada
 category: Solo show
+view: Installation view
+year: "2021"
 coverImage: https://res.cloudinary.com/dyciaxri0/image/upload/v1730809803/o-espelho/img5_feydhx.jpg
 images:
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1730809770/o-espelho/img2_ayki0h.jpg
