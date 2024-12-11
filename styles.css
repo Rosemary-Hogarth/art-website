@@ -396,14 +396,7 @@ body.fancybox-open .navbar-toggler {
 }
 
 
-button {
-  border: none;
-  /* font-size: 0.8em; */
-  margin:0;
-  padding: 0;
-  background-color: white;
 
-}
 .text-link {
   margin-left: auto;
 }
@@ -474,14 +467,18 @@ button {
 
 
 /* Works */
+
+
+
+
 /* Full-screen heading */
-.works-intro {
+/* .works-intro {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: white; /* Background color */
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -489,12 +486,12 @@ button {
   color: black;
   text-align: center;
   cursor:pointer;
-  animation: fadeIn 0.2s ease-in-out; /* Initial fade-in */
+  animation: fadeIn 0.2s ease-in-out;
 }
 
 .works-heading {
   font-size: 10em;
-}
+} */
 
 /* Hide the works container initially */
 .hidden {
@@ -634,20 +631,17 @@ button {
   background: none !important;
 }
 .fancybox__caption {
-  font-family: "indivisible",sans-serif !important;
-  font-size: 1rem;
-  font-weight: 200;
-  color: #000;
+  font-family: "minion-3", serif !important;
+  font-size: 1.1rem;
+  color: #6D6E6D;
   margin-top: 7em;
 }
 
 
 
 .fancybox__caption em {
-  font-family: "indivisible",sans-serif !important;
-  font-weight: 200;
+  font-family: "minion-3", serif !important;
   display:inline;
-  font-size: 1em;
 }
 
 .fancybox__image {
@@ -673,9 +667,8 @@ button {
 .fancybox__container .fancybox__caption,
 .fancybox__container .fancybox__toolbar,
 .fancybox__container .fancybox__nav {
-  font-family: "indivisible",sans-serif !important;
-  font-weight: 200;
-  font-family: "indivisible",sans-serif !important;
+  font-family: "minion-3", serif !important;
+
 }
 
 .carousel-control-prev,
@@ -685,10 +678,12 @@ button {
 
   .fancybox__nav {
    display: none;
-
   }
 
+.caption-title, .caption-year, .caption-medium, .caption-dimensions {
 
+font-size: 17.6px;
+}
 
 .filter-buttons {
   display: flex;
@@ -696,11 +691,10 @@ button {
   flex-wrap: wrap;
   margin-top: 2em;
   margin-bottom: 1em;
-  font-size: 1.1em;
 
 }
 
-.filter-button {
+.filter-button  {
   border: none;
   border-radius: 5px;
   background-color: #fff;

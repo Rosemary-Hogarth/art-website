@@ -26,9 +26,9 @@ pagination:
           {% if work.data.type == "Installation" %}
             <a href="{{ (work.data.installationImages[0].image | replace('/upload/', '/upload/w_1600,q_auto,f_auto,dpr_auto/')) }}"
                data-fancybox="gallery-{{ work.data.name | slugify }}"
-               data-caption="<span class='caption-title'><em>{{ work.data.name }}</em></span> |
-                    <span class='caption-year'>{{ work.data.year }}</span> |
-                    <span class='caption-medium'>{{ work.data.medium }}</span> |
+               data-caption="<span class='caption-title'><em>{{ work.data.name }}</em></span>,
+                    <span class='caption-year'>{{ work.data.year }}</span>,
+                    <span class='caption-medium'>{{ work.data.medium }}</span>,
                     <span class='caption-location'>{{ work.data.location }}</span>">
               <img
                 src="{{ (work.data.installationImages[0].image | replace('/upload/', '/upload/w_300,h_300,c_thumb,g_center,q_auto,f_auto,dpr_auto/')) }}"
@@ -40,9 +40,9 @@ pagination:
                 <a href="{{ (image.image | replace('/upload/', '/upload/w_1600,q_auto,f_auto,dpr_auto/')) }}"
                   data-fancybox="gallery-{{ work.data.name | slugify }}"
                   data-caption="
-                    <span class='caption-title'><em>{{ work.data.name }}</em></span> |
-                    <span class='caption-year'>{{ work.data.year }}</span> |
-                    <span class='caption-medium'>{{ work.data.medium }}</span> |
+                    <span class='caption-title'><em>{{ work.data.name }}</em></span>,
+                    <span class='caption-year'>{{ work.data.year }}</span>,
+                    <span class='caption-medium'>{{ work.data.medium }}</span>,
                     <span class='caption-location'>{{ work.data.location }}</span>
                   "
                   {% if forloop.index == 2 %}class="carousel-main-image"{% else %}style="display: none;"{% endif %}>
@@ -56,10 +56,12 @@ pagination:
             <a href="{{ (work.data.image | replace('/upload/', '/upload/w_1600,q_auto,f_auto,dpr_auto/')) }}"
                data-fancybox="gallery"
                data-caption="
-                 <span class='caption-title'><em>{{ work.data.name }}</em></span> |
-                 <span class='caption-year'>{{ work.data.year }}</span> |
-                 <span class='caption-medium'>{{ work.data.medium }}</span> |
-                 <span class='caption-dimensions'>{{ work.data.dimensions }}</span>
+               <div class='artwork-details-works'>
+                 <span class='caption-title'><em>{{ work.data.name}},</em></span>
+                 <span class='caption-year'>{{ work.data.year }},</span>
+                 <span class='caption-dimensions'>{{ work.data.dimensions }},</span>
+                 <span class='caption-medium'>{{ work.data.medium }}</span>
+              </div>
                ">
               <img
                 src="{{ (work.data.image | replace('/upload/', '/upload/w_300,h_300,c_thumb,g_center,q_auto,f_auto,dpr_auto/')) }}"
@@ -72,7 +74,6 @@ pagination:
 
   </div>
 </div>
-
 
 
 

@@ -20,9 +20,12 @@ collections:
     slug: '{{title | slugify}}'
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Location", name: "location", widget: "string"}
+      - {label: "Location Date", name: "locationDate", widget: "string", required: false}
+      - {label: "Location", name: "location", widget: "string", required: false}
       - {label: "Category", name: "category", widget: "select", options: ["Solo show", "Group show"], required: false}
-      - {label: "Cover Image", name: "coverImage", widget: "image"}
+      - {label: "View", name: "view", widget: "select", options: ["Installation view"], required: false}
+      - {label: "Year", name: "year", widget: "string", required: false}
+      - {label: "Cover Image", name: "coverImage", widget: "image", required: false}
       - label: "Gallery Images"
         name: "images"
         widget: "list"
