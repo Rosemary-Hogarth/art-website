@@ -2,7 +2,7 @@
 layout: base.njk
 ---
 
- <button id="back-to-grid"  data-url="{{ '/contact/' | url }}"><img src="/images/arrow-left.svg"></button>
+ <div id="back-to-grid"  data-url="{{ '/contact/' | url }}"><img src="/images/arrow-left.svg"></div>
 {% if collections.imprint.length > 0 %}
   {% set imprint = collections.imprint[0] %}
   <div class="imprint-container">
