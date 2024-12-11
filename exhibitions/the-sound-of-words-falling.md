@@ -19,7 +19,7 @@ images:
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1733394580/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_08_web_b3uyvh.jpg
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1733394580/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_10_web_p2hnfj.jpg
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1733394580/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_01_web_oa1tgx.jpg
-exhibitionTextTitle: 'Julius Heinemann "The Sound of Words Falling" '
+exhibitionTextTitle: 'Julius Heinemann - "The Sound of Words Falling" '
 exhibitionTextLocation: Solo show at Jahn und Jahn, Munich
 exhibitionTextDates: 26.01.—09.03.2024
 exhibitionText: >-
@@ -48,6 +48,6 @@ exhibitionText: >-
   The watercolours on view test materiality as media and represent an extended exploration of pictorial elements, letting the process run free, a modus operandi close to expressionist painting. In line with prior productions, the works on view in The Sound of Words Falling toy with the perception of ephemeral light in the studio, thrown and cascading shadows – they are pictures that take on a life of their own. Light reflections acquire different shades of grey as a narrative of projections and superimpositions. While the watercolours are additive, in the paintings the colours do overlap subtractively. Where previously the white wall was the reference in Heinemann’s paintings, now the texture of the canvas has become the common denominator. A sanded surface contains moments and colour nuances recorded in the winter days of Berlin, sparks of colour are emanating from a muddy primer. The viewer encounters a classic exhibition that focuses on the existentialist, subjectivist and romantic notions of being in the world derived from the artist’s own subjectivity and relayed in the individual works as signifiers of vital force.
 
 
-  B﻿y Author
+  Text by Tobi Maier
 year: 2024
 ---
