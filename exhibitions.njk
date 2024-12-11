@@ -39,14 +39,18 @@ pagination:
                     </div>
                   {% endfor %}
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls-{{ exhibition.fileSlug }}" role="button" data-slide="prev">
+                <!--<a class="carousel-control-prev" href="#carouselExampleControls-{{ exhibition.fileSlug }}" role="button" data-slide="prev">
                   <div class="carousel-control-prev-icon" aria-hidden="true"></div>
                   <div class="sr-only">Previous</div>
                 </a>
                 <a class="carousel-control-next" href="#carouselExampleControls-{{ exhibition.fileSlug }}" role="button" data-slide="next">
                   <div class="carousel-control-next-icon" aria-hidden="true"></div>
                   <div class="sr-only">Next</div>
-                </a>
+                </a>-->
+                <div class="sliders">
+                <button id="prevSlide"><img src="/images/arrow-left-slide.svg"></button>
+                <button id="nextSlide"><img src="/images/arrow-right-slide.svg"></button>
+                </div>
               </div>
             </div>
             <div class="caption">
@@ -98,4 +102,5 @@ pagination:
 
 {% block scripts %}
   <script src="/exhibitions.js"></script>
+  <script src="/carousel.js"></script>
 {% endblock %}

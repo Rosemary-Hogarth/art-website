@@ -241,7 +241,13 @@ body.fancybox-open .navbar-toggler {
 
 #back-to-grid {
   margin-bottom: 0.8em;
+
 }
+
+
+
+
+
 
 /* Exhibitions */
 
@@ -452,6 +458,17 @@ button {
   animation: fadeIn 0.6s ease-in-out;
 }
 
+.sliders {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+
+
+
 /* Works */
 /* Full-screen heading */
 .works-intro {
@@ -657,13 +674,11 @@ button {
   font-family: "indivisible",sans-serif !important;
 }
 
-/* .carousel-control-prev,
+.carousel-control-prev,
 .carousel-control-next {
-  &:focus {
-    outline: none;
-    box-shadow: none;
+  display: none;
   }
-} */
+
 
 
 

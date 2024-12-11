@@ -1,3 +1,5 @@
+// Initialize swipe functionality once the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
 let touchStartX = 0;
 let touchEndX = 0;
 
@@ -30,7 +32,29 @@ function initSwipe() {
     carousel.addEventListener('touchend', handleTouchEnd, false);
 }
 
-// Initialize swipe functionality once the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', () => {
+
     initSwipe();
-});
+
+
+function moveCarousel() {
+  const carousels = document.querySelectorAll('.carousel');
+
+  carousels.forEach((carousel) => {
+    const prevButton = carousel.querySelector('#prevSlide');
+    const nextButton = carousel.querySelector('#nextSlide');
+
+    prevButton.addEventListener('click', () => {
+      console.log('Previous slide');
+      $(carousel).carousel('prev');
+    });
+
+    nextButton.addEventListener('click', () => {
+      console.log('Next slide');
+      $(carousel).carousel('next');
+    });
+  })
+}
+
+moveCarousel()
+
+})
