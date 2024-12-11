@@ -465,6 +465,10 @@ button {
   justify-content: space-between;
 }
 
+.sliders img {
+  width: 15px;
+  height: 15px;
+}
 
 
 
@@ -879,7 +883,12 @@ footer */
     font-size: 0.8em;
   }
 
+.sliders {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  padding-bottom: 0.5em;
 
+}
 
 
   .about-content {
