@@ -2,15 +2,17 @@
 coverImage: https://res.cloudinary.com/dyciaxri0/image/upload/v1730809794/essay/img4_bvsekw.jpg
 exhibitionTextAuthor: Enno Schramm, 2021. Translated from German by Valerie von
   Kittlitz and Blake Kendall.
-permalink: /exhibitions/{{ title | slugify }}/
 title: Julius Heinemann - "Essay"
 location: Jahn und Jahn, Lisbon / 16.05.-22-08.2024
 category: Solo show
+exhibitionTextTitle: Julius Heinemann - "Essay"
+exhibitionTextDates: 16.05.-22..08.2024
+permalink: /exhibitions/{{ title | slugify }}/
 images:
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1730809833/essay/img2-cover_ivyhdn.jpg
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1730809786/essay/img3_qbhgdo.jpg
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1730809809/essay/img6_vsn2oo.jpg
-exhibitionTextTitle: "Julius Heinemann: MA"
+exhibitionTextLocation: "Solo show at Jahn und Jahn, Lisbon "
 exhibitionText: >-
   Here we are. Seeing, sensing, experiencing: This exhibition invites us to
   explore the momentary relations between space and our subjective experience.
@@ -35,6 +37,11 @@ exhibitionText: >-
 
 
   We become one —however, not in the form of a social utopia, but as independent individuals held in space and time. Catching the weight and simultaneously, the banality of this fleeting realization, is Heinemann's encouragement for us to consider alternative scopes of thought, action, and togetherness. He is interested in the ephemeral traces and paths leading to such alternatives. His work can be read as an indication in the sense of the old Japanese proverb: Catch the MA.
+
+
+
+
+  B﻿y Author
 year: 2021
 ---
 # P﻿ara one
