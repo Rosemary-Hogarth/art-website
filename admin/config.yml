@@ -29,7 +29,8 @@ collections:
         field:
           {label: "Image", name: "image", widget: "image"}
       - {label: "Exhibition Text Title", name: "exhibitionTextTitle", widget: "string"}
-      - {label: "Exhibition Text Author", name: "exhibitionTextAuthor", widget: "string"}
+      - {label: "Exhibition Text Location", name: "exhibitionTextLocation", widget: "string"}
+      - {label: "Exhibition Text Dates", name: "exhibitionTextDates", widget: "string"}
       - {label: "Exhibition Text", name: "exhibitionText", widget: "markdown"}
 
 
@@ -105,6 +106,7 @@ collections:
       - { label: "Contact name", name: "contactName", widget: "text" }
       - { label: "Contact address", name: "contactAddress", widget: "text" }
       - { label: "Contact email", name: "contactEmail", widget: "text" }
+      - { label: "Contact artist", name: "contactArtist", widget: "text" }
 
 
   - name: "imprint"

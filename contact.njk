@@ -7,10 +7,11 @@ layout: base.njk
   {% set contact = collections.contact[0] %}
   <div class="contact-container">
     <div class="artist-info">
-      <p class="gallery-contact">{{ contact.data.contactName }}</p>
-      <p class="gallery-contact">{{ contact.data.contactAddress }}</p>
-      <a href="https://www.jahnundjahn.com" target="_blank" class="gallery-contact">{{ contact.data.contactEmail }}</a>
+      <p class="gallery-contact-name">{{ contact.data.contactName }}</p>
+      <p class="gallery-contact-address">{{ contact.data.contactAddress }}</p>
+      <a href="https://www.jahnundjahn.com" target="_blank" class="gallery-contact-email">{{ contact.data.contactEmail }}</a>
     </div>
+    <p class="gallery-contact-artist">{{ contact.data.contactArtist }}</p>
     <div class="footer-links">
       <a href="#" data-toggle="imprint">Imprint</a>
       <span>|</span>

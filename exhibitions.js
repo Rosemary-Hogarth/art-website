@@ -53,36 +53,38 @@ removeContainerPadding();
       return;
     }
 
-    function splitTextIfNecessary(text, title, author) {
+    function splitTextIfNecessary(text, title, location, date) {
       // Temporarily inject the full text to measure height
       textContent.innerHTML = `<p>${text}</p>`;
       const textHeight = textContent.scrollHeight;
       const viewportHeight = window.innerHeight;
 
       if (textHeight < viewportHeight) {
-        renderSingleColumnText(title, author, text);
+        renderSingleColumnText(title, location, date, text);
       } else {
-        renderTwoColumnText(title, author, text);
+        renderTwoColumnText(title, location, date, text);
       }
     }
 
-    function renderSingleColumnText(title, author, text) {
+    function renderSingleColumnText(title, location, date, text) {
       textContent.innerHTML = `
-        <h2>${title}</h2>
-        <p><em>By ${author}</em></p>
-        <p>${text}</p>
+        <h2 class="exhibition-details-title">${title}</h2>
+        <p class="exhibition-details-location">${location}</p>
+        <p class="exhibition-details-date">${date}</p>
+        <p class="exhibition-details-text">${text}</p>
       `;
     }
 
-    function renderTwoColumnText(title, author, text) {
+    function renderTwoColumnText(title, location, date, text) {
       const words = text.split(' ');
       const midPoint = Math.ceil(words.length / 2);
       const leftText = words.slice(0, midPoint).join(' ');
       const rightText = words.slice(midPoint).join(' ');
 
       textContent.innerHTML = `
-        <h2>${title}</h2>
-        <p><em>By ${author}</em></p>
+        <h2 class="exhibition-details-title">${title}</h2>
+        <p class="exhibition-details-location">${location}</p>
+        <p class="exhibition-details-date">${date}</p>
         <div class="row">
           <div class="column left-column">
             <p>${leftText}</p>
@@ -97,9 +99,12 @@ removeContainerPadding();
     function showExhibitionText(button) {
       const text = button.dataset.exhibitionText;
       const title = button.dataset.exhibitionTextTitle;
-      const author = button.dataset.exhibitionTextAuthor;
+      const location = button.dataset.exhibitionTextLocation;
+      const date = button.dataset.exhibitionTextDates;
 
-      splitTextIfNecessary(text, title, author);
+  console.log({ title, location, date, text });
+
+      splitTextIfNecessary(text, title, location, date);
       exhibitionGrid.style.display = 'none';
       exhibitionText.style.display = 'block';
 
