@@ -8,7 +8,6 @@ year: "2024"
 coverImage: https://res.cloudinary.com/dyciaxri0/image/upload/v1733394582/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_16_web_uzlzc7.jpg
 images:
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1733394582/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_15_web_wrnwfo.jpg
-  - https://res.cloudinary.com/dyciaxri0/image/upload/v1733394582/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_15_web_wrnwfo.jpg
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1733394582/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_05_web_uu0lpu.jpg
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1733394582/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_06_web_dm9xjk.jpg
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1733394581/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_07_web_j9jo5w.jpg
