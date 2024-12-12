@@ -43,6 +43,9 @@
       <div class="fullscreen-menu" id="fullscreenMenu">
       <button class="close-btn" id="closeMenu"><img src="/images/xmark.svg"></button>
         <ul class="nav-list">
+         <li class="nav-item {% if page.url == '/about/' %}active{% endif %}">
+            <a class="nav-link" href="{{ '/news/' | url }}">News</a>
+          </li>
           <li class="nav-item {% if page.url == '/exhibitions/' %}active{% endif %}">
             <a class="nav-link" href="{{ '/exhibitions/' | url }}">Exhibitions</a>
           </li>
@@ -52,9 +55,7 @@
           <li class="nav-item {% if page.url == '/publications/' %}active{% endif %}">
             <a class="nav-link" href="{{ '/publications/' | url }}">Publications</a>
           </li>
-           <li class="nav-item {% if page.url == '/about/' %}active{% endif %}">
-            <a class="nav-link" href="{{ '/news/' | url }}">News</a>
-          </li>
+
           <li class="nav-item {% if page.url == '/about/' %}active{% endif %}">
             <a class="nav-link" href="{{ '/about/' | url }}">About</a>
           </li>
