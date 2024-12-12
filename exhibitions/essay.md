@@ -1,5 +1,5 @@
 ---
-title: Julius Heinemann - "Essay"
+title: Julius Heinemann - Essay
 locationDate: Jahn und Jahn, Lisbon / 16.05.-22-08.2024
 category: Solo show
 view: Installation view
@@ -7,7 +7,7 @@ year: 2021
 coverImage: https://res.cloudinary.com/dyciaxri0/image/upload/v1730809794/essay/img4_bvsekw.jpg
 exhibitionTextAuthor: Enno Schramm, 2021. Translated from German by Valerie von
   Kittlitz and Blake Kendall.
-exhibitionTextTitle: Julius Heinemann - "Essay"
+exhibitionTextTitle: Julius Heinemann - Essay
 exhibitionTextDates: 16.05.-22..08.2024
 permalink: /exhibitions/{{ title | slugify }}/
 location: Jahn und Jahn, Lisbon
