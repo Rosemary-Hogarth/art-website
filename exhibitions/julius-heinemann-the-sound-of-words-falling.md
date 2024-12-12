@@ -1,5 +1,5 @@
 ---
-title: Julius Heinemann - "The Sound of Words Falling"
+title: Julius Heinemann - The Sound of Words Falling
 locationDate: Jahn und Jahn, Munich / 01.01.-20.01.2024
 location: "Jahn und Jahn, Munich "
 category: Solo show
