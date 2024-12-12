@@ -87,6 +87,11 @@ module.exports = function(eleventyConfig) {
     console.log(privacy);
     return privacy;
   });
+
+  eleventyConfig.addCollection("news", function(collectionApi) {
+    const news = collectionApi.getFilteredByGlob("news/*.md");
+    return news;
+  });
   // Passthrough copy for assets
   eleventyConfig.addPassthroughCopy("*.css");
   eleventyConfig.addPassthroughCopy("images");

@@ -9,21 +9,24 @@ document.addEventListener("DOMContentLoaded", () => {
     navToggle.classList.toggle("active");
   });
 
+  // handle close button on fullscreen menu
+  document.getElementById('closeMenu').addEventListener('click', function() {
+    fullscreenMenu.classList.remove('active');
+    navToggle.classList.remove('active');
+  });
+});
+
 // Create a new MutationObserver
 const observer = new MutationObserver((mutations) => {
-  // For each mutation that occurs...
   mutations.forEach((mutation) => {
-    // Check if the mutation is an attribute change and specifically a class change
     if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-      // Check if Fancybox is open by looking for its container element
       const fancyboxOpen = document.querySelector('.fancybox__container') !== null;
+      const navToggle = document.getElementById("navToggle");
 
       if (fancyboxOpen) {
-        // If Fancybox is open, hide the navigation toggle
         console.log("Fancybox is open, hiding navToggle");
         navToggle.style.display = 'none';
       } else {
-        // If Fancybox is closed, show the navigation toggle
         console.log("Fancybox is closed, showing navToggle");
         navToggle.style.display = 'block';
       }
@@ -33,9 +36,7 @@ const observer = new MutationObserver((mutations) => {
 
 // Start observing the document body for changes
 observer.observe(document.body, {
-  attributes: true,  // Watch for attribute changes
-  subtree: true,     // Watch all descendants, not just direct children
-  childList: true    // Watch for changes to the direct children of the body
-});
-
+  attributes: true,
+  subtree: true,
+  childList: true
 });
