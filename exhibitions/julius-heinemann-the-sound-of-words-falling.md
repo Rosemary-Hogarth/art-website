@@ -17,7 +17,7 @@ images:
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1733394580/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_02_web_hwtdmp.jpg
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1733394580/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_10_web_p2hnfj.jpg
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1733394580/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_01_web_oa1tgx.jpg
-exhibitionTextTitle: Julius Heinemann - "The Sound of Words Falling"
+exhibitionTextTitle: Julius Heinemann - The Sound of Words Falling
 exhibitionTextLocation: Solo show at Jahn und Jahn, Munich
 exhibitionTextDates: 01.01.-20.01.2024
 exhibitionText: >-
