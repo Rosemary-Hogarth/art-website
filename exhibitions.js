@@ -27,7 +27,8 @@ Fancybox.bind("[data-fancybox^='gallery-']", {
       fancybox.next();
     }
   }
-});
+})
+
 
 
 

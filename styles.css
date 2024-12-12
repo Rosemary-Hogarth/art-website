@@ -486,6 +486,7 @@ body.fancybox-open .navbar-toggler {
 /* Reveal the exhibitions container */
 .exhibitions-container {
   animation: fadeIn 0.6s ease-in-out;
+  margin-top: 5em;
 }
 
 .sliders {
@@ -504,72 +505,37 @@ body.fancybox-open .navbar-toggler {
 
 
 /* Works */
+/* Container for the whole gallery */
+.works-container {
+  padding: 20px;
+}
 
+/* Works Grid Setup using CSS Grid for responsive layout */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Auto-adjust columns */
+  gap: 30px; /* Space between items */
+  grid-auto-rows: auto; /* Ensure rows adjust to image sizes */
+}
 
-
-
-/* Full-screen heading */
-/* .works-intro {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: white;
+/* Style for each work item */
+.work-item {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
-  color: black;
-  text-align: center;
-  cursor:pointer;
-  animation: fadeIn 0.2s ease-in-out;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
-.works-heading {
-  font-size: 10em;
-} */
+/* Ensure images maintain their aspect ratio and aren't cropped */
+.work-item img {
+  width: 100%;  /* Ensure images take the full width of the container */
+  height: auto; /* Maintain the original aspect ratio */
+  object-fit: contain; /* Ensures the image is contained within its box */
+  display: block;
 
-/* Hide the works container initially */
-.hidden {
-  display: none;
 }
-
-/* Reveal the works container */
-.works-container {
-  animation: fadeIn 0.6s ease-in-out;
-}
-
-
-
-/* @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-.fadeOut {
-  animation: fadeOut 0.5s ease-in-out forwards;
-}
-
-.fadeIn {
-  animation: fadeIn 0.5s ease-in-out forwards;
-} */
-
-
 
 .visually-hidden {
   position: absolute !important;
@@ -582,70 +548,43 @@ body.fancybox-open .navbar-toggler {
   white-space: nowrap !important;
   border: 0 !important;
 }
-
-/* .works-heading {
-  font-size: 3em;
-  font-weight: 400;
-  margin-top: 0.5em;
-  margin-bottom: 1em;
-} */
-
-
-.filter {
-  font-size: 0.8em;
-  margin-bottom: 1.5em;
-}
-
-.works-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 30px;
-}
-
-
-.work-item {
-  overflow: visible;
+/* .works-card {
   position: relative;
-  aspect-ratio: 5 / 4;
-}
-
-.works-card {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease;
-}
+  width: 200px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+} */
 
 .works-card a {
   flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   width: 100%;
   height: 100%;
 }
 
-
+/* Hover effect for works card */
 .works-card:hover {
-  transform: scale(1.1);
+  transform: scale(1.05); /* Slight zoom effect */
 }
 
+/* Ensure image inside the works card scales correctly */
 .works-card img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* Ensures the image stays within the bounds of the card */
   transition: transform 0.3s ease;
 }
 
+/* Hover effect on image */
 .works-card:hover img {
-  transform: scale(1.1);
+  transform: scale(1.1); /* Zoom in on hover */
 }
 
+/* Work Info Styling */
 .work-info {
   position: absolute;
   bottom: 0;
@@ -655,6 +594,13 @@ body.fancybox-open .navbar-toggler {
   padding: 10px;
   text-align: center;
 }
+
+/* Style for the filter buttons (if needed) */
+.filter {
+  font-size: 0.8em;
+  margin-bottom: 1.5em;
+}
+
 
 /* lightbox */
 .fancybox__container {
@@ -747,7 +693,12 @@ font-size: 17.6px;
   background-color: #fff;
   cursor: pointer;
   color: black;
-  font-size: 1.1em;
+  font-size: 1.2em;
+padding-right: 10px;
+padding-left: 10px;
+padding-top: 3px;
+padding-bottom: 3px;
+  border-radius: 20px;
 }
 
 .filter-button.active, .filter-button:hover {
@@ -811,10 +762,17 @@ button.carousel__button.fancybox__button--zoom {
   display: none;
 }
 .fancybox__counter {
-  stroke-width: 0.2;
-  font-weight: 100;
-  font-size: 0.8em;
+  position: absolute;
+  font-size: 1.1em !important;
+  color: black;
+  z-index: 1000;
+  text-shadow: var(--fancybox-toolbar-text-shadow, 0 0 0 rgba(0, 0, 0, 0)) !important;
 }
+
+
+
+
+
 
 /* contact-imprint - privacy */
 .contact-container {
@@ -1013,8 +971,12 @@ footer */
   .exhibition-grid {
     grid-template-columns: 1fr;
     padding:0 !important;
-    margin-top: 3em;
+    margin-top: 4em;
   }
+
+.exhibitions-container {
+  margin-top: 1em;
+}
 
 
   .index-title {

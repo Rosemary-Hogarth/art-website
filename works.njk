@@ -22,7 +22,7 @@ pagination:
   <div class="works-grid">
     {% for work in collections.works %}
       <div class="work-item" data-category="{{ work.data.category }}" data-medium="{{ work.data.medium }}">
-        <div class="works-card">
+
           {% if work.data.type == "Installation" %}
             <a href="{{ (work.data.installationImages[0].image | replace('/upload/', '/upload/w_1600,q_auto,f_auto,dpr_auto/')) }}"
                data-fancybox="gallery-{{ work.data.name | slugify }}"
@@ -31,7 +31,7 @@ pagination:
                     <span class='caption-medium'>{{ work.data.medium }}</span>,
                     <span class='caption-location'>{{ work.data.location }}</span>">
               <img
-                src="{{ (work.data.installationImages[0].image | replace('/upload/', '/upload/w_300,h_300,c_thumb,g_center,q_auto,f_auto,dpr_auto/')) }}"
+                src="{{ (work.data.installationImages[0].image | replace('/upload/', '/upload/w_500,c_fit,g_center,q_auto,f_auto,dpr_auto/')) }}"
                 alt="{{ work.data.name }}">
             </a>
 
@@ -46,7 +46,7 @@ pagination:
                     <span class='caption-location'>{{ work.data.location }}</span>
                   "
                   {% if forloop.index == 2 %}class="carousel-main-image"{% else %}style="display: none;"{% endif %}>
-                  <img src="{{ (image.image | replace('/upload/', '/upload/w_300,h_300,c_thumb,g_center,q_auto,f_auto,dpr_auto/')) }}" alt="{{ work.data.name }}">
+                  <img src="{{ (image.image | replace('/upload/', '/upload/w_500,c_fit,g_center,q_auto,f_auto,dpr_auto/')) }}" alt="{{ work.data.name }}">
                 </a>
               {% endif %}
             {% endfor %}
@@ -64,11 +64,11 @@ pagination:
               </div>
                ">
               <img
-                src="{{ (work.data.image | replace('/upload/', '/upload/w_300,h_300,c_thumb,g_center,q_auto,f_auto,dpr_auto/')) }}"
+                src="{{ (work.data.image | replace('/upload/', '/upload/w_500,g_center,q_auto,f_auto,dpr_auto/')) }}"
                 alt="{{ work.data.name }}">
             </a>
           {% endif %}
-        </div>
+
       </div>
     {% endfor %}
 
