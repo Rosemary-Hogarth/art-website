@@ -3,7 +3,7 @@ locationDate: Condeduque, Madrid / 01.01.-20.02.2022
 view: Installation view
 coverImage: https://res.cloudinary.com/dyciaxri0/image/upload/v1731409012/Pueblo%20Potemkin/Pueblo1_zawh2z.jpg
 exhibitionTextAuthor: Jane Smith
-title: Julius Heinemann - "Pueblo Potemkin"
+title: Julius Heinemann - Pueblo Potemkin
 location: "Condeduque, Madrid "
 category: Solo show
 year: 2022
@@ -11,7 +11,7 @@ images:
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1731409016/Pueblo%20Potemkin/pueblo2_pfgdcs.jpg
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1731409007/Pueblo%20Potemkin/pueblo4_xnjsmx.jpg
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1731409012/Pueblo%20Potemkin/Pueblo1_zawh2z.jpg
-exhibitionTextTitle: Julius Heinemann - "Pueblo Potemkin"
+exhibitionTextTitle: Julius Heinemann - Pueblo Potemkin
 exhibitionTextLocation: Solo show in Location
 exhibitionTextDates: Date
 exhibitionText: >-
