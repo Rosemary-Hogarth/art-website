@@ -998,6 +998,8 @@ button.carousel__button.fancybox__button--zoom {
   }
   .works-grid {
     grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
   }
 }
 
@@ -1013,6 +1015,8 @@ button.carousel__button.fancybox__button--zoom {
   }
   .works-grid {
     grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
   }
 }
 
@@ -1195,6 +1199,8 @@ button.carousel__button.fancybox__button--zoom {
 
   .works-grid {
     grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
   }
 
   .works-heading {
