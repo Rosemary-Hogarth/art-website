@@ -20,6 +20,8 @@ module.exports = function(eleventyConfig) {
     md.render(markdownString),
   );
 
+
+
   // Add cloudinaryUrl filter
   eleventyConfig.addFilter("cloudinaryUrl", (imagePath) => {
     return `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload/${imagePath}`;
@@ -94,6 +96,7 @@ module.exports = function(eleventyConfig) {
   });
   // Passthrough copy for assets
   eleventyConfig.addPassthroughCopy("*.css");
+
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("*.js");
   eleventyConfig.addPassthroughCopy("admin");
