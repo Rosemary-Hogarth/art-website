@@ -271,9 +271,9 @@ body, html {
 }
 
 #exhibition-text .narrow-container {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 30px 20px;
+  padding-top: 30px;
   cursor: default;
   /* text-align: justify; */
   line-height: 1.3em;
@@ -627,46 +627,18 @@ body, html {
 }
 
 .text-container {
-  max-width: 800px;
-  margin: 3em auto;
-  padding: 30px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 60px ;
   font-size: 1.1em;
   line-height: 1.4em;
 }
 
 
 
-@media (min-width: 577px) and (max-width: 768px) {
-  .about-content {
-    font-size: 1em;
-
-  }
-}
 
 
-@media (min-width: 1201px) {
-
-  .exhibition-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .exhibition-item {
-    align-items: start;
-
-  }
-
-
-  .exhibition-details {
-    grid-column: 2 / span 1;
-    text-align: left;
-    /* padding-left: 0.5em; */
-    max-width: 500px;
-  }
-
-
-
-}
-
-/* Works */
+/* WORKS */
 /* Container for the whole gallery */
 .works-container {
   padding: 20px;
@@ -681,15 +653,7 @@ body, html {
 
 }
 
-/* Style for each work item */
-/* .work-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-} */
+
 
 .work-item {
   position: relative;
@@ -698,15 +662,8 @@ body, html {
   overflow: hidden;
 }
 
-/*
-.work-item img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
 
-} */
-
+/* keeps actual image size */
 .work-item img {
   position: absolute;
   top: 50%;
@@ -997,6 +954,21 @@ button.carousel__button.fancybox__button--zoom {
   .pubDetails {
     font-size: 0.9em;
   }
+  .exhibition-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .exhibition-item {
+    align-items: start;
+
+  }
+
+
+  .exhibition-details {
+    grid-column: 2 / span 1;
+    text-align: left;
+    /* padding-left: 0.5em; */
+    max-width: 500px;
+  }
 }
 
 @media (min-width: 993px) and (max-width: 1200px) {
@@ -1044,6 +1016,10 @@ button.carousel__button.fancybox__button--zoom {
 }
 
 @media (min-width: 577px) and (max-width: 768px) {
+  .about-content {
+    font-size: 1em;
+  }
+
   .exhibition-grid {
     grid-template-columns: repeat(3, 1fr);
     padding:0 !important;
@@ -1170,7 +1146,13 @@ button.carousel__button.fancybox__button--zoom {
 .exhibitions-intro {
   font-size: 0.7em;
 }
+#exhibition-text .narrow-container {
+  padding: 0;
+}
 
+#exhibition-text {
+  margin-top: 3em;
+}
   .about-content {
     font-size: 1em;
   }
