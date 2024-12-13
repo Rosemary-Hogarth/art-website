@@ -1,0 +1,112 @@
+/* publications */
+.publications-container {
+  margin-top: 5em;
+  overflow-x: hidden;
+}
+
+.publications-heading {
+  font-size: 1.5em;
+  display: none;
+}
+
+
+.pubTitle {
+  font-size: 1.7em;
+}
+
+.pubMainInfo{
+  font-size: 0.8em;
+  margin-bottom: 0.5em;
+}
+
+.text-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Keeps the text left-aligned */
+
+  padding: 20px; /* Optional for spacing */
+}
+
+.publication-image-container {
+  height: 300px; /* Adjust this value as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.publication-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  width:auto;
+}
+
+
+.each-row {
+  margin-bottom: 3em;
+}
+
+.row.each-row {
+  padding-bottom: 3em;
+  border-bottom: 1px solid black;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.pubDetails {
+  margin-bottom: 0.3em;
+}
+
+@media (max-width: 576px) {
+  .pubTitle {
+    font-size: 1.1em;
+    margin-top: 1em;
+  }
+
+  .pubDetails {
+    font-size: 0.7em;
+    margin-bottom: 0.8em;
+  }
+
+  .pubMainInfo {
+    margin-bottom: 0.3em;
+    font-size: 0.7em;
+  }
+
+  .publications-heading {
+    font-size: 1.5em;
+    display: block;
+  }
+  .publications-container {
+    margin-top: 0.5em;
+  }
+
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .pubTitle {
+    font-size: 1em;
+    margin-bottom: 0.2em;
+  }
+
+  .pubDetails {
+    font-size: 0.7em;
+    margin-bottom: 1.2em;
+  }
+
+  .pubMainInfo {
+    margin-bottom: 0.3em;
+    font-size: 0.7em;
+  }
+}
+
+@media (min-width: 1201px) {
+  .pubDetails {
+    font-size: 0.9em;
+  }
+}

@@ -1,0 +1,141 @@
+
+/* contact-imprint - privacy */
+.contact-container {
+  margin-top: 5em;
+}
+
+.artist-info {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 1.3em;
+
+}
+
+/* .gallery-contact-artist {
+  font-size: 1.3em;
+} */
+.gallery-contact-name {
+  margin-bottom: 0;
+}
+
+.gallery-contact-address {
+  margin-bottom: 0;
+}
+.gallery-contact-email {
+  margin-bottom: 0;
+  text-decoration: none;
+  color: black;
+}
+
+.gallery-contact-email:hover {
+  color: grey;
+}
+
+.imprint-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  text-align: justify;
+
+}
+
+.imprint-header {
+  border-bottom: 2px solid #333;
+  margin-bottom: 20px;
+}
+
+.imprint-header h1 {
+  color: #333;
+  font-size: 2em;
+}
+
+.imprint-content {
+  line-height: 1.6;
+}
+
+.imprint-text {
+  color: #444;
+}
+
+.no-content-message {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+/* mprint-privacy links*/
+.site-footer {
+  background-color: #f8f8f8;
+  padding: 20px 0;
+  font-size: 14px;
+  color: #666;
+
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center items vertically */
+}
+
+
+.contact-info p {
+  margin: 0 0 5px 0;
+}
+.footer-links {
+  display: flex;
+  align-items: center; /* Center links vertically */
+}
+
+.footer-links a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #333;
+}
+
+.footer-links span {
+  margin: 0 10px; /* Space between links */
+}
+
+@media (max-width: 768px) {
+
+
+
+
+
+  .footer-content {
+    flex-direction: column; /* Stack on smaller screens */
+    align-items: center; /* Center items */
+    text-align: center; /* Center text */
+  }
+
+  .footer-links {
+    margin-top: 10px; /* Space above links */
+  }
+
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .pubTitle {
+    font-size: 1.2em;
+    margin-bottom: 0.2em;
+  }
+
+  .pubDetails {
+    font-size: 0.8em;
+    margin-bottom: 0.6em;
+  }
+
+  .pubMainInfo {
+    margin-bottom: 0.3em;
+    font-size: 0.8em;
+  }
+
+}
