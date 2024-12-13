@@ -649,7 +649,8 @@ body, html {
 .works-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 30px;
+  column-gap: 30px;
+  row-gap: 0;
 
 }
 
@@ -1101,7 +1102,6 @@ button.carousel__button.fancybox__button--zoom {
   }
 
   .text-container {
-    padding: 1em;
     margin: 0 2em;
   }
 
