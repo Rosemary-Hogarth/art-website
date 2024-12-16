@@ -1,5 +1,5 @@
 ---
-title: Julius Heinemann - Essay
+title: Julius Heinemann - "Essay"
 locationDate: Jahn und Jahn, Lisbon / 16.05. - 22.05.2024
 location: Lisbon
 category: Solo show
