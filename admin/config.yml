@@ -26,6 +26,7 @@ collections:
       - {label: "View", name: "view", widget: "select", options: ["Installation view"], required: false}
       - {label: "Year", name: "year", widget: "string", required: false}
       - {label: "Cover Image", name: "coverImage", widget: "image", required: false}
+      - {label: "Permalink", name: "permalink", widget: "hidden", default: "/exhibitions/{{ title | slugify }}/"}
       - label: "Gallery Images"
         name: "images"
         widget: "list"
@@ -51,6 +52,7 @@ collections:
       - {label: "Dimensions", name: "dimensions", widget: "string"}
       - {label: "Type", name: "type", widget: "select", options: ["Single", "Installation"], default: "Single"}
       - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Permalink", name: "permalink", widget: "hidden", default: "/works/{{ name | slugify }}/"}
       - label: "Installation Images"
         name: "installationImages"
         widget: "list"

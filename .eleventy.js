@@ -7,7 +7,7 @@ const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
-
+const slugify = require("slugify");
 
 module.exports = function(eleventyConfig) {
   const md = require("markdown-it")({
@@ -59,10 +59,11 @@ module.exports = function(eleventyConfig) {
     return exhibitions;
   });
 
-  eleventyConfig.addCollection("works", function(collectionApi) {
-    const works = collectionApi.getFilteredByGlob("works/*.md");
-    return works;
+  eleventyConfig.addCollection("works", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("./works/*.md");
   });
+
+
 
   eleventyConfig.addCollection("publications", function(collectionApi) {
     const publications = collectionApi.getFilteredByGlob("publications/*.md");

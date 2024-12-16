@@ -4,7 +4,6 @@ pagination:
   data: collections.exhibitions
   size: 1
   alias: exhibition
-
 ---
 
 
@@ -36,7 +35,7 @@ pagination:
                          <img
                           class="carousel-image d-block w-300"
                           src="{{ (image | replace('/upload/', '/upload/w_1600,q_auto,f_auto/')) }}"
-                          alt="Image from {{ exhibition.data.title }}">
+                          alt="Image from {{ exhibition.data.title }}" loading="lazy">
                       </a>
                     </div>
                   {% endfor %}

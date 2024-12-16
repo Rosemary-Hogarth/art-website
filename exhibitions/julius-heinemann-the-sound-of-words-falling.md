@@ -5,7 +5,7 @@ location: Munich
 category: Solo show
 view: Installation view
 year: "2024"
-permalink: /works/{{ name | slugify }}/
+permalink: /exhibitions/{{ title | slugify }}/
 images:
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1733394582/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_16_web_uzlzc7.jpg
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1733394582/words-falling/test_files/Heinemann_The-Sound-of-Words-Falling_Jahn-und-Jahn_Munich_15_web_wrnwfo.jpg
