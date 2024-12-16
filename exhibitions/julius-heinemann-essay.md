@@ -5,7 +5,7 @@ location: Lisbon
 category: Solo show
 view: Installation view
 year: "2024"
-coverImage: https://res.cloudinary.com/dyciaxri0/image/upload/v1730809794/essay/img4_bvsekw.jpg
+coverImage: https://res.cloudinary.com/dyciaxri0/image/upload/v1730809809/essay/img6_vsn2oo.jpg
 permalink: /exhibitions/{{ name | slugify }}/
 images:
   - https://res.cloudinary.com/dyciaxri0/image/upload/v1730809833/essay/img2-cover_ivyhdn.jpg
