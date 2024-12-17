@@ -10,14 +10,15 @@ pagination:
   <div class="publications-grid">
     {% for publication in publications %}
       <div class="publication-item" data-category="{{ publication.data.category }}">
+
         <div class="publication-image-container">
           {% if publication.data.images %}
             {% for image in publication.data.images %}
-              <a href="{{ (image | replace('/upload/', '/upload/w_1600,q_auto,f_auto,dpr_auto/')) }}"
+              <a href="{{ (image.image | replace('/upload/', '/upload/w_1600,q_auto,f_auto,dpr_auto/')) }}"
                  data-fancybox="publication-{{ forloop.parentloop.index }}"
                  data-caption="{{ publication.data.publicationTitle }}">
-                {% if forloop.first %}
-                  <img src="{{ (image | replace('/upload/', '/upload/w_1600,c_fit,g_center,q_auto,f_auto,dpr_auto/')) }}"
+                {% if image.displayOnPage %}
+                  <img src="{{ (image.image | replace('/upload/', '/upload/w_1600,c_fit,g_center,q_auto,f_auto,dpr_auto/')) }}"
                        alt="{{ publication.data.publicationTitle }}">
                 {% endif %}
               </a>
@@ -51,7 +52,7 @@ pagination:
             <p class="pubMainInfo">{{ publication.data.isbn }}</p>
           {% endif %}
           {% if publication.data.publicationPrice %}
-            <p class="p">{{ publication.data.publicationPrice }}</p>
+            <p class="price">{{ publication.data.publicationPrice }}</p>
           {% endif %}
         </div>
       </div>
