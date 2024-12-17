@@ -338,8 +338,8 @@ body, html {
   display: grid;
   grid-template-columns: 1fr; /* Ensures single-column layout */
   gap: 25px;
-  padding: 20px;
-  margin-top: 3em;
+  padding: 0 20px;
+  margin-top: 1em;
 
 
 }
@@ -751,7 +751,7 @@ body, html {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  margin-top: 5em;
+  margin-top: 3em;
   margin-bottom: 1em;
 
 }
@@ -889,22 +889,25 @@ button.carousel__button.fancybox__button--zoom {
 
 /* publications */
 .publications-container {
-  margin-top: 5em;
-  overflow-x: hidden;
+  margin: 3em auto;
+}
+
+/* Grid layout for publications */
+.publications-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+  gap: 20px; /* Space between the columns and items */
 }
 
 
-
-
-.pubTitle {
-  font-size: 1.2em;
-  margin-bottom: 0.1em;
+.publication-item {
+  display: flex;
+  flex-direction: column; /* Stacks image and text vertically */
+  overflow: hidden;
+  height: 100%;
+  background-color: #fff; /* White background */
 }
 
-.pubMainInfo{
-  font-size: 1.2em;
-  margin-bottom: 0.5em;
-}
 
 .text-section {
   display: flex;
@@ -916,39 +919,55 @@ button.carousel__button.fancybox__button--zoom {
 }
 
 .publication-image-container {
-  height: 300px; /* Adjust this value as needed */
+  position: relative;
+  width: 100%; /* Full width of the publication item */
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
-.publication-image {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  width:auto;
-}
-
-
-.each-row {
-  margin-bottom: 3em;
-}
-
-.row.each-row {
-  padding-bottom: 3em;
-  border-bottom: 1px solid black;
+/* Publication image */
+.publication-image-container img {
+  width: 100%; /* Makes the image fill the container */
+  height: 100%; /* Ensures the image is full height */
+  object-fit: contain; /* Ensures the image covers the area without stretching */
 
 }
 
-* {
+.publication-text {
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  line-height: 1.7em;
+  margin-top: -4px;
   box-sizing: border-box;
 }
 
+.pubTitle {
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+
+.pubMainInfo{
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+
 .pubDetails {
-  margin-bottom: 0.1em;
+  margin-bottom: 0;
+  margin-top: 20px;
   font-size: 1.2em;
 }
+
+.price {
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+
 
 
 
@@ -1002,7 +1021,32 @@ button.carousel__button.fancybox__button--zoom {
     column-gap: 20px;
     row-gap: 20px;
   }
-}
+  .publications-grid {
+    grid-template-columns: 1fr 1fr; /* Still two columns */
+    gap: 15px; /* Slightly reduce gap */
+  }
+
+  .publication-item {
+    flex-direction: column; /* Ensure image and text stack vertically */
+    height: auto; /* Adjust height to content */
+  }
+
+  .publication-image-container {
+    aspect-ratio: 4 / 3; /* Slightly taller aspect ratio */
+  }
+
+  .publication-text {
+    padding: 10px 0;
+    line-height: 1.5em; /* Adjust spacing for compact view */
+  }
+
+  .pubTitle, .pubMainInfo, .pubDetails, .price {
+    font-size: 1.1em; /* Slightly smaller font size */
+  }
+
+
+  }
+
 
 @media (max-width: 768px) {
   .exhibitions-heading {
@@ -1023,7 +1067,33 @@ button.carousel__button.fancybox__button--zoom {
   .exhibition-details {
     padding-left: 0;
   }
+  .publications-grid {
+    grid-template-columns: 1fr; /* Single-column layout */
+    gap: 10px; /* Smaller gap for compact layout */
+  }
+
+  .publication-item {
+    flex-direction: column; /* Stack image and text */
+    height: auto; /* Let height adjust to content */
+  }
+
+  .publication-image-container {
+    aspect-ratio: 4 / 3; /* Maintain a balanced image size */
+  }
+
+  .publication-text {
+    padding: 8px 0;
+    line-height: 1.4em; /* Compact text spacing */
+  }
+
+  .pubTitle, .pubMainInfo, .pubDetails, .price {
+    font-size: 1em; /* Smaller font size for readability on small screens */
+  }
+
+
 }
+
+
 
 @media (min-width: 577px) and (max-width: 768px) {
   .about-content {
@@ -1051,21 +1121,49 @@ button.carousel__button.fancybox__button--zoom {
     max-width: 600px;
   }
 
+.publication-text {
+  padding: 0;
+  line-height: 1.5em;
 
+}
 
     .pubTitle {
-      font-size: 1em;
-      margin-bottom: 0.2em;
+      margin-bottom: 0;
+      font-size: 14px;
     }
 
     .pubDetails {
-      font-size: 0.7em;
-      margin-bottom: 1.2em;
+      margin-top: 10px;
+      margin-bottom: 0;
+      font-size: 14px;
     }
 
     .pubMainInfo {
-      margin-bottom: 0.3em;
-      font-size: 0.7em;
+      margin-bottom: 0;
+      font-size: 14px;
+    }
+
+    .publication-text .price {
+      font-size: 14px;
+      margin-top: 20px;
+    }
+
+    .publications-grid {
+      grid-template-columns: 1fr; /* Stacks the columns into a single column */
+    }
+
+    .publication-item {
+      max-width: 100%;
+    }
+
+    /* Reduce the image height on smaller screens for better visual hierarchy */
+    .publication-image-container {
+      aspect-ratio: 4 / 3;
+     /* Reduced height on mobile */
+
+    }
+    .publication-image-container {
+      object-fit: contain;
     }
   }
 
@@ -1274,5 +1372,53 @@ margin-left: 0;
       font-size: 14px;
     }
 
+    .publications-container {
+      margin-top: 3em;
+    }
+    .publications-grid {
+      grid-template-columns: 1fr; /* Stacks the columns into a single column */
+    }
+
+    .publication-item {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Reduce the image height on smaller screens for better visual hierarchy */
+    .publication-image-container {
+
+      aspect-ratio: 4 / 3;
+
+    }
+    .publication-image-container img {
+      object-fit: contain;
+    }
+    .publication-text {
+      padding: 0;
+      line-height: 1.3em;
+      margin-top: 5px;
+    }
+
+    .pubTitle {
+      font-size: 14px;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+
+    .pubMainInfo{
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .pubDetails {
+      margin-bottom: 0;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .price {
+      font-size: 14px;
+      margin-top: 20px;
+    }
 
 }

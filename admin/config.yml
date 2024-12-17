@@ -48,7 +48,7 @@ collections:
       - {label: "Name", name: "name", widget: "string"}
       - {label: "Year", name: "year", widget: "number"}
       - {label: "Medium", name: "medium", widget: "string"}
-      - {label: "Category", name: "category", widget: "select", options: ["Painting", "Works on paper", "Sculpture", "Photography", "Installation", "Mixed media", "Performance", "Public sculpture"]} # Filter category
+      - {label: "Category", name: "category", widget: "select", options: ["Installation", "Painting", "Watercolour", "Collage", "Drawing", "Object"]} # Filter category
       - {label: "Dimensions", name: "dimensions", widget: "string"}
       - {label: "Type", name: "type", widget: "select", options: ["Single", "Installation"], default: "Single"}
       - {label: "Image", name: "image", widget: "image", required: false}
@@ -79,12 +79,10 @@ collections:
     create: true
     slug: '{{publicationTitle | slugify}}'
     fields:
-      - {label: "Image", name: "image", widget: "image", required: false}
       - {label: "Publication Title", name: "publicationTitle", widget: "string", required: true}
+      - {label: "Images", name: "images", widget: "list", field: {label: "Image", name: "image", widget: "image", required: true}}
       - {label: "Publication Text Author", name: "publicationTextAuthor", widget: "string", required: false}
-      - {label: "Publication Languages", name: "publicationLanguages", widget: "string", required: false}
       - {label: "Publication Details", name: "publicationDetails", widget: "text", required: false}
-      - {label: "Publication Edition", name: "publicationEdition", widget: "string", required: false}
       - {label: "Designed by", name: "designedBy", widget: "string", required: false}
       - {label: "Published by", name: "publishedBy", widget: "string", required: false}
       - {label: "ISBN", name: "isbn", widget: "string", required: false}
