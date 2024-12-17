@@ -1,33 +1,53 @@
 document.addEventListener("DOMContentLoaded", function () {
-// Initialize Fancybox for Exhibitions
-Fancybox.bind("[data-fancybox^='gallery-']", {
-  Thumbs: false, // Disable thumbnails
-  autoFocus: false,
-  hideScrollbar: false,
-  Image: {
-    zoom: false,
-    click: 'next', // This enables click to next
-  },
-  Carousel: {
-    friction: 0, // Makes sliding between images instant
-  },
-  on: {
-    ready: (fancybox) => {
-      if (fancybox && fancybox.container) {
-        // Apply transparent background to Fancybox elements
-        const elements = fancybox.container.querySelectorAll('*');
-        elements.forEach(el => {
-          el.style.setProperty('background-color', 'transparent', 'important');
-        });
-      }
+  // Initialize Fancybox for Exhibitions
+  Fancybox.bind("[data-fancybox^='gallery-']", {
+    Thumbs: false, // Disable thumbnails
+    autoFocus: false,
+    hideScrollbar: false,
+    Image: {
+      zoom: false,
+      click: 'next', // Clicking on the image goes to the next slide
     },
-    // Log when an image is clicked
-    click: (fancybox, slide) => {
-      console.log('Image clicked:', slide);
-      fancybox.next();
+    Carousel: {
+      friction: 0, // Instant slide transition
+    },
+    click: false, // Disable default click behavior to handle it manually
+    on: {
+      ready: (fancybox) => {
+        if (fancybox && fancybox.container) {
+          // Apply transparent background to Fancybox elements
+          const elements = fancybox.container.querySelectorAll('*');
+          elements.forEach(el => {
+            el.style.setProperty('background-color', 'transparent', 'important');
+          });
+        }
+      },
+      closing: (fancybox) => {
+        console.log("Fancybox is closing...");
+      },
+      done: (fancybox, slide) => {
+        console.log("Slide is ready:", slide);
+      },
+    },
+  });
+
+  // Custom handler for background clicks
+  document.addEventListener('click', function (event) {
+    // Check if the click is within a Fancybox slide container
+    const fancyboxSlide = event.target.closest('.fancybox__slide');
+    const fancyboxContainer = event.target.closest('.fancybox__container');
+
+    if (fancyboxContainer && fancyboxSlide && !event.target.closest('.fancybox__content')) {
+      // If clicked outside the image/content, move to the next slide
+      const instance = Fancybox.getInstance();
+      if (instance) {
+        instance.next();
+        event.preventDefault();
+      }
     }
-  }
-})
+  });
+
+
 
 
 

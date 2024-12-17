@@ -12,6 +12,7 @@ body, html {
   font-family: "minion-3", serif !important;
   font-weight: 600;
   margin: 0;
+  font-size: 14px;
   /* cursor: url('/images/cursor.png'), auto; */
 }
 
@@ -62,6 +63,7 @@ body, html {
 
 #back-to-grid {
   margin-bottom: 0.8em;
+  margin-left: 3em;
 }
 
 .current-page {
@@ -429,7 +431,6 @@ body, html {
 #exhibition-text {
   line-height: 1.8em;
   text-align:left;
-  padding: 1em;
 }
 
 .exhibitions-intro {
@@ -645,10 +646,10 @@ body, html {
 
 /* WORKS */
 /* Container for the whole gallery */
-.works-container {
+/* .works-container {
   padding: 20px;
 
-}
+} */
 
 
 .works-grid {
@@ -762,11 +763,13 @@ body, html {
   cursor: pointer;
   color: black;
   font-size: 1.6em;
-padding-right: 10px;
-padding-left: 10px;
-padding-top: 3px;
-padding-bottom: 3px;
-  border-radius: 20px;
+  padding-right: 11px;
+  padding-left: 11px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border-radius: 23px;
+  margin: 0;
+
 }
 
 .filter-button.active, .filter-button:hover {
@@ -847,10 +850,6 @@ padding-bottom: 3px;
    display: none;
   }
 
-.caption-title, .caption-year, .caption-medium, .caption-dimensions {
-
-font-size: 17.6px;
-}
 
 body.fancybox-open .navbar-toggler {
   display: none !important;
@@ -993,7 +992,7 @@ button.carousel__button.fancybox__button--zoom {
 @media (min-width: 769px) and (max-width: 992px) {
 
   .exhibition-details {
-    padding-left: 0.5em;
+    padding-left: 0;
   }
   .exhibitions-heading {
     font-size: 5em;
@@ -1020,6 +1019,10 @@ button.carousel__button.fancybox__button--zoom {
     column-gap: 20px;
     row-gap: 20px;
   }
+
+  .exhibition-details {
+    padding-left: 0;
+  }
 }
 
 @media (min-width: 577px) and (max-width: 768px) {
@@ -1038,6 +1041,7 @@ button.carousel__button.fancybox__button--zoom {
     padding-left: 0.5em;
     max-width: 300px;
     font-weight: 350;
+    padding-left: 0;
   }
   .exhibitions-heading {
     font-size: 5em;
@@ -1069,6 +1073,14 @@ button.carousel__button.fancybox__button--zoom {
 
 
 @media (max-width: 576px) {
+  #back-to-grid {
+margin-left: 0;
+
+  }
+  .main-container {
+    padding: 0 8px;
+
+  }
   .current-page-name {
     font-size: 1.2em;
     position: static;
@@ -1114,9 +1126,8 @@ button.carousel__button.fancybox__button--zoom {
     margin: 0;
 
   }
-  #exhibition-text {
-    font-size: 0.8em;
-  }
+
+
   .exhibition-grid {
     grid-template-columns: repeat(1, 1fr);
     padding:0 !important;
@@ -1127,17 +1138,33 @@ button.carousel__button.fancybox__button--zoom {
   margin-top: 1em;
 }
 
+#exhibition-text {
+  font-size: 14px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-top: 4em;
+}
+
 .exhibition-details {
-  padding-left: 0.5em;
-  font-size: 0.8em;
-  max-width: 320px;
+  font-size: 14px;
+  max-width: 300px;
 }
 
 .more-info {
-
-  font-size: 0.8em;
-  padding-right: 0.5em;
+  font-size: 14px;
 }
+
+.caption {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1em;
+  line-height: 1em;
+  padding-right: 8px;
+  padding-left: 8px;
+
+}
+
 
 
 .exhibitions-heading {
@@ -1155,9 +1182,7 @@ button.carousel__button.fancybox__button--zoom {
   padding: 0;
 }
 
-#exhibition-text {
-  margin-top: 3em;
-}
+
   .about-content {
     font-size: 1em;
   }
@@ -1209,26 +1234,19 @@ button.carousel__button.fancybox__button--zoom {
   }
 
 
+
+
   .filter-button {
+    padding: 0 8px 0 8px;
+    border-radius: 23px;
+    margin: 0;
     font-size: 1.2em;
   }
 
-  .filter-button {
-    padding: 0 5px 0 5px;
-    /* padding-right: 5px;
-    padding-bottom: 0; */
-    border-radius: 5px;
-    margin: 0;
+  .filter-buttons {
+
+    margin-top: 3em;
   }
-
-    .caption {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-
-      margin-bottom: 1em;
-      line-height: 1em;
-    }
 
     .fancybox__image {
       max-height: 70vh !important; /* Allow more space for the close button */
@@ -1253,7 +1271,7 @@ button.carousel__button.fancybox__button--zoom {
       margin: 0;
       padding: 10px 10px;
       color: black;
-      font-size: 0.8em;
+      font-size: 14px;
     }
 
 

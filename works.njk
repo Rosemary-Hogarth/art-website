@@ -24,7 +24,7 @@ pagination:
 
           {% if work.data.type == "Installation" %}
             <a href="{{ (work.data.installationImages[0].image | replace('/upload/', '/upload/w_1600,q_auto,f_auto,dpr_auto/')) }}"
-               data-fancybox="gallery-{{ work.data.name | slugify }}"
+               data-fancybox="all-installations"
                data-caption="<span class='caption-title'><em>{{ work.data.name }}</em></span>,
                     <span class='caption-year'>{{ work.data.year }}</span>,
                     <span class='caption-medium'>{{ work.data.medium }}</span>,
@@ -37,7 +37,7 @@ pagination:
             {% for image in work.data.installationImages %}
               {% if not forloop.first %}
                 <a href="{{ (image.image | replace('/upload/', '/upload/w_1600,q_auto,f_auto,dpr_auto/')) }}"
-                  data-fancybox="gallery-{{ work.data.name | slugify }}"
+                  data-fancybox="all-installations"
                   data-caption="
                     <span class='caption-title'><em>{{ work.data.name | default("Untitled")}}</em></span>,
                     <span class='caption-year'>{{ work.data.year | default("Unknown Year") }}</span>,
