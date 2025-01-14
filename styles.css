@@ -11,8 +11,8 @@
 body, html {
   font-family: "minion-3", serif !important;
   margin: 0;
-  /* font-size: 14px; */
-  /* cursor: url('/images/cursor.png'), auto; */
+  font-weight: 500;
+
 }
 
 img {
@@ -20,29 +20,6 @@ img {
   height: auto;
 }
 
-/* a, a:hover, a:active, button:hover {
-  cursor: url('/images/cursor.png'), auto;
-} */
-
-
-body, html {
-  margin: 0;
-}
-
-/* .text-link {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  margin-top: -19px;
-} */
-
-
-
-
-/* moves the .current-page-name to the left */
-/* .brand-container {
-  flex: 1;
-} */
 .exhibition-link {
   text-decoration: none;
   color: black;
@@ -300,13 +277,12 @@ h2.recent {
 
 /* exhibition text styles - classes in exhibitions.js*/
 .exhibition-details-title {
-  font-size: 1em;
   margin-bottom: 0;
+
 }
 
 .exhibition-details-location {
   margin-bottom: 0;
-  font-size: 1em;
 }
 
 .exhibition-details-date {
@@ -1212,20 +1188,49 @@ button.carousel__button.fancybox__button--zoom {
 
 
 @media (max-width: 576px) {
-  #back-to-grid {
-margin-left: 0;
 
+  h2.recent {
+    font-size: 1em;
   }
+
+  .news-container {
+    font-size: 1em;
+  }
+
+  .news-container:first-child {
+    margin-top: 4em;
+  }
+#back-to-grid img {
+  margin-bottom: 1.6em;
+}
+
   .main-container {
     padding: 0 8px;
 
   }
   .current-page-name {
-    font-size: 1.2em;
-    position: static;
-    display: block;
+    font-size: 1.1em;
+    position: absolute; /* Use absolute positioning for centering */
+    left: 50%;          /* Move to the middle of the parent */
+    transform: translateX(-50%); /* Adjust for exact centering */
     text-align: center;
-    }
+    top: 50%;           /* Optional: Adjust vertical alignment if needed */
+    transform: translate(-50%, -50%);
+}
+
+
+.navbar {
+  position: relative; /* Make the navbar the positioning context */
+}
+
+.navbar-toggler {
+  position: absolute;
+  right: 5px; /* Ensure the button stays on the right */
+  top: 50%;    /* Align vertically */
+  transform: translateY(-50%);
+  padding-right: 0.05em;
+
+}
 
   .pubTitle {
     font-size: 1.1em;
@@ -1278,14 +1283,18 @@ margin-left: 0;
 }
 
 #exhibition-text {
-  font-size: 14px;
   padding-left: 8px;
   padding-right: 8px;
   margin-top: 4em;
 }
 
+#exhibition-text .narrow-container {
+  font-size: 1em;
+  padding: 0;
+}
+
 .exhibition-details {
-  font-size: 14px;
+  font-size: 0.9em;
   max-width: 300px;
 }
 
@@ -1317,9 +1326,7 @@ margin-left: 0;
 .exhibitions-intro {
   font-size: 0.7em;
 }
-#exhibition-text .narrow-container {
-  padding: 0;
-}
+
 
 
   .about-content {
@@ -1331,13 +1338,13 @@ margin-left: 0;
       justify-content: space-between;
     }
     .navbar-brand {
-      font-size: 1.2em;
+      font-size: 1.1em;
       padding-left: 0.4em;
       padding-right: 1.6em;
     }
 
     .navbar-toggler {
-      padding-right: 0.3em;
+      font-size: 1.1em;
     }
     .fullscreen-menu .close-btn {
       top: 10px;
@@ -1461,5 +1468,7 @@ margin-left: 0;
       font-size: 14px;
       margin-top: 20px;
     }
+
+
 
 }

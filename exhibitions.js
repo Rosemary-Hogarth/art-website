@@ -27,7 +27,7 @@ removeContainerPadding();
 
   function renderText(title, location, date, text) {
     textContent.innerHTML = `
-      <h2 class="exhibition-details-title">${title}</h2>
+      <p class="exhibition-details-title">${title}</p>
       <p class="exhibition-details-location">${location}</p>
       <p class="exhibition-details-date">${date}</p>
       <p class="exhibition-details-text">${text}</p>

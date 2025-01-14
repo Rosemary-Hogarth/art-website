@@ -18,7 +18,7 @@ layout: base.njk
   {% for newsItem in collections.recent %}
     <div class="news-container">
       {% if loop.first %}
-        <h2 class="recent">Recent</h2>
+        <h2 class="recent">RECENT</h2>
       {% endif %}
       <p class="news-item"><em>{{ newsItem.data.title }}</em></p>
       <p class="news-item">{{ newsItem.data.location }}</p>
