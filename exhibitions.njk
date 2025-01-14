@@ -6,82 +6,56 @@ pagination:
   alias: exhibition
 ---
 
-
-<!--<div id="exhibitions-intro" class="exhibitions-intro hidden">
-  <h1 id="exhibitions-heading" class="exhibitions-heading">Exhibitions</h1>
-</div>-->
-
 <div id="exhibitions-main" class="exhibitions-container">
   <div id="content-area">
     <div id="exhibition-grid" class="exhibition-grid">
       {% for exhibition in collections.exhibitions %}
         <div class="exhibition-item">
-          <a href="/exhibitions/{{ exhibition.fileSlug }}/" class="exhibition-link">
-            <!-- Invisible Carousel Card -->
-            <div class="carousel-card">
-              <!-- Carousel -->
-              <div id="carouselExampleControls-{{ exhibition.fileSlug }}" class="carousel slide">
-                <div class="carousel-inner">
-                  {% for image in exhibition.data.images %}
-                    <div class="carousel-item {% if loop.first %}active{% endif %}">
-                        <a href="{{ image }}" data-fancybox="gallery-{{ exhibition.fileSlug }}"
+          <!-- Carousel (clickable) -->
+          <div class="carousel-card">
+            <div id="carouselExampleControls-{{ exhibition.fileSlug }}" class="carousel slide">
+              <div class="carousel-inner">
+                {% for image in exhibition.data.images %}
+                  <div class="carousel-item {% if loop.first %}active{% endif %}">
+                    <img
+                      class="carousel-image d-block w-300"
+                      src="{{ (image | replace('/upload/', '/upload/w_1600,q_auto,f_auto/')) }}"
+                      alt="Image from {{ exhibition.data.title }}" loading="lazy">
+                  </div>
 
-                        data-caption="
-                        <span class='exhib-title'><em>{{ exhibition.data.title }}</em></span>,
-                        <span class='exhib-view'>{{ exhibition.data.view }}, </span>
-                        <span class='exhib-location'>{{ exhibition.data.location }}, </span>
-                         <span class='exhib-year'>{{ exhibition.data.year }}</span>
-                        <!--<span class='caption-year'>{{ exhibition.data.year }}</span>"-->
-                         <img
-                          class="carousel-image d-block w-300"
-                          src="{{ (image | replace('/upload/', '/upload/w_1600,q_auto,f_auto/')) }}"
-                          alt="Image from {{ exhibition.data.title }}" loading="lazy">
-                      </a>
-                    </div>
-                  {% endfor %}
-                </div>
-                <!--<a class="carousel-control-prev" href="#carouselExampleControls-{{ exhibition.fileSlug }}" role="button" data-slide="prev">
-                  <div class="carousel-control-prev-icon" aria-hidden="true"></div>
-                  <div class="sr-only">Previous</div>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls-{{ exhibition.fileSlug }}" role="button" data-slide="next">
-                  <div class="carousel-control-next-icon" aria-hidden="true"></div>
-                  <div class="sr-only">Next</div>
-                </a>-->
-                <div class="sliders">
-                <div id="prevSlide"><img src="/images/arrow-left-slide.svg"></div>
-                <div id="nextSlide"><img src="/images/arrow-right-slide.svg"></div>
-                </div>
+                {% endfor %}
+
+              </div>
+                <div class="carousel-click-area left"></div>
+                <div class="carousel-click-area right"></div>
+            </div>
+          </div>
+
+          <!-- Exhibition details (not clickable) -->
+          <div class="caption">
+            <div class="exhibition-details">
+              <div class="exhibition-title">{{ exhibition.data.title }}</div>
+              <div class="exhibition-location">{{ exhibition.data.locationDate }}</div>
+              <div class="exhibition-category">{{ exhibition.data.category }}</div>
+            </div>
+
+            <!-- This is being rendered by javascript -->
+            <div class="text-link">
+              <div class="show-text"
+                data-exhibition-text="{{ exhibition.data.exhibitionText | markdownify | safe }}"
+                data-exhibition-text-title="{{ exhibition.data.exhibitionTextTitle | escape }}"
+                data-exhibition-text-location="{{ exhibition.data.exhibitionTextLocation | escape }}"
+                data-exhibition-text-dates="{{ exhibition.data.exhibitionTextDates | escape }}">
+                <div class="more-info">more info</div>
               </div>
             </div>
-            <div class="caption">
-              <div class="exhibition-details">
-                <div class="exhibition-title">{{ exhibition.data.title }}</div>
-                <div class="exhibition-location">{{ exhibition.data.locationDate }}</div>
-                <div class="exhibition-category">{{ exhibition.data.category }}</div>
-              </div>
-
-              <!-- This is being rendered by javascript -->
-              <div class="text-link">
-                <div class="show-text"
-                  data-exhibition-text="{{ exhibition.data.exhibitionText | markdownify | safe }}"
-                  data-exhibition-text-title="{{ exhibition.data.exhibitionTextTitle | escape }}"
-                  data-exhibition-text-location="{{ exhibition.data.exhibitionTextLocation | escape }}"
-                  data-exhibition-text-dates="{{ exhibition.data.exhibitionTextDates | escape }}">
-                  <!--<img src="/images/more-horiz.svg" class="svg-img">-->
-                  <div class="more-info">more info</div>
-                </div>
-              </div>
-            </div>
-          </a>
+          </div>
         </div>
       {% endfor %}
     </div>
   </div>
 </div>
 
-
-    </div>
 
 
   <div id="exhibition-text" style="display: none;">

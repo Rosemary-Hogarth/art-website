@@ -18,7 +18,9 @@ collections:
     folder: "exhibitions"
     create: true
     slug: '{{title | slugify}}'
+    sortableFields: ["order", "title"]
     fields:
+      - { label: "Order", name: "order", widget: "number", required: true, hint: "Order the exhibitions as you want them displayed." }
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Location Date", name: "locationDate", widget: "string", required: false}
       - {label: "Location", name: "location", widget: "string", required: false}

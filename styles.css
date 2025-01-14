@@ -43,6 +43,10 @@ body, html {
 /* .brand-container {
   flex: 1;
 } */
+.exhibition-link {
+  text-decoration: none;
+  color: black;
+}
 
 .news-container {
   max-width: 1000px;
@@ -405,7 +409,7 @@ h2.recent {
 
 .exhibition-details {
   transition: all 0.3s ease;
-  margin-top: 0.5em;
+  margin-top: 1em;
   flex-grow: 1;
   font-size: 1.2em;
   font-weight: 500;

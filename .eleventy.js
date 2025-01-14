@@ -54,9 +54,12 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addCollection("exhibitions", function(collectionApi) {
-    const exhibitions = collectionApi.getFilteredByGlob("exhibitions/*.md");
-    return exhibitions;
+    return collectionApi
+      .getFilteredByGlob("exhibitions/*.md")
+      .filter(item => item.data.order !== undefined) // Ensure `order` is defined
+      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)); // Default to 0 if `order` is undefined
   });
+
 
   eleventyConfig.addCollection("works", function (collectionApi) {
     return collectionApi.getFilteredByGlob("./works/*.md");
