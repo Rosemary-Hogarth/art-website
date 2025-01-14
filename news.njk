@@ -1,3 +1,17 @@
 ---
 layout: base.njk
 ---
+{% if collections.news and collections.news.length > 0 %}
+  {% for newsItem in collections.news %}
+    <div class="news-container">
+      <p class="news-item"><em>{{ newsItem.data.title }}</em></p>
+      <p class="news-item">{{ newsItem.data.location }}</p>
+      <p class="news-item">{{ newsItem.data.opening or "not specified" }}</p>
+      <p class="news-item web"><a href="{{ newsItem.data.web }}" target="_blank">{{ newsItem.data.web }}</a></p>
+    </div>
+  {% endfor %}
+{% else %}
+  <div class="imprint-container">
+    <p class="no-content-message">No imprint information available.</p>
+  </div>
+{% endif %}

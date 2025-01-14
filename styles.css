@@ -10,9 +10,8 @@
 
 body, html {
   font-family: "minion-3", serif !important;
-  font-weight: 600;
   margin: 0;
-  font-size: 14px;
+  /* font-size: 14px; */
   /* cursor: url('/images/cursor.png'), auto; */
 }
 
@@ -45,6 +44,27 @@ body, html {
   flex: 1;
 } */
 
+.news-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 2.3em;
+  cursor: default;
+  line-height: 1.3em;
+  font-size: 1.45em;
+  font-weight: 500;
+  color: black;
+}
+
+.news-container:first-child {
+  margin-top: 150px; /* Pushes the first item below the navbar */
+}
+.news-item {
+  margin-bottom: 0;
+}
+
+.web a {
+  color: black;
+}
 
 
 .main-container.no-padding {
@@ -62,9 +82,20 @@ body, html {
 }
 
 #back-to-grid {
-  margin-bottom: 0.8em;
-  margin-left: 3em;
+  margin-left: auto; /* Centers horizontally within its parent */
+  margin-right: auto; /* Centers horizontally within its parent */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px; /* Larger than the image height */
+  width: 50px;  /* Larger than the image width */
 }
+
+#back-to-grid img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 
 .current-page {
   font-weight: bold;
@@ -101,6 +132,12 @@ body, html {
   background: none;
   border: none;
   cursor: pointer;
+
+}
+
+.fullscreen-menu .close-btn img {
+  width: 30px;
+  height: 30px;
 }
 
 .fullscreen-menu .close-btn:hover {
@@ -160,12 +197,10 @@ body, html {
   text-align: center;
 }
 
-.nav-list .nav-item {
-  margin: 15px 0;
-}
+
 
 .nav-list .nav-link {
-  font-size: 3rem;
+  font-size: 3.47em;
   color: white;
   text-decoration: none;
   transition: color 0.2s;
@@ -211,12 +246,10 @@ body, html {
 }
 
 .navbar-brand {
-  font-size: 1.6em;
+  font-size: 1.62em;
   padding-left: 0.8em;
-  font-weight: 400;
+  font-weight: 500;
   margin-right: 0.5rem;
-
-
 }
 
 
@@ -278,9 +311,9 @@ body, html {
   margin: 0 auto;
   padding-top: 30px;
   cursor: default;
-  /* text-align: justify; */
   line-height: 1.3em;
-  font-size: 1.1em;
+  font-size: 1.45em;
+  font-weight: 500;
 }
 
 #text-content .row {
@@ -304,11 +337,12 @@ body, html {
 }
 
 .current-page-name {
-  font-size: 1.6em;
+  font-size: 1.62em;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
+  font-weight: 500;
 }
 
 .exhibition-h2 {
@@ -371,7 +405,7 @@ body, html {
   margin-top: 0.5em;
   flex-grow: 1;
   font-size: 1.2em;
-  font-weight: 400;
+  font-weight: 500;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -393,7 +427,7 @@ body, html {
   font-size: 1.2em;
   height: auto;
   max-width: 100%;
-  /* line-height: 1.1em; */
+  font-weight: 500;
   color: #000;
   margin-top: 0;
   display: flex;

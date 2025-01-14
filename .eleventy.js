@@ -90,10 +90,15 @@ module.exports = function(eleventyConfig) {
     return privacy;
   });
 
-  eleventyConfig.addCollection("news", function(collectionApi) {
-    const news = collectionApi.getFilteredByGlob("news/*.md");
-    return news;
+
+
+  eleventyConfig.addCollection("news", function (collectionApi) {
+    return collectionApi
+      .getFilteredByGlob("./news/*.md")
+      .sort((a, b) => a.data.order - b.data.order); // Sort by 'order' field
   });
+
+
   // Passthrough copy for assets
   eleventyConfig.addPassthroughCopy("*.css");
 

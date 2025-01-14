@@ -140,3 +140,17 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string", required: true }
       - { label: "Body", name: "body", widget: "markdown", required: true }
+
+
+  - name: "news"
+    label: "News"
+    folder: "news"
+    create: true
+    slug: '{{title | slugify}}'
+    sortableFields: ["order", "title"] # Adds sorting in the CMS UI
+    fields:
+      - { label: "Order", name: "order", widget: "number", required: true }
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Location", name: "location", widget: "string", required: true }
+      - { label: "Opening", name: "opening", widget: "string", required: true }
+      - { label: "Web", name: "web", widget: "string", required: true }
