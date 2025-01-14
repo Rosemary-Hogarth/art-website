@@ -1,4 +1,5 @@
 ---
+order: 2
 title: Julius Heinemann - Essay
 locationDate: Jahn und Jahn, Lisbon / 16.05.-22.08.2024
 location: Lisbon
