@@ -142,15 +142,29 @@ collections:
       - { label: "Body", name: "body", widget: "markdown", required: true }
 
 
-  - name: "news"
-    label: "News"
-    folder: "news"
+
+  - name: "upcoming"
+    label: "Upcoming Exhibitions"
+    folder: "news/upcoming"
     create: true
     slug: '{{title | slugify}}'
-    sortableFields: ["order", "title"] # Adds sorting in the CMS UI
+    sortableFields: ["order", "title"]
     fields:
-      - { label: "Order", name: "order", widget: "number", required: true }
       - { label: "Title", name: "title", widget: "string", required: true }
       - { label: "Location", name: "location", widget: "string", required: true }
-      - { label: "Opening", name: "opening", widget: "string", required: true }
+      - { label: "Opening", name: "opening", widget: "string" }
+      - { label: "Order", name: "order", widget: "number", required: true, hint: "Order the exhibitions as you want them displayed." }
+      - { label: "Web", name: "web", widget: "string", required: true }
+
+  - name: "recent"
+    label: "Recent Exhibitions"
+    folder: "news/recent"
+    create: true
+    slug: '{{title | slugify}}'
+    sortableFields: ["order", "title"]
+    fields:
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Location", name: "location", widget: "string", required: true }
+      - { label: "Opening", name: "opening", widget: "string", required: false }
+      - { label: "Order", name: "order", widget: "number", required: true, hint: "Order the exhibitions as you want them displayed." }
       - { label: "Web", name: "web", widget: "string", required: true }

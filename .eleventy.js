@@ -90,13 +90,24 @@ module.exports = function(eleventyConfig) {
     return privacy;
   });
 
-
-
-  eleventyConfig.addCollection("news", function (collectionApi) {
+  eleventyConfig.addCollection("upcoming", function(collectionApi) {
     return collectionApi
-      .getFilteredByGlob("./news/*.md")
-      .sort((a, b) => a.data.order - b.data.order); // Sort by 'order' field
+      .getFilteredByGlob("news/upcoming/*.md")
+      .sort((a, b) => a.data.order - b.data.order);
   });
+
+  eleventyConfig.addCollection("recent", function(collectionApi) {
+    return collectionApi
+      .getFilteredByGlob("news/recent/*.md")
+      .sort((a, b) => a.data.order - b.data.order);
+  });
+
+
+  // eleventyConfig.addCollection("news", function (collectionApi) {
+  //   return collectionApi
+  //     .getFilteredByGlob("./news/*.md")
+  //     .sort((a, b) => a.data.order - b.data.order); // Sort by 'order' field
+  // });
 
 
   // Passthrough copy for assets
