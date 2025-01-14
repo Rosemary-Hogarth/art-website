@@ -56,7 +56,7 @@ body, html {
 }
 
 .news-container:first-child {
-  margin-top: 150px; /* Pushes the first item below the navbar */
+  margin-top: 120px; /* Pushes the first item below the navbar */
 }
 .news-item {
   margin-bottom: 0;
