@@ -35,8 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to update Fancybox bindings for all works
     function updateFancybox() {
-      // Bind Fancybox for all works in the "All" gallery
-      Fancybox.bind('[data-fancybox="gallery"], [data-fancybox="all-installations"]', {
+      const fancyboxOptions = {
         hideScrollbar: false,
         autoFocus: false,
         Thumbs: { autoStart: false },
@@ -56,21 +55,15 @@ document.addEventListener('DOMContentLoaded', function () {
             }
           },
         },
-      });
+      };
+
+      // Bind Fancybox for all works in the "All" gallery
+      Fancybox.bind('[data-fancybox="gallery"], [data-fancybox="all-installations"]', fancyboxOptions);
 
       // Bind Fancybox for visible items in the current filter (works that are shown)
-      Fancybox.bind('.work-item:not(.visually-hidden) [data-fancybox^="gallery"]', {
-        hideScrollbar: false,
-        autoFocus: false,
-        Thumbs: { autoStart: false },
-        Toolbar: true,
-        arrows: true,
-        dragToClose: false,
-        Image: { zoom: false, click: 'next' },
-        Carousel: { friction: 0 },
-        click: false
-      });
+      Fancybox.bind('.work-item:not(.visually-hidden) [data-fancybox^="gallery"]', fancyboxOptions);
     }
+
 
     // Function to filter works based on the selected filter
     function filterWorks(filter) {

@@ -49,9 +49,9 @@ collections:
     fields:
       - {label: "Name", name: "name", widget: "string"}
       - {label: "Year", name: "year", widget: "number"}
+      - {label: "Dimensions", name: "dimensions", widget: "string"}
       - {label: "Medium", name: "medium", widget: "string"}
       - {label: "Category", name: "category", widget: "select", options: ["Installation", "Painting", "Watercolour", "Collage", "Drawing", "Object"]} # Filter category
-      - {label: "Dimensions", name: "dimensions", widget: "string"}
       - {label: "Type", name: "type", widget: "select", options: ["Single", "Installation"], default: "Single"}
       - {label: "Image", name: "image", widget: "image", required: false}
       - {label: "Permalink", name: "permalink", widget: "hidden", default: "/works/{{ name | slugify }}/"}
